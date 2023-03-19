@@ -1,0 +1,5 @@
+.gridLayout {
+  display: grid;
+  grid-template-rows: 8vh 1fr 20vh;
+  min-height: 100vh;
+}
