@@ -7,28 +7,24 @@ header {
   height: 20vh;
 }
 
-.ocio-menu-sections{
+.ocio-menu-sections {
   display: flex;
   flex-wrap: wrap;
   height: 50%;
- 
 }
 
-header > .ocio-nav-container{
+header > .ocio-nav-container {
   height: 50%;
-
-  
 }
 
-
-header >div > nav > ul {
+header > div > nav > ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 7rem;
 }
 
-header> div > nav > ul > li {
+header > div > nav > ul > li {
   list-style: none;
 }
 

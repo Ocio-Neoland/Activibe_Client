@@ -1,7 +1,8 @@
 import './Header.css';
 
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import { types } from '../../data/data';
 
 const Header = () => {

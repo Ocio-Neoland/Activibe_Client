@@ -1,8 +1,9 @@
 import './Home.css';
 
 import React from 'react';
-import Carousel from '../../Components/Carousel/Carousel';
 import { Link } from 'react-router-dom';
+
+import Carousel from '../../Components/Carousel/Carousel';
 
 const Home = () => {
   return (
