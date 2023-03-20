@@ -1,5 +1,4 @@
 header {
-  background-color: blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,5 +29,11 @@ header > div > nav > ul > li {
 
 header > div > nav > ul > li > a {
   text-decoration: none;
-  color: white;
+  color: black;
+  font-size: 1.4rem;
+}
+header > nav > ul > li > a:hover {
+  color: #004bad;
+  scale: 1.2;
+  transition: 0.2s;
 }

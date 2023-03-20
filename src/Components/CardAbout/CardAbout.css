@@ -1,0 +1,108 @@
+.CardAbout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5rem;
+}
+.mainCarAbout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 7rem;
+}
+
+.card {
+  gap: 5rem;
+  width: 15rem;
+  height: 20rem;
+}
+
+.card:hover .content {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  bottom: 25px;
+}
+
+.content .title {
+  position: relative;
+  color: black;
+  font-weight: bold;
+  font-weight: 500;
+  line-height: 1em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content .title span {
+  font-weight: 300;
+  font-size: 0.7em;
+}
+
+.content .sci {
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li .fa-brands {
+  width: 14px;
+}
+
+.sci li .fa-facebook {
+  width: 10px;
+}
+
+.sci li a {
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  justify-content: center;
+
+  text-decoration: none;
+  color: white;
+  background: #004badec;
+  fill: currentColor;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 1rem;
+}
+.foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale();
+}
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
