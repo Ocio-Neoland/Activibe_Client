@@ -1,5 +1,4 @@
 header {
-
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -25,6 +24,4 @@ header > nav > ul > li > a:hover {
   color: #004bad;
   scale: 1.2;
   transition: 0.2s;
-
-
 }

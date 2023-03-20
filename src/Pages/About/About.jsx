@@ -1,6 +1,7 @@
 import './About.css';
 
 import React from 'react';
+
 import CardAbout from '../../Components/CardAbout/CardAbout';
 
 const About = () => {

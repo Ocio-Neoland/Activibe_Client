@@ -1,11 +1,12 @@
 import './CardAbout.css';
+
 import React from 'react';
 
 const CardAbout = () => {
   return (
     <main className="mainCarAbout">
       <div className="CardAbout">
-        <div class="card">
+        <div className="card">
           <div className="img">
             <img
               className="foto"
@@ -13,9 +14,9 @@ const CardAbout = () => {
               alt="foto"
             />
           </div>
-          <div class="content">
+          <div className="content">
             <h3 className="title">Jesús Roman Juarez</h3>
-            <ul class="sci">
+            <ul className="sci">
               <li>
                 <a href="https://github.com/Shuss1988">
                   <svg
@@ -34,7 +35,7 @@ const CardAbout = () => {
               <li>
                 <a href="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/">
                   <svg
-                    class="fa-brands fa-linkedin-in"
+                    className="fa-brands fa-linkedin-in"
                     width="24"
                     xmlns="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/"
                     viewBox="0 0 448 512"
@@ -46,7 +47,7 @@ const CardAbout = () => {
             </ul>
           </div>
         </div>
-        <div class="card">
+        <div className="card">
           <div className="img">
             <img
               className="foto"
@@ -54,9 +55,9 @@ const CardAbout = () => {
               alt="foto"
             />
           </div>
-          <div class="content">
+          <div className="content">
             <h3 className="title">Sebastian Riballo Herrera</h3>
-            <ul class="sci">
+            <ul className="sci">
               <li>
                 <a href="https://github.com/Sriballo93">
                   <svg
@@ -75,7 +76,7 @@ const CardAbout = () => {
               <li>
                 <a href="https://www.linkedin.com/in/sebastian-riballo-herrera-a862b5180/">
                   <svg
-                    class="fa-brands fa-linkedin-in"
+                    className="fa-brands fa-linkedin-in"
                     width="24"
                     xmlns="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/"
                     viewBox="0 0 448 512"
@@ -87,7 +88,7 @@ const CardAbout = () => {
             </ul>
           </div>
         </div>
-        <div class="card">
+        <div className="card">
           <div className="img">
             <img
               className="foto"
@@ -95,9 +96,9 @@ const CardAbout = () => {
               alt="foto"
             />
           </div>
-          <div class="content">
+          <div className="content">
             <h3 className="title">Carlos M. García Sánchez </h3>
-            <ul class="sci">
+            <ul className="sci">
               <li>
                 <a href="https://github.com/Charliecgs">
                   <svg
@@ -116,7 +117,7 @@ const CardAbout = () => {
               <li>
                 <a href="https://www.linkedin.com/in/carlos-manuel-garc%C3%ADa-s%C3%A1nchez-95b211267/">
                   <svg
-                    class="fa-brands fa-linkedin-in"
+                    className="fa-brands fa-linkedin-in"
                     width="24"
                     xmlns="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/"
                     viewBox="0 0 448 512"
@@ -128,7 +129,7 @@ const CardAbout = () => {
             </ul>
           </div>
         </div>
-        <div class="card">
+        <div className="card">
           <div className="img">
             <img
               className="foto"
@@ -136,9 +137,9 @@ const CardAbout = () => {
               alt="foto"
             />
           </div>
-          <div class="content">
+          <div className="content">
             <h3 className="title">Cristian Alonso Ramos </h3>
-            <ul class="sci">
+            <ul className="sci">
               <li>
                 <a href="https://github.com/C-AlonsoRamos">
                   <svg
@@ -157,7 +158,7 @@ const CardAbout = () => {
               <li>
                 <a href="https://www.linkedin.com/in/cristian-alonso-ramos-60749b256/">
                   <svg
-                    class="fa-brands fa-linkedin-in"
+                    className="fa-brands fa-linkedin-in"
                     width="24"
                     xmlns="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/"
                     viewBox="0 0 448 512"
@@ -169,7 +170,7 @@ const CardAbout = () => {
             </ul>
           </div>
         </div>
-        <div class="card">
+        <div className="card">
           <div className="img">
             <img
               className="foto"
@@ -177,9 +178,9 @@ const CardAbout = () => {
               alt="foto"
             />
           </div>
-          <div class="content">
+          <div className="content">
             <h3 className="title">Jacobo Linares Fernández</h3>
-            <ul class="sci">
+            <ul className="sci">
               <li>
                 <a href="https://github.com/jackhietala">
                   <svg
@@ -198,7 +199,7 @@ const CardAbout = () => {
               <li>
                 <a href="https://www.linkedin.com/in/jacobo-linares-fern%C3%A1ndez-5285ba53/">
                   <svg
-                    class="fa-brands fa-linkedin-in"
+                    className="fa-brands fa-linkedin-in"
                     width="24"
                     xmlns="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/"
                     viewBox="0 0 448 512"
