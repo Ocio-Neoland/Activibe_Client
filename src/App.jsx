@@ -9,13 +9,11 @@ import BaseLayout from './Layouts/BaseLayout/BaseLayout';
 
 const App = () => {
   return (
-    <div className="App">
-      <BaseLayout>
-        <Header />
-        <Outlet />
-        <Footer />
-      </BaseLayout>
-    </div>
+    <BaseLayout>
+      <Header />
+      <Outlet />
+      <Footer />
+    </BaseLayout>
   );
 };
 

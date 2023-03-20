@@ -1,0 +1,32 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  height: 160px;
+  padding: 1rem;
+  width: 100%;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  line-height: 40px;
+  height: 100px;
+  background-color: #141414;
+  margin: 0 0.1rem;
+  color: #fff;
+  flex: 0 0 19.7%;
+  text-align: center;
+  transition: transform 300ms ease 100ms;
+}
+
+.item:hover {
+  transform: translateX(25%);
+  transform: scale(1.5) !important;
+  transform: translateX(-25%);
+}
