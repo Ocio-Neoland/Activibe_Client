@@ -1,0 +1,24 @@
+.About{
+    display: flex;
+   justify-content: center;
+    
+}
+
+.divLogo{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+   
+}
+
+
+.containerAbout{
+    
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+}
+.mas p{
+font-size: 1.5rem;
+}

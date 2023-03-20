@@ -1,5 +1,5 @@
 header {
-  background-color: blue;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -18,5 +18,13 @@ header > nav > ul > li {
 
 header > nav > ul > li > a {
   text-decoration: none;
-  color: white;
+  color: black;
+  font-size: 1.4rem;
+}
+header > nav > ul > li > a:hover {
+  color: #004bad;
+  scale: 1.2;
+  transition: 0.2s;
+
+
 }
