@@ -5,11 +5,12 @@
   list-style-type: none;
 }
 
-a{
+a {
   text-decoration: none;
-  color:inherit
+  color: inherit;
 }
 
-main{
-  margin:1rem;
+main {
+  margin: 1rem;
+  min-height: 60vh;
 }
