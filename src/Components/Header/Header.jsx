@@ -1,8 +1,9 @@
 import './Header.css';
-import { UserContext } from '../../Context/UserContext';
+
 import React, { useContext, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { UserContext } from '../../Context/UserContext';
 import { types } from '../../data/data';
 
 const Header = () => {

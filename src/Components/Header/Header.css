@@ -5,24 +5,20 @@ header {
   height: 15vh;
   width: 100%;
 }
-.ocio-sections-btn{
-  background-color:#004bad;
+.ocio-sections-btn {
+  background-color: #004bad;
   border: none;
   font-size: 22px;
 }
 
-.ocio-sections-btn::after{
-
-  content: "  ⟪" ;
-
+.ocio-sections-btn::after {
+  content: '  ⟪';
 }
-
-
 
 .ocio-menu-sections {
   display: flex;
   flex-wrap: wrap;
-  min-height:250px;
+  min-height: 250px;
   background-color: #004bad;
   width: 100%;
   max-height: 300px;
@@ -32,12 +28,9 @@ header {
   top: 5rem;
   z-index: 1030;
   position: fixed;
- 
 }
 
-
 header > .ocio-nav-container {
-
   min-height: 80px;
   width: 100%;
   display: flex;
@@ -69,23 +62,20 @@ header > nav > ul > li > a:hover {
   transition: 0.2s;
 }
 
-
-
-.icon-menu{
+.icon-menu {
   height: 70px;
   width: 70px;
   border-radius: 12px;
   object-fit: cover;
 }
 
-.ocio-a-container > h2{
+.ocio-a-container > h2 {
   width: fit-content;
-  
 }
 
-.ocio-a-container{
-  display:flex;
-  justify-content:left;
+.ocio-a-container {
+  display: flex;
+  justify-content: left;
   align-items: center;
   gap: 1rem;
   width: 300px;
