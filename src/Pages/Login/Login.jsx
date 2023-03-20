@@ -15,7 +15,7 @@ const Login = () => {
     API.post('/users/login', formData)
       .then((res) => {
         if (res.status === 200) {
-          login(res.data.userName, res.data.token);
+          login(res.data.user.userName, res.data.token);
           navigate('/');
         }
       })
