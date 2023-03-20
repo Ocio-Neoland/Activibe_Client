@@ -15,7 +15,7 @@ a {
 }
 
 main {
-  margin: 1rem;
-  min-height: 60vh;
-
+  padding: 2rem 4rem;
+  margin-top: 2rem;
+  min-height: 75vh;
 }
