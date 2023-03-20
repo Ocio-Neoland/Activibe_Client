@@ -3,7 +3,7 @@ import './BaseLayout.css';
 import React from 'react';
 
 const BaseLayout = ({ children }) => {
-  return <main className="gridLayout">{children}</main>;
+  return <div className="gridLayout">{children}</div>;
 };
 
 export default BaseLayout;
