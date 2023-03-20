@@ -12,4 +12,6 @@ a{
 
 main{
   margin:1rem;
+  min-height: 60vh;
+
 }

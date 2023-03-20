@@ -22,11 +22,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
-            <Route path="/sections" element={<Sections />} />
+            <Route path="/:name" element={<Sections />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/activityDetail" element={<ActivityDetail />} />
+            <Route path="/:name/:id" element={<ActivityDetail />} />
             <Route path="/about" element={<About />} />
           </Route>
         </Routes>

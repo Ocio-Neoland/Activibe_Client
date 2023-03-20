@@ -1,22 +1,38 @@
 header {
   background-color: blue;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 20vh;
 }
 
-header > nav > ul {
+.ocio-menu-sections{
+  display: flex;
+  flex-wrap: wrap;
+  height: 50%;
+ 
+}
+
+header > .ocio-nav-container{
+  height: 50%;
+
+  
+}
+
+
+header >div > nav > ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 7rem;
 }
 
-header > nav > ul > li {
+header> div > nav > ul > li {
   list-style: none;
 }
 
-header > nav > ul > li > a {
+header > div > nav > ul > li > a {
   text-decoration: none;
   color: white;
 }

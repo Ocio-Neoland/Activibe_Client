@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <main>
+    <main className="ocio-home">
       <Link to="#">
         <h2>Top 10</h2>
       </Link>
