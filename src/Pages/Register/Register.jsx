@@ -1,9 +1,10 @@
 import './Register.css';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+
 import { API } from '../../Services/API';
-import { useState } from 'react';
 
 const Register = () => {
   const [password, setPassword] = useState('');
