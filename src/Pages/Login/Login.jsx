@@ -1,10 +1,11 @@
+import './Login.css';
+
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { UserContext } from '../../Context/UserContext';
 import { API } from '../../Services/API';
-
 const Login = () => {
   const { register, handleSubmit } = useForm();
   let navigate = useNavigate();
@@ -26,15 +27,41 @@ const Login = () => {
 
   return (
     <main>
-      <h2>Login</h2>
-      {error !== null && <h2>{error}</h2>}
-      <form onSubmit={handleSubmit(formSubmit)}>
-        <label htmlFor="userName">Username</label>
-        <input type="text" id="userName" name="userName" {...register('userName')} />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" {...register('password')} />
-        <button type="submit">Login</button>
-      </form>
+      <div className="login-box">
+        <p>Login</p>
+        {error !== null && <h2>{error}</h2>}
+        <form className="user-box" onSubmit={handleSubmit(formSubmit)}>
+          <div className="user-box">
+            <input
+              className="input"
+              type="text"
+              required=""
+              id="userName"
+              name="userName"
+              {...register('userName')}
+            />
+            <label htmlFor="userName">Username:</label>
+          </div>
+          <div className="user-box">
+            <input
+              className="input"
+              type="password"
+              required=""
+              id="password"
+              name="password"
+              {...register('password')}
+            />
+            <label htmlFor="password">Password:</label>
+
+            <button className="a2" type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>Login
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
   );
 };
