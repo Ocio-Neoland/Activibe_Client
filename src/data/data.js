@@ -12,11 +12,11 @@ export const types = [
     img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346192/Ocioland/15995011199081_bcdtgz.jpg',
   },
   {
-    name: 'Juegos de Mesa',
+    name: 'Juegos de mesa',
     img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679345934/Ocioland/f.elconfidencial.com_original_575_703_c55_575703c554a82581b104630219c77d36_uaymmb.jpg',
   },
   {
-    name: 'Exotico',
+    name: 'Exoticos',
     img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346117/Ocioland/escape-room-1_ewglaw.jpg',
   },
   {

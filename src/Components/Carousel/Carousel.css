@@ -1,14 +1,25 @@
 .flex {
   display: flex;
-  align-items: center;
+  
+  
 }
 
 .container {
-  height: 160px;
+  height: 250px;
   padding: 1rem;
   width: 100%;
   overflow: scroll;
+
 }
+
+.ocio-img{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
 
 ::-webkit-scrollbar {
   display: none;
@@ -16,17 +27,41 @@
 
 .item {
   line-height: 40px;
-  height: 100px;
+  max-width: 200px;
+  width: 100px;
+  height: 200px;
   background-color: #141414;
   margin: 0 0.1rem;
-  color: #fff;
+  color: black;
   flex: 0 0 19.7%;
   text-align: center;
   transition: transform 300ms ease 100ms;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 6px;
+}
+
+.item > .nm{
+ text-align: end;
+ color:#F9B132;
+ font-size: 25px;
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+}
+
+.nm > span {
+  font-size: 15px;
+}
+
+.item > .na {
+  font-size: 15px;
+  background:rgba(255, 255, 255, 0.448);
 }
 
 .item:hover {
   transform: translateX(25%);
-  transform: scale(1.5) !important;
+  transform: scale(1.1) !important;
   transform: translateX(-25%);
 }
