@@ -1,8 +1,10 @@
 import './Home.css';
-import { API } from '../../Services/API';
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import Carousel from '../../Components/Carousel/Carousel';
+import { API } from '../../Services/API';
 
 const Home = () => {
   const [activities, setActivities] = useState('');
