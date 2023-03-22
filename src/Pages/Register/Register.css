@@ -7,7 +7,6 @@
   border-radius: 20px;
   padding: 30px 20px;
   border: 1px solid #004badec;
-
 }
 
 .title1 {
@@ -46,12 +45,11 @@
   cursor: pointer;
   box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.015),
     100px 100px 80px rgba(0, 0, 0, 0.03);
-    color: black;
+  color: black;
 }
 
 .form button {
   align-self: flex-end;
-  
 }
 
 .input,
@@ -64,7 +62,6 @@
   border-radius: 10px;
   box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.015),
     100px 100px 80px rgba(0, 0, 0, 0.03);
-    
 }
 
 .button {
@@ -73,7 +70,6 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
-
 }
 
 .input:focus {
@@ -115,20 +111,20 @@
   justify-content: center;
   color: black;
 }
-.ParrafoAvatar{
+.ParrafoAvatar {
   margin-top: 0.8rem;
-display: flex;
-justify-content: center;
-align-items: center;
-color: black;
-font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.1rem;
 }
-.username{
+.username {
   margin-top: 3rem;
 }
-.passwordRequisitos{
+.passwordRequisitos {
   font-size: 14px;
-  color: red ;
+  color: red;
   display: flex;
   justify-content: flex-start;
   gap: 0.7rem;

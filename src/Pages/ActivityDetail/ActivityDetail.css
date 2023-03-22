@@ -1,5 +1,5 @@
-.ocio-figure{
-padding: 0 10rem;
+.ocio-figure {
+  padding: 0 10rem;
 }
 
 .ocio-feeds {
@@ -8,12 +8,12 @@ padding: 0 10rem;
   gap: 1rem;
   color: black;
   margin-top: 2rem;
-  padding-left:4rem ;
+  padding-left: 4rem;
   margin-bottom: 2rem;
 }
 
-.ocio-main-details{
-    background-color: white;
+.ocio-main-details {
+  background-color: white;
 }
 .ocio-detail-hero {
   height: 600px;
@@ -22,13 +22,13 @@ padding: 0 10rem;
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  justify-content:flex-end;
-  background-color:#333038 ;
+  justify-content: flex-end;
+  background-color: #333038;
   bottom: 6rem;
 }
 
 .curve {
-background-color:#2b2634;
+  background-color: #2b2634;
   height: 500px;
   width: 70%;
   border-bottom-left-radius: 95%;
@@ -51,8 +51,8 @@ background-color:#2b2634;
 }
 
 .ocio-container-title > h1 {
-    color: white;
-  }
+  color: white;
+}
 
 .ocio-activity-detail {
   display: flex;
@@ -71,7 +71,7 @@ background-color:#2b2634;
   flex-direction: column;
   align-items: center;
   background-color: aliceblue;
-    color: black;
+  color: black;
   gap: 1rem;
   padding: 1rem;
   border-radius: 7px;
@@ -117,7 +117,6 @@ background-color:#2b2634;
   border: 1px solid black;
   border-radius: 50%;
   object-fit: cover;
-
 }
 
 .ocio-feed > h2 {
