@@ -1,7 +1,9 @@
 .ocio-home {
   min-height: 60vh;
+  display: flex;
+  justify-content: center;
 }
 
 .ocio-container-home {
-  width: 100vw;
+  width: 90vw;
 }

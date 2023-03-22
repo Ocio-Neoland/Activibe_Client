@@ -98,3 +98,15 @@ header > div > nav > ul > li > .active {
 .ocio-a-container:hover {
   color: var(--av-color-highlight);
 }
+
+.ocio-avatar-profile {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid black;
+}
+
+.btn-avatar {
+  border-radius: 50%;
+}
