@@ -1,7 +1,6 @@
 import './Home.css';
 
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Carousel from '../../Components/Carousel/Carousel';
 import { API } from '../../Services/API';
@@ -59,33 +58,32 @@ const Home = () => {
     <main className="ocio-home">
       {loaded ? (
         <div>
-          <Link to="#">
-            <h2>Top 10</h2>
-          </Link>
+          <h2>Top 10</h2>
+
           <Carousel prop={activities} />
-          <Link to="#">
-            <h2>Para los amantes de la Naturaleza</h2>
-          </Link>
+
+          <h2>Para los amantes de la Naturaleza</h2>
+
           <Carousel prop={naturaleza} />
-          <Link to="#">
-            <h2>Para los más Deportistas</h2>
-          </Link>
+
+          <h2>Para los más Deportistas</h2>
+
           <Carousel prop={deportes} />
-          <Link to="#">
-            <h2>Para los más Atrevidos</h2>
-          </Link>
+
+          <h2>Para los más Atrevidos</h2>
+
           <Carousel prop={adrenalina} />
-          <Link to="#">
-            <h2>Para los amantes de los Juegos de Mesa</h2>
-          </Link>
+
+          <h2>Para los amantes de los Juegos de Mesa</h2>
+
           <Carousel prop={juegos} />
-          <Link to="#">
-            <h2>Para los más Exóticos</h2>
-          </Link>
+
+          <h2>Para los más Exóticos</h2>
+
           <Carousel prop={exoticos} />
-          <Link to="#">
-            <h2>Otras Actividades...</h2>
-          </Link>
+
+          <h2>Otras Actividades...</h2>
+
           <Carousel prop={otros} />
         </div>
       ) : (

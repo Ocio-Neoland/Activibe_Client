@@ -23,19 +23,32 @@ const Header = () => {
   return (
     <header>
       <div className="ocio-nav-container">
-        <img src="#" alt="imagen" />
+        <NavLink to={'/'}>
+          {' '}
+          <img
+            src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1679488952/activibe-removebg-preview_sczveb.png"
+            alt="imagen"
+          />
+        </NavLink>
         <nav>
           <ul>
             <li>
-              {' '}
-              <NavLink to={'/'}>Home</NavLink>
+              <button className="ocio-sections-btn" ref={menuBtn} onClick={handleClick}>
+                Sections
+              </button>
             </li>
             <li>
               <NavLink to={'/profile'}>Profile</NavLink>
             </li>
             {!user && (
               <li>
-                <NavLink to={'/login'}>Login</NavLink>
+                <NavLink to={'/login'}>
+                  <img
+                    className="log"
+                    src="https://res.cloudinary.com/dsvvktihq/image/upload/v1678960169/utils/20079_iurohv.png"
+                    alt="logo login"
+                  />
+                </NavLink>
               </li>
             )}
             {!user && (
@@ -43,11 +56,6 @@ const Header = () => {
                 <NavLink to={'/register'}>Register</NavLink>
               </li>
             )}
-            <li>
-              <button className="ocio-sections-btn" ref={menuBtn} onClick={handleClick}>
-                Sections
-              </button>
-            </li>
             <li>
               <NavLink to={'/about'}>About</NavLink>
             </li>
