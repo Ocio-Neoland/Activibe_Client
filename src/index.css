@@ -9,10 +9,6 @@
   list-style-type: none;
 }
 
-html{
-  scroll-behavior: smooth;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -23,5 +19,3 @@ main {
   margin-top: 2rem;
   min-height: 75vh;
 }
-
-
