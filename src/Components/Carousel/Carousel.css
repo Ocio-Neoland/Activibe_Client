@@ -5,25 +5,19 @@
 .container {
   height: 250px;
   padding: 1rem;
-  width: 100%;
+
+  width: 100vw;
+  display: flex;
+
   overflow: scroll;
-}
-
-.ocio-img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-::-webkit-scrollbar {
-  display: none;
+  gap: 1rem;
 }
 
 .item {
   line-height: 40px;
   max-width: 200px;
-  width: 100px;
-  height: 200px;
+  height: 220px;
+  width: 300px;
   background-color: #141414;
   margin: 0 0.1rem;
   color: black;
@@ -38,7 +32,7 @@
 
 .item > .nm {
   text-align: end;
-  color: #f9b132;
+  color: #fcd53f;
   font-size: 25px;
   display: flex;
   justify-content: flex-start;

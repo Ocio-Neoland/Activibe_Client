@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { API } from '../../Services/API';
 
 const Register = () => {
+  const [shown, setShown] = useState(false);
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -43,19 +44,20 @@ const Register = () => {
         : '',
     );
   };
+  const switchShown = () => setShown(!shown);
+  const onChange = ({ currentTarget }) => setPassword(currentTarget.value);
   return (
     <main className="main-register">
       <div className="containerRegister">
-        <div className="h2Register">
-          <h2>Register</h2>
-        </div>
+        <div className="h2Register"></div>
 
         <form className="form" onSubmit={handleSubmit(formSubmit)}>
-          <span className="title">Welcome</span>
+          <span className="title1">Welcome</span>
           <span className="sub mb">Register to get full access now </span>
 
           <input type="file" id="file" {...register('avatar')} />
           <label className="avatar" htmlFor="file">
+            {' '}
             <span>
               {' '}
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -97,10 +99,14 @@ const Register = () => {
                 </g>
               </svg>
             </span>
+            <p className="ParrafoAvatar">avatar</p>
           </label>
 
-          <label htmlFor="userName">Username:</label>
+          <label className="username" htmlFor="userName">
+            Username:
+          </label>
           <input
+            placeholder="Username"
             type="text"
             className="input"
             id="userName"
@@ -115,21 +121,30 @@ const Register = () => {
             id="email"
             name="email"
             {...register('email')}
+            placeholder="Email"
           />
 
           <label htmlFor="password">Password:</label>
           <input
-            type="password"
+            type={shown ? 'text' : 'password'}
+            value={password}
             className="input"
             id="password"
             name="password"
-            value={password}
             {...register('password')}
-            onChange={handleChange}
+            onChange={(handleChange, onChange)}
+            placeholder="password"
           />
-
+          <button onClick={switchShown}>{shown ? 'Ocultar' : 'Mostrar'}</button>
+          <div className="passwordRequisitos">
+            <p>min 8 characters,</p>
+            <p>1 auppercase,</p>
+            <p>1 symbol,</p>
+            <p>1 number</p>
+          </div>
           <label htmlFor="password">repit Password:</label>
           <input
+            placeholder="repeatPassword"
             type="password"
             className="input"
             id="repeatPassword"

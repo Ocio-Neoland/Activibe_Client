@@ -9,13 +9,6 @@ const About = () => {
     <main className="About">
       <div className="containerAbout">
         <div className="mas">
-          <div className="divLogo">
-            <img
-              className="Logo"
-              src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679330249/fotos/activibe-removebg-preview_ib0l8g.png"
-              alt="logo"
-            />
-          </div>
           <p>Sobre nosotros:</p>
         </div>
         <CardAbout />
