@@ -10,9 +10,11 @@ const Header = () => {
   const menuBtn = useRef('null');
   const hiddenMenu = useRef('null');
   const [menu, setMenu] = useState(false);
-  const { user } = useContext(UserContext);
+  const [profile, setProfile] = useState(false);
+  const { user, avatar } = useContext(UserContext);
 
-  const handleClick = () => {
+  const handleClickMenu = () => {
+    console.log(avatar);
     if (menu === false) {
       setMenu(true);
     } else {
@@ -20,11 +22,19 @@ const Header = () => {
     }
   };
 
+  const handleClickAvatar = () => {
+    console.log(profile);
+    if (profile === false) {
+      setProfile(true);
+    } else {
+      setProfile(false);
+    }
+  };
+
   return (
     <header>
       <div className="ocio-nav-container">
         <NavLink to={'/'}>
-          {' '}
           <img
             src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1679488952/activibe-removebg-preview_sczveb.png"
             alt="imagen"
@@ -33,14 +43,23 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <button className="ocio-sections-btn" ref={menuBtn} onClick={handleClick}>
+              <button
+                className="ocio-sections-btn"
+                ref={menuBtn}
+                onClick={handleClickMenu}
+              >
                 Sections
               </button>
             </li>
             <li>
-              <NavLink to={'/profile'}>Profile</NavLink>
+              <NavLink to={'/about'}>About</NavLink>
             </li>
             {!user && (
+              <li>
+                <NavLink to={'/register'}>Register</NavLink>
+              </li>
+            )}
+            {!user ? (
               <li>
                 <NavLink to={'/login'}>
                   <img
@@ -50,15 +69,13 @@ const Header = () => {
                   />
                 </NavLink>
               </li>
-            )}
-            {!user && (
+            ) : (
               <li>
-                <NavLink to={'/register'}>Register</NavLink>
+                <button className="btn-avatar" onClick={handleClickAvatar}>
+                  <img className="ocio-avatar-profile" src={avatar} alt={user} />
+                </button>
               </li>
             )}
-            <li>
-              <NavLink to={'/about'}>About</NavLink>
-            </li>
           </ul>
         </nav>
       </div>
@@ -67,7 +84,7 @@ const Header = () => {
           {types.map((type) => (
             <NavLink
               className="ocio-a-container"
-              onClick={handleClick}
+              onClick={handleClickMenu}
               to={`/${type.name}`}
               key={type.name}
             >
@@ -75,6 +92,13 @@ const Header = () => {
               <h2>{type.name}</h2>
             </NavLink>
           ))}
+        </ul>
+      )}
+      {profile !== false && (
+        <ul className="ocio-menu-sections">
+          <li>
+            <NavLink to="/profile"> Profile</NavLink>
+          </li>
         </ul>
       )}
     </header>

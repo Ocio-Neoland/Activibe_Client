@@ -12,6 +12,11 @@ export const UserContextProvider = ({ children }) => {
     return initialValue || null;
   });
 
+  const [avatar, setAvatar] = useState(() => {
+    const savedAvatar = localStorage.getItem('avatar');
+    return savedAvatar || null;
+  });
+
   const [id, setId] = useState(() => {
     const savedId = localStorage.getItem('id');
     return savedId || null;
@@ -22,26 +27,29 @@ export const UserContextProvider = ({ children }) => {
     return savedJwt || null;
   });
 
-  const [editingMovie, setEditingMovie] = useState({});
-
   const logout = () => {
     setUser(null);
+
+    setAvatar(null);
     setId(null);
 
     setJwt(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     localStorage.removeItem('id');
+    localStorage.removeItem('avatar');
     navigate('/login');
   };
 
-  const login = (resUser, resToken, resId) => {
+  const login = (resUser, resToken, resId, resAvatar) => {
     setUser(resUser);
     setJwt(resToken);
+    setAvatar(resAvatar);
     setId(resId);
     localStorage.setItem('user', JSON.stringify(resUser));
     localStorage.setItem('token', resToken);
     localStorage.setItem('id', resId);
+    localStorage.setItem('avatar', resAvatar);
   };
 
   return (
@@ -55,8 +63,8 @@ export const UserContextProvider = ({ children }) => {
         login,
         setUser,
         setJwt,
-        editingMovie,
-        setEditingMovie,
+        setAvatar,
+        avatar,
       }}
     >
       {children}
