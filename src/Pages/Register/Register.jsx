@@ -51,7 +51,7 @@ const Register = () => {
         </div>
 
         <form className="form" onSubmit={handleSubmit(formSubmit)}>
-          <span className="title">Welcome</span>
+          <span className="title1">Welcome</span>
           <span className="sub mb">Register to get full access now </span>
 
           <input type="file" id="file" {...register('avatar')} />

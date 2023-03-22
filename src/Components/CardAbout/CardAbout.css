@@ -1,14 +1,11 @@
 .CardAbout {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 5rem;
+  gap: 3rem;
 }
 .mainCarAbout {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  margin-right: 7rem;
+  gap: 2rem;
 }
 
 .card {
@@ -24,9 +21,8 @@
   bottom: 25px;
 }
 
-.content .title {
+.title {
   position: relative;
-  color: black;
   font-weight: bold;
   font-weight: 500;
   line-height: 1em;
@@ -34,6 +30,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
+  color: var(--av-color-text-primary);
 }
 
 .content .title span {
