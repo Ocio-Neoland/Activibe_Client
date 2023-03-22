@@ -23,8 +23,9 @@ const Register = () => {
     };
     API.post('/users', data, {
       headers: { 'Content-Type': 'multipart/form-data' },
-    }).then(() => {
+    }).then((res) => {
       navigate('/login');
+      console.log(res.data);
     });
   };
 

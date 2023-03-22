@@ -12,6 +12,11 @@ export const UserContextProvider = ({ children }) => {
     return initialValue || null;
   });
 
+  const [id, setId] = useState(() => {
+    const savedId = localStorage.getItem('id');
+    return savedId || null;
+  });
+
   const [jwt, setJwt] = useState(() => {
     const savedJwt = localStorage.getItem('token');
     return savedJwt || null;
@@ -21,17 +26,22 @@ export const UserContextProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
+    setId(null);
+
     setJwt(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
     navigate('/login');
   };
 
-  const login = (resUser, resToken) => {
+  const login = (resUser, resToken, resId) => {
     setUser(resUser);
     setJwt(resToken);
+    setId(resId);
     localStorage.setItem('user', JSON.stringify(resUser));
     localStorage.setItem('token', resToken);
+    localStorage.setItem('id', resId);
   };
 
   return (
@@ -39,6 +49,8 @@ export const UserContextProvider = ({ children }) => {
       value={{
         user,
         jwt,
+        id,
+        setId,
         logout,
         login,
         setUser,
