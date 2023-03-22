@@ -57,7 +57,7 @@ const Home = () => {
   return (
     <main className="ocio-home">
       {loaded ? (
-        <div>
+        <div className="ocio-container-home">
           <h2>Top 10</h2>
 
           <Carousel prop={activities} />

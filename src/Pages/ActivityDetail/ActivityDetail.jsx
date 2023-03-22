@@ -25,16 +25,16 @@ const ActivityDetail = () => {
   }, []);
 
   return (
-    <main>
+    <main className="ocio-main-details">
       {loaded ? (
         <figure>
           <div className="ocio-detail-hero">
             <div className="curve"></div>
           </div>
-          <div className="ocio-top">
+          <div className="ocio-top ocio-figure">
             <section className="ocio-activity-detail">
               <div className="ocio-container-title">
-                <h2>{details.name}</h2>
+                <h1>{details.name}</h1>
                 <img
                   className="ocio-img-details"
                   src={details.image}

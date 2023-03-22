@@ -1,3 +1,7 @@
 .ocio-home {
   min-height: 60vh;
 }
+
+.ocio-container-home{
+  width: 100vw;
+}
