@@ -24,3 +24,24 @@ export const types = [
     img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346030/Ocioland/Ultimate-Frisbee1_b48ryc.jpg',
   },
 ];
+
+export const typesInput = [
+  'name',
+  'description',
+  'location',
+  'coordinates',
+  'city',
+  'image',
+];
+
+export const typesNames = [
+  '-',
+  'Naturaleza',
+  'Adrenalina',
+  'Deportes',
+  'Juegos de mesa',
+  'Exoticos',
+  'Otros',
+];
+
+export const city = ['-', 'Madrid', 'Malaga', 'Barcelona'];
