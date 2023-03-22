@@ -1,11 +1,9 @@
-.flex {
-  display: flex;
-}
 
 .container {
   height: 250px;
   padding: 1rem;
   width: 100%;
+  display: flex;
   overflow: scroll;
 }
 
@@ -36,6 +34,8 @@
   border-radius: 6px;
 }
 
+
+
 .item > .nm {
   text-align: end;
   color: #f9b132;
@@ -58,4 +58,9 @@
   transform: translateX(25%);
   transform: scale(1.1) !important;
   transform: translateX(-25%);
+  z-index: 1;
+  
 }
+
+
+

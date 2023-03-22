@@ -16,36 +16,43 @@ const Home = () => {
   const [otros, setOtros] = useState('');
   const [loaded, setLoaded] = useState(false);
 
-  const getAllActivities = async () => {
-    API.get(`/activities`).then((res) => {
-      setActivities(res.data);
+  const filters = (data) => {
+    if (!data.length) {
+      setLoaded(false);
+    } else {
+      const naturActivities = data.filter((activity) => activity.type === 'Naturaleza');
 
-      const naturActivities = activities.filter(
-        (activity) => activity.type === 'Naturaleza',
-      );
-      const deporActivities = activities.filter(
-        (activity) => activity.type === 'Deportes',
-      );
-      const adreActivities = activities.filter(
-        (activity) => activity.type === 'Adrenalina',
-      );
-      const exoActivities = activities.filter((activity) => activity.type === 'Exoticos');
-      const otroActivities = activities.filter((activity) => activity.type === 'Otros');
-      const juegosActivities = activities.filter(
+      const deporActivities = data.filter((activity) => activity.type === 'Deportes');
+      const adreActivities = data.filter((activity) => activity.type === 'Adrenalina');
+      const exoActivities = data.filter((activity) => activity.type === 'Exoticos');
+      const otroActivities = data.filter((activity) => activity.type === 'Otros');
+      const juegosActivities = data.filter(
         (activity) => activity.type === 'Juegos de mesa',
       );
-      setLoaded(true);
       setNaturaleza(naturActivities.slice(0, 10));
       setDeportes(deporActivities.slice(0, 10));
       setAdrenalina(adreActivities.slice(0, 10));
       setExoticos(exoActivities.slice(0, 10));
       setOtros(otroActivities.slice(0, 10));
       setJuegos(juegosActivities.slice(0, 10));
+    }
+  };
+  const getAllActivities = () => {
+    API.get(`/activities`).then((res) => {
+      filters(res.data);
+    });
+  };
+
+  const getTop10 = () => {
+    API.get(`/activities/top10`).then((res) => {
+      setActivities(res.data);
     });
   };
 
   useEffect(() => {
     getAllActivities();
+    getTop10();
+    setLoaded(true);
   }, []);
 
   return (
@@ -55,6 +62,7 @@ const Home = () => {
           <Link to="#">
             <h2>Top 10</h2>
           </Link>
+          <Carousel prop={activities} />
           <Link to="#">
             <h2>Para los amantes de la Naturaleza</h2>
           </Link>
