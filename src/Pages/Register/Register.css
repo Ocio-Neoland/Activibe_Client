@@ -102,19 +102,19 @@
   display: flex;
   justify-content: center;
 }
-.ParrafoAvatar{
+.ParrafoAvatar {
   margin-top: 0.8rem;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
 }
-.username{
+.username {
   margin-top: 3rem;
 }
-.passwordRequisitos{
+.passwordRequisitos {
   font-size: 14px;
-  color: red ;
+  color: red;
   display: flex;
   justify-content: flex-start;
   gap: 0.7rem;
