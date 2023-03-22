@@ -6,7 +6,9 @@
   height: 250px;
   padding: 1rem;
 
+
   width: 100vw;
+
   display: flex;
 
   overflow: scroll;
@@ -28,6 +30,9 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 .item > .nm {

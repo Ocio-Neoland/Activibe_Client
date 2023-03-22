@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const Carousel = ({ prop }) => {
   return (
     <section className="container">
-      <button type="button">◁</button>
       {prop.length &&
         prop.map((item) => (
           <Link to={`/${item.type}/${item._id}`} key={item._id}>
@@ -23,7 +22,6 @@ const Carousel = ({ prop }) => {
             </div>
           </Link>
         ))}
-      <button type="button">▷</button>
     </section>
   );
 };
