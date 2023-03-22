@@ -1,8 +1,16 @@
+.flex {
+  display: flex;
+}
+
 .container {
   height: 250px;
   padding: 1rem;
-  width: 80vw;
+
+
+  width: 100vw;
+
   display: flex;
+
   overflow: scroll;
   gap: 1rem;
 }
@@ -49,5 +57,4 @@
   transform: translateX(25%);
   transform: scale(1.1) !important;
   transform: translateX(-25%);
-  z-index: 1;
 }
