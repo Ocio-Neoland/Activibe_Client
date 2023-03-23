@@ -31,14 +31,7 @@ export const types = [
   },
 ];
 
-export const typesInput = [
-  'name',
-  'description',
-  'location',
-  'coordinates',
-  'city',
-  'image',
-];
+export const typesInput = ['name', 'description', 'location', 'coordinates'];
 
 export const typesNames = [
   '-',
