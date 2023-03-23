@@ -105,8 +105,28 @@ a {
   width: 100%;
 }
 
+.masInfo {
+  margin-top: 0.5rem;
+}
 .divHero {
-  width: 100%;
+  position: relative;
+  bottom: 4.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+
+}
+
+.divHero > h1 {
+  background-color: rgba(0, 0, 0, 0.463);
+  color: var(--av-color-text-primary);
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0.5rem;
+  height: 100%;
+
 }
 .divHero img {
   width: 100%;
