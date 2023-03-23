@@ -105,10 +105,21 @@ a {
   margin-top: 0.5rem;
 }
 .divHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+
   width: 100%;
+  height: 10rem;
 }
-.divHero img {
+
+.divHero > h1 {
+  background-color: rgba(0, 0, 0, 0.463);
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0.5rem;
+  height: 100%;
   width: 100%;
-  height: 21rem;
-  object-fit: cover;
 }

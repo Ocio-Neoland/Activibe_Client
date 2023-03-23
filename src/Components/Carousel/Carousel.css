@@ -41,10 +41,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 15px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .nm > span {
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .item > .na {
@@ -56,4 +59,9 @@
   transform: translateX(25%);
   transform: scale(1.1) !important;
   transform: translateX(-25%);
+}
+
+.nm {
+  background-color: #141414;
+  height: 30px;
 }
