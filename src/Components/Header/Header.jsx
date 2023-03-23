@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import { UserContext } from '../../Context/UserContext';
 import { types } from '../../data/data';
+import BtnDarkMode from '../Btn-darkMode/Btn-darkMode';
 
 const Header = () => {
   const menuBtn = useRef('null');
@@ -48,12 +49,13 @@ const Header = () => {
                 ref={menuBtn}
                 onClick={handleClickMenu}
               >
-                Sections
+                Menu
               </button>
             </li>
             <li>
               <NavLink to={'/about'}>About</NavLink>
             </li>
+
             {!user && (
               <li>
                 <NavLink to={'/register'}>Register</NavLink>
@@ -76,6 +78,7 @@ const Header = () => {
                 </button>
               </li>
             )}
+            <BtnDarkMode />
           </ul>
         </nav>
       </div>

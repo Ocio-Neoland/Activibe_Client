@@ -30,6 +30,15 @@ main {
 }
 
 body {
+  transition: all 0.5s ease-in-out;
+}
+
+.light {
+  background-color: var(--av-color-background-secondary);
+  color: var(--av-color-text-secondary);
+}
+
+.dark {
   background-color: var(--av-color-background-primary);
   color: var(--av-color-text-primary);
 }
