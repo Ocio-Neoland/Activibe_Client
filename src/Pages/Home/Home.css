@@ -2,16 +2,14 @@
   min-height: 60vh;
   display: flex;
   justify-content: center;
-  
 }
 
 .ocio-container-home {
   width: 98vw;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  gap:2rem;
-  
+  gap: 2rem;
 }
 
 .ocio-container-home > h2 {
