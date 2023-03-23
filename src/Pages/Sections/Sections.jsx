@@ -25,9 +25,11 @@ const Sections = () => {
 
   return (
     <main className="mainSection">
-      <div className="divHero">
+      <div
+        className="divHero"
+        style={{ backgroundImage: `url(${filter[0].img2})`, backgroundSize: `cover` }}
+      >
         <h1 className="hero">{name}</h1>
-        <img src={filter[0].img2} alt={name} />
       </div>
       {loaded ? (
         activities.map((activity) => (

@@ -14,18 +14,18 @@ const Header = () => {
   const { user, avatar } = useContext(UserContext);
 
   const handleClickMenu = () => {
-    console.log(avatar);
     if (menu === false) {
       setMenu(true);
+      setProfile(false);
     } else {
       setMenu(false);
     }
   };
 
   const handleClickAvatar = () => {
-    console.log(profile);
     if (profile === false) {
       setProfile(true);
+      setMenu(false);
     } else {
       setProfile(false);
     }

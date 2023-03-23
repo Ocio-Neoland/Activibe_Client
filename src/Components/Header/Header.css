@@ -100,8 +100,8 @@ header > div > nav > ul > li > .active {
 }
 
 .ocio-avatar-profile {
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid black;
@@ -109,4 +109,6 @@ header > div > nav > ul > li > .active {
 
 .btn-avatar {
   border-radius: 50%;
+  height: 55px;
+  border: none;
 }
