@@ -1,170 +1,88 @@
-import { useContext, useEffect, useState } from 'react';
+import './Profile.css';
 
-import InputCreate from '../../Components/Inputs/InputCreate';
-import InputEdit from '../../Components/Inputs/InputEdit';
-import SelectCreate from '../../Components/Selects/SelectCreate';
-import SelectEdit from '../../Components/Selects/SelectEdit';
+import { useContext, useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+import Favorites from '../../Components/FavoritesProfile/FavoritesProfile';
+import Profile2 from '../../Components/ProfileActivities/ProfileActivities';
 import { UserContext } from '../../Context/UserContext';
-import { city, typesInput, typesNames } from '../../data/data';
 import { API } from '../../services/API';
 
 const Profile = () => {
-  const [error, setError] = useState(null);
-  const { id } = useContext(UserContext);
+  const { id, setAvatar } = useContext(UserContext);
   const [user, setUser] = useState({});
-  const [act, setAct] = useState({});
   const [loaded, setLoaded] = useState(false);
-  const [activity, setActivity] = useState({
-    name: '',
-    image: '',
-    description: '',
-    location: '',
-    coordinates: '',
-    city: '',
-    type: '',
-    validate: true,
-    createdBy: id,
-  });
-
-  const [editActivity, setEditActivity] = useState({
-    name: '',
-    image: '',
-    description: '',
-    location: '',
-    coordinates: '',
-    city: '',
-    type: '',
-    validate: true,
-    createdBy: id,
-  });
-  const showActivities = (data) => {
-    setAct(data.createdActivities);
-  };
+  const [showProfile, setShowProfile] = useState(true);
+  const { register, handleSubmit } = useForm();
 
   const getUser = async () => {
     API.get(`/users/${id}`).then((res) => {
       setUser(res.data);
-      showActivities(res.data);
+      setAvatar(res.data.avatar);
+      console.log(res.data);
       setLoaded(true);
     });
   };
+
+  const formSubmit = (formData) => {
+    const data = {
+      ...user,
+      avatar: formData.avatar[0],
+    };
+    API.patch(`/users/${user._id}`, data, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(() => {
+      getUser();
+    });
+  };
+
+  //CREATE
+
+  //EDIT
+
+  //DELETE
 
   useEffect(() => {
     getUser();
   }, [loaded]);
 
-  const createActivities = (ev) => {
-    ev.preventDefault();
-    console.log(activity);
-    if (
-      !activity.image ||
-      !activity.description ||
-      !activity.name ||
-      !activity.location ||
-      !activity.coordinates ||
-      !activity.city
-    ) {
-      setError('Incomplete form');
-      console.log(error);
-    } else {
-      setError(null);
-      API.post('/activities', activity, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-        body: JSON.stringify(activity),
-      }).then(() => {
-        getUser();
-      });
-    }
-  };
-
-  const updateActivities = (ev, id) => {
-    ev.preventDefault();
-    API.patch(`/activities/${id}`, editActivity, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-      body: JSON.stringify(editActivity),
-    });
-  };
-
-  const deleteActivities = (id) => {
-    API.delete(`/activities/${id}`, {}).then(() => {
-      getUser();
-    });
-  };
+  console.log(user);
 
   return (
     <main>
-      <div>
-        <h2>Profile</h2>
-        <img src={user.avatar} alt={user.userName} />
-        <h2>{user.userName}</h2>
-        <h2>Actividades creadas</h2>
-        {loaded ? (
-          act.map((act) => {
-            return (
-              <figure key={act.name}>
-                <p>{act.name} </p>
-                <img src={act.image} alt={act.name} />
-                <button onClick={() => deleteActivities(act._id)}>Eliminar</button>
-                <button onClick={() => setEditActivity(act)}>Editar</button>
-              </figure>
-            );
-          })
-        ) : (
-          <h2>loading</h2>
-        )}
+      <div className="container2">
+        <h1>Profile</h1>
+        <div className="perfil-container">
+          <div className="avatar2">
+            <img src={user.avatar} alt={user.userName} />
+            <form onSubmit={handleSubmit(formSubmit)} className="form-change-avatar">
+              <input type="file" id="avatar" name="avatar" {...register('avatar')} />
+              <button type="submit">Change</button>
+            </form>
+          </div>
+          <div className="perfil-datos">
+            <p className="espacio">
+              <strong>Username:</strong> {user.userName}
+            </p>
+            <p className="espacio">
+              <strong>Email:</strong> {user.email}{' '}
+            </p>
+            <p className="espacio">
+              <strong>User created at:</strong> {user.createdAt}{' '}
+            </p>
+          </div>
+          <button className="perfil-button">Edit password</button>
+        </div>
       </div>
-      <h2>Create Activity</h2>
-      <form onSubmit={(ev) => createActivities(ev)}>
-        {typesInput.map((info) => (
-          <InputCreate
-            info={info}
-            key={info}
-            action={(ev) => {
-              setActivity({ ...activity, [info]: ev.target.value });
-            }}
-          />
-        ))}
-
-        <SelectCreate
-          options={typesNames}
-          action={(ev) => setActivity({ ...activity, type: ev.target.value })}
-        />
-
-        <SelectCreate
-          options={city}
-          action={(ev) => setActivity({ ...activity, city: ev.target.value })}
-        />
-
-        <button type="submit">Create Activity</button>
-      </form>
-
-      <h2>Edit Activity</h2>
-      <form onSubmit={(ev) => updateActivities(ev, editActivity._id)}>
-        {typesInput.map((info) => (
-          <InputEdit
-            value={editActivity[info]}
-            info={info}
-            key={info}
-            action={(ev) => {
-              setEditActivity({ ...editActivity, [info]: ev.target.value });
-            }}
-          />
-        ))}
-
-        <SelectEdit
-          value={editActivity.type}
-          options={typesNames}
-          action={(ev) => setEditActivity({ ...editActivity, type: ev.target.value })}
-        />
-
-        <SelectEdit
-          value={editActivity.city}
-          options={city}
-          action={(ev) => setEditActivity({ ...editActivity, city: ev.target.value })}
-        />
-
-        <button type="submit">Update Activity</button>
-      </form>
+      <div className="perfil-toggle-buttons">
+        <button onClick={() => setShowProfile(true)} className="perfil-button-act">
+          Mis Actividades
+        </button>
+        <button onClick={() => setShowProfile(false)} className="perfil-button-act">
+          Mis favoritos
+        </button>
+      </div>
+      {showProfile ? <Profile2 /> : <Favorites />}
     </main>
   );
 };
