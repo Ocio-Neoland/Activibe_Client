@@ -1,9 +1,9 @@
 import './Profile.css';
 
 import { useContext, useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
 
 import Favorites from '../../Components/FavoritesProfile/FavoritesProfile';
+import Modals from '../../Components/Modals/Modals';
 import Profile2 from '../../Components/ProfileActivities/ProfileActivities';
 import { UserContext } from '../../Context/UserContext';
 import { API } from '../../services/API';
@@ -13,7 +13,6 @@ const Profile = () => {
   const [user, setUser] = useState({});
   const [loaded, setLoaded] = useState(false);
   const [showProfile, setShowProfile] = useState(true);
-  const { register, handleSubmit } = useForm();
 
   const getUser = async () => {
     API.get(`/users/${id}`).then((res) => {
@@ -41,7 +40,7 @@ const Profile = () => {
       ...user,
       password: formData.password,
     };
-    console.log(data);
+    console.log(data.password);
     API.patch(`/users/${user._id}`, data, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
@@ -58,11 +57,8 @@ const Profile = () => {
         <div className="perfil-container">
           <div className="avatar2">
             <img src={user.avatar} alt={user.userName} />
-            <form onSubmit={handleSubmit(changeAvatar)} className="form-change-avatar">
-              <input type="file" id="avatar" name="avatar" {...register('avatar')} />
-              <button type="submit">Change</button>
-            </form>
           </div>
+
           <div className="perfil-datos">
             <p className="espacio">
               <strong>Username:</strong> {user.userName}
@@ -74,11 +70,13 @@ const Profile = () => {
               <strong>User created at:</strong> {user.createdAt}{' '}
             </p>
           </div>
-          <form onSubmit={handleSubmit(changePassword)}>
-            <p>Cambiar Contraseña</p>
-            <input type="text" id="password" name="password" {...register('password')} />
-            <button type="submit">Change</button>
-          </form>
+          <button
+            onClick={(ev) => (ev.target.nextSibling.open = true)}
+            className="perfil-button-act"
+          >
+            Edit profile
+          </button>
+          <Modals changeA={changeAvatar} changePass={changePassword} />
         </div>
       </div>
       <div className="perfil-toggle-buttons">

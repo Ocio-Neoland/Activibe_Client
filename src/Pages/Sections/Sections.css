@@ -115,7 +115,6 @@ a {
   justify-content: center;
   align-items: center;
   background-position: center;
-
 }
 
 .divHero > h1 {
@@ -126,7 +125,6 @@ a {
   position: relative;
   top: 0.5rem;
   height: 100%;
-
 }
 .divHero img {
   width: 100%;
