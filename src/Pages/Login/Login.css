@@ -29,7 +29,6 @@
 
 .login-box .user-box {
   position: relative;
-
 }
 
 .login-box .user-box input {
@@ -182,7 +181,6 @@
   border-radius: 10px;
   font-size: 1rem;
   transition: ease-in-out 500ms;
-
 }
 
 .login-box button.a2:hover {
@@ -210,26 +208,25 @@
   font-size: 1rem;
   transition: ease-in-out 500ms;
 }
-.login-button-Look{
-
+.login-button-Look {
   background-color: none;
-    bottom: 1.3rem;
-    float:right;
-    height: 1rem;
-  }
-  .ojoPassword2{
-    z-index: 10;
+  bottom: 1.3rem;
+  float: right;
+  height: 1rem;
+}
+.ojoPassword2 {
+  z-index: 10;
   position: relative;
   bottom: 4.3rem;
   left: 14.5rem;
-  float:right;
+  float: right;
   height: 1.7rem;
   border: none;
   padding: 0;
   margin: 0;
-  }
-  .login-button-mostrar2{
+}
+.login-button-mostrar2 {
   margin-bottom: 1rem;
   height: 0;
   width: 0;
-  }
+}
