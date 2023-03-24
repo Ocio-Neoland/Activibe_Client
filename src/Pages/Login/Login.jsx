@@ -10,7 +10,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
   let navigate = useNavigate();
   const { login } = useContext(UserContext);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   const formSubmit = (formData) => {
     API.post('/users/login', formData)
