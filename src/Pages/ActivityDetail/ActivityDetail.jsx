@@ -16,7 +16,7 @@ const ActivityDetail = () => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
   const [comments, setComments] = useState('');
-  const [stars, setStars] = useState(0);
+
   const hiddenStar5 = useRef('null');
   const hiddenStar4 = useRef('null');
   const hiddenStar3 = useRef('null');
@@ -93,38 +93,30 @@ const ActivityDetail = () => {
       hiddenStar3.current.classList.value = '';
       hiddenStar2.current.classList.value = '';
       hiddenStar1.current.classList.value = '';
-
-      setStars(numberOfStars);
     } else if (numberOfStars === 3) {
       hiddenStar4.current.classList.value = 'hide';
       hiddenStar5.current.classList.value = 'hide';
       hiddenStar3.current.classList.value = '';
       hiddenStar2.current.classList.value = '';
       hiddenStar1.current.classList.value = '';
-      setStars(numberOfStars);
     } else if (numberOfStars === 2) {
       hiddenStar4.current.classList.value = 'hide';
       hiddenStar5.current.classList.value = 'hide';
       hiddenStar3.current.classList.value = 'hide';
       hiddenStar2.current.classList.value = '';
       hiddenStar1.current.classList.value = '';
-      setStars(numberOfStars);
     } else if (numberOfStars === 1) {
       hiddenStar4.current.classList.value = 'hide';
       hiddenStar5.current.classList.value = 'hide';
       hiddenStar3.current.classList.value = 'hide';
       hiddenStar2.current.classList.value = 'hide';
       hiddenStar1.current.classList.value = '';
-
-      setStars(numberOfStars);
     } else {
       hiddenStar4.current.classList.value = '';
       hiddenStar5.current.classList.value = '';
       hiddenStar3.current.classList.value = '';
       hiddenStar2.current.classList.value = '';
       hiddenStar1.current.classList.value = '';
-      setStars(numberOfStars);
-      console.log(stars);
     }
     setNewFeed({ ...newFeed, stars: numberOfStars });
   };
