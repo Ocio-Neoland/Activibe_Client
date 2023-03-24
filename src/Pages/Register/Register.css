@@ -1,4 +1,4 @@
-.main-register{
+.main-register {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
@@ -16,8 +16,6 @@
   justify-content: center;
   position: relative;
   bottom: 3rem;
-
-
 }
 
 .title1 {
@@ -62,7 +60,6 @@
 }
 
 .button {
-
   background-color: var(--av-color-highlight);
   color: #fff;
   text-transform: uppercase;
@@ -114,7 +111,6 @@
   color: black;
 }
 .ParrafoAvatar {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,29 +144,28 @@
   justify-content: center;
   align-items: center;
 }
-.regiser-button-mostrar{
+.regiser-button-mostrar {
   z-index: 10;
   position: relative;
-  bottom: 2.9rem;
-  float:right;
+  bottom: 3rem;
+  float: right;
   height: 2.3rem;
   border: none;
   background-color: rgb(226, 223, 223);
   margin-right: 0.3rem;
 }
-.regiser-repitPass-mostrar{
+.regiser-repitPass-mostrar {
   border: 2px solid black;
   z-index: 10;
   position: relative;
   bottom: 2.4rem;
   height: 3rem;
   border: none;
-  float:right;
+  float: right;
   margin-right: 0.3rem;
   background-color: rgb(226, 223, 223);
 }
-.ojoPassword{
+.ojoPassword {
   width: 1.5rem;
   height: 1.5rem;
-
 }
