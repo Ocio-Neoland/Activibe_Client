@@ -33,7 +33,7 @@ const Sections = () => {
       </div>
       {loaded ? (
         activities.map((activity) => (
-          <div className="container" key={activity._id}>
+          <div className="av-section-container" key={activity._id}>
             <div className="box">
               <div className="headerCard">
                 <h3 className="activity">{activity.type}</h3>

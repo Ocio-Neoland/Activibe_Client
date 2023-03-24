@@ -63,13 +63,11 @@
 }
 
 .sci li a {
-  color: rgba(255, 255, 255, 1);
   position: relative;
   justify-content: center;
-
   text-decoration: none;
-  color: white;
-  background: #004badec;
+  color: var(--av-color-background-secondary);
+  background: var(--av-color-highlight);
   fill: currentColor;
   width: 30px;
   height: 30px;
@@ -87,6 +85,10 @@
   transition: 0.5s;
   margin-top: 1rem;
 }
+.sci li a:hover {
+  background: #0348a3;
+}
+
 .foto {
   width: 200px;
   height: 200px;
