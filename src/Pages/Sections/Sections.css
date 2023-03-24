@@ -2,71 +2,69 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap:2rem;
 }
-.container {
+.av-section-container{
   width: auto;
   height: auto;
-  gap: 1rem;
+  gap: rem;
   margin-top: 2rem;
 }
 
-.container::before,
-.container::after {
+.av-section-container::before,
+.av-section-container::after {
   content: '';
   background-color: #fab5704c;
   position: absolute;
 }
 
-.container .box {
+.av-section-container .box {
   width: 23.875em;
   height: 27.875em;
   padding: 1rem;
-  background-color: rgba(14, 61, 214, 0.048);
-  border: 1px solid rgba(255, 255, 255, 0.555);
+  background-color: rgba(14, 61, 214, 0.093);
+  border: 1px solid rgba(255, 255, 255, 0.952);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-radius: 0.7rem;
   transition: all ease 0.3s;
 }
 
-.container .box {
+.av-section-container .box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.container .box .title {
+.av-section-container .box .title {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
 }
 
-.container .box div strong {
+.av-section-container .box div strong {
   display: block;
   margin-bottom: 0.3rem;
 }
 
-.container .box div p {
+.av-section-container .box div p {
   margin: 0;
   font-size: 0.9em;
   font-weight: 300;
   letter-spacing: 0.1em;
 }
 
-.container .box div span {
+.av-section-container .box div span {
   font-size: 17px;
   font-weight: 300;
 }
 
-.container .box div span:nth-child(3) {
+.av-section-container .box div span:nth-child(3) {
   font-weight: 500;
   margin-right: 0.2rem;
 }
 
-.container .box:hover {
-  box-shadow: 0px 0px 20px 1px #ffbb763f;
-  border: 1px solid rgba(255, 255, 255, 0.454);
-}
+
 .footerCard {
   display: flex;
   align-items: center;
@@ -115,11 +113,13 @@ a {
   justify-content: center;
   align-items: center;
   background-position: center;
+  width: 100%;
+  height: 15rem;
 
 }
 
 .divHero > h1 {
-  background-color: rgba(0, 0, 0, 0.463);
+  background-color: rgba(0, 0, 0, 0.174);
   color: var(--av-color-text-primary);
   display: flex;
   align-items: center;

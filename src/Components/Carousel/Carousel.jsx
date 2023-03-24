@@ -29,7 +29,7 @@ const Carousel = ({ prop }) => {
                 <h3 className="na">{item.name}</h3>
                 <h3 className="nm">
                   <span>⭐</span>
-                  {item.mediaStars}
+                  {item.mediaStars.toFixed(1)}
                 </h3>
               </div>
             </Link>

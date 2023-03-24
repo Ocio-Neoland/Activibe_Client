@@ -106,13 +106,16 @@
 
 .item > .na {
   font-size: 15px;
-  background: rgba(255, 255, 255, 0.114);
+  background: rgba(255, 255, 255, 0.56);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
 .nm {
-  background-color: #0000001a;
+  background-color: rgba(0, 0, 0, 0.358);
   height: 30px;
+  width: 18%;
+  align-self: flex-end;
+  border-radius:6px;
 }
