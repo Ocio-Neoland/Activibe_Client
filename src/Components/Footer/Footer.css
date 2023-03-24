@@ -63,7 +63,7 @@ ul {
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -71,7 +71,7 @@ ul {
   width: 200px;
 }
 .footer-col .social-links a:hover {
-  color: #24262b;
+  color: #ffffff;
   background-color: #0348a3;
 }
 

@@ -8,9 +8,11 @@ import { API } from '../../Services/API';
 
 const Register = () => {
   const [shown, setShown] = useState(false);
+  const [shown1, setShown1] = useState(false);
+
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+
   const [imgavatar, setImgAvatar] = useState(null);
   const [showImgavatar, setShowImgAvatar] = useState(null);
   const { register, handleSubmit } = useForm();
@@ -22,40 +24,36 @@ const Register = () => {
 
   let navigate = useNavigate();
   const formSubmit = (formData) => {
-    const data = {
-      email: formData.email,
-      userName: formData.userName,
-      password: formData.password,
-      avatar: imgavatar,
-    };
+    let data;
+    if (repeatPassword === formData.password) {
+      data = {
+        email: formData.email,
+        userName: formData.userName,
+        password: formData.password,
+        avatar: imgavatar,
+      };
+    } else {
+      data = {
+        email: '',
+        userName: '',
+        password: '',
+        avatar: '',
+      };
+    }
+
     API.post('/users', data, {
       headers: { 'Content-Type': 'multipart/form-data' },
     }).then(() => {
       navigate('/login');
     });
   };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    if (name === 'password') {
-      setPassword(value);
-    } else {
-      setRepeatPassword(value);
-    }
-
-    // Verifica si la contraseña y la repetición de contraseña coinciden
-    setPasswordError(name === 'password' && value !== repeatPassword);
-  };
+  const switchShown1 = () => setShown1(!shown1);
   const switchShown = () => setShown(!shown);
   const onChange = ({ currentTarget }) => setPassword(currentTarget.value);
   return (
     <main className="main-register">
       <div className="containerRegister">
-        <div className="h2Register"></div>
-
         <form className="form" onSubmit={handleSubmit(formSubmit)}>
-          <span className="title1">Welcome</span>
           <span className="sub mb">Register to get full access now </span>
 
           <input
@@ -117,13 +115,37 @@ const Register = () => {
             id="password"
             name="password"
             {...register('password')}
-            onChange={(handleChange, onChange)}
+            onChange={onChange}
             placeholder="password"
           />
           <div className="register-div-register">
-            <button onClick={switchShown} className="regiser-button-mostrar">
-              {shown ? 'Ocultar' : 'Mostrar'}
-            </button>
+            {shown ? (
+              <button
+                type="button"
+                onClick={switchShown}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667868/fotos/ojo_aqmzwt.png"
+                  alt="icono ojo"
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={switchShown}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667874/fotos/ojoCerrado_sy8jkw.png"
+                  alt="icono ojo"
+                />
+              </button>
+            )}
             <div className="passwordRequisitos">
               <p>min 8 characters,</p>
               <p>1 uppercase,</p>
@@ -134,14 +156,41 @@ const Register = () => {
           <label htmlFor="password">repit Password:</label>
           <input
             placeholder="repeatPassword"
-            type="password"
+            type={shown1 ? 'text' : 'password'}
             className="input"
             id="repeatPassword"
             name="repeatPassword"
-            value={repeatPassword}
-            onChange={handleChange}
+            onChange={(ev) => setRepeatPassword(ev.target.value)}
           />
-          {passwordError && <div>{passwordError}</div>}
+          <div className="register-div-register">
+            {shown1 ? (
+              <button
+                type="button"
+                onClick={switchShown1}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667868/fotos/ojo_aqmzwt.png"
+                  alt="icono ojo"
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={switchShown1}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667874/fotos/ojoCerrado_sy8jkw.png"
+                  alt="icono ojo"
+                />
+              </button>
+            )}
+          </div>
           <button className="button" type="submit">
             Register
           </button>

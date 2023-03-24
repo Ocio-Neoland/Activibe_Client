@@ -201,8 +201,8 @@ const ActivityDetail = () => {
                   ) : (
                     <div>
                       <h2>No hay comentarios en la actividad</h2>
-                      <label htmlFor="input">Agrega un comentario</label>
-                      <input name="input">.....</input>
+                      {/* <label htmlFor="input">Agrega un comentario</label>
+                      <input name="input">.....</input> */}
                     </div>
                   )}
                 </div>
@@ -223,7 +223,11 @@ const ActivityDetail = () => {
               <section className="ocio-feeds">
                 <h2>Valoraciones de los Usuarios</h2>
                 <div className="ocio-media">
-                  <h2>{details.mediaStars.toFixed(1)}/5</h2>
+                  {details.feeds.length === 0 ? (
+                    <h2>0/5</h2>
+                  ) : (
+                    <h2>{details.mediaStars.toFixed(1)}</h2>
+                  )}
                   <div className="ocio-media-right">
                     {details.mediaStars === 5 ? (
                       <h2>⭐⭐⭐⭐⭐</h2>

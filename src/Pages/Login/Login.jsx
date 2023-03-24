@@ -10,7 +10,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
   let navigate = useNavigate();
   const { login } = useContext(UserContext);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   const formSubmit = (formData) => {
     API.post('/users/login', formData)
@@ -35,8 +35,6 @@ const Login = () => {
   return (
     <main>
       <div className="login-box">
-        <p>Login</p>
-        {error !== null && <h2>{error}</h2>}
         <form className="user-box" onSubmit={handleSubmit(formSubmit)}>
           <div className="user-box">
             <input
@@ -47,7 +45,7 @@ const Login = () => {
               name="userName"
               {...register('userName')}
             />
-            <label htmlFor="userName">Username:</label>
+            <label htmlFor="userName">Usuario:</label>
           </div>
           <div className="user-box">
             <input
@@ -58,13 +56,19 @@ const Login = () => {
               name="password"
               {...register('password')}
             />
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Contraseña:</label>
 
             <button className="a2" type="submit">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>Login
+              INICIAR SESION
+            </button>
+
+            <p className="separador"></p>
+            <button
+              className="btn-login"
+              type="button"
+              onClick={() => navigate('/register')}
+            >
+              CREAR CUENTA NUEVA
             </button>
           </div>
         </form>
