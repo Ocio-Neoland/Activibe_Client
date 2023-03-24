@@ -8,6 +8,8 @@ import { API } from '../../Services/API';
 
 const Register = () => {
   const [shown, setShown] = useState(false);
+  const [shown1, setShown1] = useState(false);
+
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
 
@@ -45,7 +47,7 @@ const Register = () => {
       navigate('/login');
     });
   };
-
+  const switchShown1 = () => setShown1(!shown1);
   const switchShown = () => setShown(!shown);
   const onChange = ({ currentTarget }) => setPassword(currentTarget.value);
   return (
@@ -117,13 +119,33 @@ const Register = () => {
             placeholder="password"
           />
           <div className="register-div-register">
-            <button
-              type="button"
-              onClick={switchShown}
-              className="regiser-button-mostrar"
-            >
-              {shown ? 'Ocultar' : 'Mostrar'}
-            </button>
+            {shown ? (
+              <button
+                type="button"
+                onClick={switchShown}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667868/fotos/ojo_aqmzwt.png"
+                  alt="icono ojo"
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={switchShown}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667874/fotos/ojoCerrado_sy8jkw.png"
+                  alt="icono ojo"
+                />
+              </button>
+            )}
             <div className="passwordRequisitos">
               <p>min 8 characters,</p>
               <p>1 uppercase,</p>
@@ -134,12 +156,41 @@ const Register = () => {
           <label htmlFor="password">repit Password:</label>
           <input
             placeholder="repeatPassword"
-            type="password"
+            type={shown1 ? 'text' : 'password'}
             className="input"
             id="repeatPassword"
             name="repeatPassword"
             onChange={(ev) => setRepeatPassword(ev.target.value)}
           />
+          <div className="register-div-register">
+            {shown1 ? (
+              <button
+                type="button"
+                onClick={switchShown1}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667868/fotos/ojo_aqmzwt.png"
+                  alt="icono ojo"
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={switchShown1}
+                className="regiser-button-mostrar"
+              >
+                {' '}
+                <img
+                  className="ojoPassword"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667874/fotos/ojoCerrado_sy8jkw.png"
+                  alt="icono ojo"
+                />
+              </button>
+            )}
+          </div>
           <button className="button" type="submit">
             Register
           </button>

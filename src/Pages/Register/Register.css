@@ -12,10 +12,11 @@
   background-color: #fff;
   border-radius: 20px;
   padding: 10px 20px;
-  border: 1px solid #004badec;
+  border: 1px solid var(--av-color-highlight);
   justify-content: center;
   position: relative;
   bottom: 3rem;
+
 
 }
 
@@ -34,12 +35,12 @@
 }
 
 .sub.mb {
-  margin-bottom: 1px;
+  margin-top: 30px;
   color: black;
 }
 
 .sub a {
-  color: rgb(23, 111, 211);
+  color: var(--av-color-highlight);
   color: black;
 }
 
@@ -61,15 +62,20 @@
 }
 
 .button {
-  margin-top: 10px;
-  background-color: #004badec;
+
+  background-color: var(--av-color-highlight);
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input:focus {
-  border: 1px solid #004badec;
+  border: 1px solid var(--av-color-highlight);
 }
 
 #file {
@@ -120,7 +126,7 @@
 
 .passwordRequisitos {
   font-size: 14px;
-  color: #004badec;
+  color: var(--av-color-highlight);
   gap: 0.7rem;
   margin-top: 5px;
   flex-wrap: wrap;
@@ -145,10 +151,26 @@
 .regiser-button-mostrar{
   z-index: 10;
   position: relative;
-  bottom: 3rem;
+  bottom: 2.9rem;
   float:right;
   height: 2.3rem;
   border: none;
   background-color: rgb(226, 223, 223);
-  margin-right: 0.rem;
+  margin-right: 0.3rem;
+}
+.regiser-repitPass-mostrar{
+  border: 2px solid black;
+  z-index: 10;
+  position: relative;
+  bottom: 2.4rem;
+  height: 3rem;
+  border: none;
+  float:right;
+  margin-right: 0.3rem;
+  background-color: rgb(226, 223, 223);
+}
+.ojoPassword{
+  width: 1.5rem;
+  height: 1.5rem;
+
 }
