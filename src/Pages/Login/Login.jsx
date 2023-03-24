@@ -35,7 +35,6 @@ const Login = () => {
   return (
     <main>
       <div className="login-box">
-        {error !== null && <h2>{error}</h2>}
         <form className="user-box" onSubmit={handleSubmit(formSubmit)}>
           <div className="user-box">
             <input
