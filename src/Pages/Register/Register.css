@@ -1,29 +1,36 @@
+.main-register{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
 .form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 353px;
-  height: 50rem;
+  width: 323px;
+  height: 40rem;
   background-color: #fff;
   border-radius: 20px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   border: 1px solid #004badec;
   justify-content: center;
+  position: relative;
+  bottom: 3rem;
+
 }
 
 .title1 {
   font-weight: bold;
   text-align: center;
   font-size: 20px;
-  margin-bottom: 4px;
   color: black;
 }
 
 .sub {
   text-align: center;
   color: black;
-  font-size: 14px;
   width: 100%;
+  font-size: 1rem;
 }
 
 .sub.mb {
@@ -44,8 +51,8 @@
 .button {
   border: none;
   outline: none;
+  height: 2.5rem;
   width: 100%;
-
   padding: 16px 10px;
   background-color: rgb(226, 223, 223);
   border-radius: 10px;
@@ -54,7 +61,7 @@
 }
 
 .button {
-  margin-top: 12px;
+  margin-top: 10px;
   background-color: #004badec;
   color: #fff;
   text-transform: uppercase;
@@ -101,15 +108,14 @@
   color: black;
 }
 .ParrafoAvatar {
-  margin-top: 0.8rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: black;
 }
 .username {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .passwordRequisitos {
@@ -120,14 +126,14 @@
   flex-wrap: wrap;
 }
 .imgAvatar {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   object-fit: cover;
-  border-radius: 506;
+  border-radius: 50%;
 }
 .iconoImgAvatar img {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   object-fit: cover;
 }
 
@@ -135,4 +141,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.regiser-button-mostrar{
+  z-index: 10;
+  position: relative;
+  bottom: 3rem;
+  float:right;
+  height: 2.3rem;
+  border: none;
+  background-color: rgb(226, 223, 223);
+  margin-right: 0.rem;
 }
