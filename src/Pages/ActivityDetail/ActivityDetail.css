@@ -1,7 +1,3 @@
-.ocio-figure {
-  padding: 0 10rem;
-}
-
 .ocio-feeds {
   display: flex;
   flex-direction: column;
@@ -14,9 +10,12 @@
 
 .ocio-main-details {
   background-color: white;
+  min-width: 600px;
 }
+
 .ocio-detail-hero {
   height: 600px;
+  min-width: 600px;
   width: 100%;
   position: absolute;
   z-index: 1000;
@@ -29,7 +28,7 @@
 
 .curve {
   background-color: #2b2634;
-  height: 500px;
+  height: 600px;
   width: 70%;
   border-bottom-left-radius: 95%;
   position: absolute;
@@ -52,31 +51,50 @@
 
 .ocio-container-title > h1 {
   color: white;
+  text-align: center;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ocio-activity-detail {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ocio-top {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .ocio-comments {
-  width: 600px;
-  height: 800px;
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: aliceblue;
+  background: none;
   color: black;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 3rem;
+
   border-radius: 7px;
-  border: 1px solid black;
-  z-index: 2000;
+}
+
+.ocio-comments > h2 {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #2b2634;
+  z-index: 100;
+  border: 1px solid #2b2634;
+  color: var(--av-color-background-secondary);
 }
 .ocio-img-details {
   height: 360px;
@@ -88,16 +106,60 @@
 .ocio-comment {
   border: 1px solid black;
   border-radius: 7px;
-  width: 500px;
+  width: 450px;
+  overflow: scroll;
+  white-space: wrap;
+  display: flex;
+  gap: 1rem;
+  text-overflow: ellipsis;
+  background-color: aliceblue;
+  height: 120px;
   padding: 1rem;
 }
 
+.ocio-blog {
+  overflow: scroll;
+  white-space: wrap;
+  display: flex;
+  gap: 1rem;
+  text-overflow: ellipsis;
+  max-height: 500px;
+  flex-wrap: wrap;
+}
+
+.ocio-map {
+  width: 300px;
+  border: solid 1px black;
+  height: 300px;
+  margin-bottom: 2rem;
+}
+
+.ocio-comment-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .ocio-comment-avatar > img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 1px solid black;
   object-fit: cover;
+}
+
+.ocio-comment-avatar > h2 {
+  font-size: 12px;
+}
+
+.ocio-comment-p {
+  text-align: justify;
+}
+
+q {
+  text-align: justify;
+  font-size: 12px;
 }
 
 .ocio-feed {
@@ -124,10 +186,61 @@
   color: black;
 }
 
+.ocio-activity-detail {
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+}
+
 .ocio-media {
   display: flex;
   gap: 1rem;
   align-items: center;
   width: 500px;
   color: black;
+}
+
+.section-right {
+  z-index: 1000;
+}
+
+.comment-create {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-create > form > h2 {
+  color: aliceblue;
+}
+
+.comment-create > form {
+  display: flex;
+}
+.comment-create > form > button {
+  height: 50px;
+  width: 50px;
+}
+
+.comment-create > form > textarea {
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 1rem;
+}
+
+.comment-create > form > ul > button {
+  border: none;
+  background-color: transparent;
+}
+
+.hide {
+  opacity: 30%;
+}
+
+.hide:hover {
+  opacity: 100%;
 }
