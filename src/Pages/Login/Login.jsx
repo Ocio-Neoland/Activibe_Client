@@ -21,6 +21,7 @@ const Login = () => {
             res.data.token,
             res.data.user._id,
             res.data.user.avatar,
+            res.data.user.password,
           );
 
           navigate('/');

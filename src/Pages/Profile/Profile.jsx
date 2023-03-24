@@ -9,7 +9,7 @@ import { UserContext } from '../../Context/UserContext';
 import { API } from '../../services/API';
 
 const Profile = () => {
-  const { id, setAvatar } = useContext(UserContext);
+  const { id, setAvatar, setPassword } = useContext(UserContext);
   const [user, setUser] = useState({});
   const [loaded, setLoaded] = useState(false);
   const [showProfile, setShowProfile] = useState(true);
@@ -19,12 +19,12 @@ const Profile = () => {
     API.get(`/users/${id}`).then((res) => {
       setUser(res.data);
       setAvatar(res.data.avatar);
-      console.log(res.data);
+      setPassword(res.data.password);
       setLoaded(true);
     });
   };
 
-  const formSubmit = (formData) => {
+  const changeAvatar = (formData) => {
     const data = {
       ...user,
       avatar: formData.avatar[0],
@@ -36,17 +36,20 @@ const Profile = () => {
     });
   };
 
-  //CREATE
-
-  //EDIT
-
-  //DELETE
+  const changePassword = (formData) => {
+    const data = {
+      ...user,
+      password: formData.password,
+    };
+    console.log(data);
+    API.patch(`/users/${user._id}`, data, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+  };
 
   useEffect(() => {
     getUser();
   }, [loaded]);
-
-  console.log(user);
 
   return (
     <main>
@@ -55,7 +58,7 @@ const Profile = () => {
         <div className="perfil-container">
           <div className="avatar2">
             <img src={user.avatar} alt={user.userName} />
-            <form onSubmit={handleSubmit(formSubmit)} className="form-change-avatar">
+            <form onSubmit={handleSubmit(changeAvatar)} className="form-change-avatar">
               <input type="file" id="avatar" name="avatar" {...register('avatar')} />
               <button type="submit">Change</button>
             </form>
@@ -71,7 +74,11 @@ const Profile = () => {
               <strong>User created at:</strong> {user.createdAt}{' '}
             </p>
           </div>
-          <button className="perfil-button">Edit password</button>
+          <form onSubmit={handleSubmit(changePassword)}>
+            <p>Cambiar Contraseña</p>
+            <input type="text" id="password" name="password" {...register('password')} />
+            <button type="submit">Change</button>
+          </form>
         </div>
       </div>
       <div className="perfil-toggle-buttons">

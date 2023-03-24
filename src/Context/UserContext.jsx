@@ -17,6 +17,11 @@ export const UserContextProvider = ({ children }) => {
     return savedAvatar || null;
   });
 
+  const [password, setPassword] = useState(() => {
+    const savedPassword = localStorage.getItem('password');
+    return savedPassword || null;
+  });
+
   const [id, setId] = useState(() => {
     const savedId = localStorage.getItem('id');
     return savedId || null;
@@ -32,24 +37,28 @@ export const UserContextProvider = ({ children }) => {
 
     setAvatar(null);
     setId(null);
+    setPassword(null);
 
     setJwt(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('password');
     localStorage.removeItem('token');
     localStorage.removeItem('id');
     localStorage.removeItem('avatar');
     navigate('/login');
   };
 
-  const login = (resUser, resToken, resId, resAvatar) => {
+  const login = (resUser, resToken, resId, resAvatar, resPassword) => {
     setUser(resUser);
     setJwt(resToken);
     setAvatar(resAvatar);
+    setPassword(resPassword);
     setId(resId);
     localStorage.setItem('user', JSON.stringify(resUser));
     localStorage.setItem('token', resToken);
     localStorage.setItem('id', resId);
     localStorage.setItem('avatar', resAvatar);
+    localStorage.setItem('password', resPassword);
   };
 
   return (
@@ -58,6 +67,8 @@ export const UserContextProvider = ({ children }) => {
         user,
         jwt,
         id,
+        password,
+        setPassword,
         setId,
         logout,
         login,
