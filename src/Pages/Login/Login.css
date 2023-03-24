@@ -5,17 +5,20 @@
   top: 50%;
   left: 50%;
   width: 280px;
-  padding: 30px;
+  height: 25rem;
+  padding: 20px;
   margin: 20px auto;
   transform: translate(-50%, -55%);
   background: white;
   box-sizing: border-box;
   border: 1px solid #004badec;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-box p:first-child {
-  margin: 0 0 30px;
+  margin: 0 0 10px 0;
   padding: 0;
   color: black;
   text-align: center;
@@ -26,20 +29,20 @@
 
 .login-box .user-box {
   position: relative;
-  margin-top: 1.5rem;
+
 }
 
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
+  padding: 5px 0;
   font-size: 16px;
   color: black;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   border: none;
   padding: 10px;
   outline: none;
 
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .login-box .user-box label {
@@ -179,6 +182,7 @@
   border-radius: 10px;
   font-size: 1rem;
   transition: ease-in-out 500ms;
+
 }
 
 .login-box button.a2:hover {
@@ -193,7 +197,7 @@
   height: 1px;
   width: 100%;
   background-color: black;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 .btn-login {
   background-color: #36a420;
@@ -206,3 +210,26 @@
   font-size: 1rem;
   transition: ease-in-out 500ms;
 }
+.login-button-Look{
+
+  background-color: none;
+    bottom: 1.3rem;
+    float:right;
+    height: 1rem;
+  }
+  .ojoPassword2{
+    z-index: 10;
+  position: relative;
+  bottom: 4.3rem;
+  left: 14.5rem;
+  float:right;
+  height: 1.7rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+  }
+  .login-button-mostrar2{
+  margin-bottom: 1rem;
+  height: 0;
+  width: 0;
+  }

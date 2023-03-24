@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { API } from '../../Services/API';
 const Login = () => {
+  const [show, setShow] = useState(false);
   const { register, handleSubmit } = useForm();
   let navigate = useNavigate();
   const { login } = useContext(UserContext);
@@ -31,7 +32,7 @@ const Login = () => {
         setError(error);
       });
   };
-
+  const switchShow = () => setShow(!show);
   return (
     <main>
       <div className="login-box">
@@ -50,14 +51,42 @@ const Login = () => {
           </div>
           <div className="user-box">
             <input
+              placeholder="password"
               className="input"
-              type="password"
+              type={show ? 'text' : 'password'}
               required=""
               id="password"
               name="password"
               {...register('password')}
             />
             <label htmlFor="password">Contraseña:</label>
+            {show ? (
+              <button
+                type="button"
+                onClick={switchShow}
+                className="login-button-mostrar2"
+              >
+                {' '}
+                <img
+                  className="ojoPassword2"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667868/fotos/ojo_aqmzwt.png"
+                  alt="icono ojo"
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={switchShow}
+                className="login-button-mostrar2"
+              >
+                {' '}
+                <img
+                  className="ojoPassword2"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667874/fotos/ojoCerrado_sy8jkw.png"
+                  alt="icono ojo"
+                />
+              </button>
+            )}
 
             <button className="a2" type="submit">
               INICIAR SESION
