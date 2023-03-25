@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 footer {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   height: 30vh;
   margin: 3rem 0;
+
 }
 
 .container {
