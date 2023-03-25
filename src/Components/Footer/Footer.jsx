@@ -12,13 +12,13 @@ const Footer = () => {
             <h4>ActiVibe</h4>
             <ul>
               <li>
-                <NavLink to={'/'}>Sobre nosotros </NavLink>
+                <NavLink to={'/about'}>Sobre nosotros </NavLink>
               </li>
               <li>
-                <NavLink to={'/'}>Blog</NavLink>
+                <NavLink to={'/about'}>Blog</NavLink>
               </li>
               <li>
-                <NavLink to={'/'}>Empleo</NavLink>
+                <NavLink to={'/about'}>Empleo</NavLink>
               </li>
             </ul>
           </div>
@@ -26,13 +26,13 @@ const Footer = () => {
             <h4>Obtén ayuda</h4>
             <ul>
               <li>
-                <NavLink to={'/'}>FAQ</NavLink>
+                <NavLink to={'/about'}>FAQ</NavLink>
               </li>
               <li>
-                <NavLink to={'/'}>Prensa</NavLink>
+                <NavLink to={'/about'}>Prensa</NavLink>
               </li>
               <li>
-                <NavLink to={'/'}>Hagamos negocios</NavLink>
+                <NavLink to={'/about'}>Hagamos negocios</NavLink>
               </li>
             </ul>
           </div>
@@ -40,29 +40,29 @@ const Footer = () => {
             <h4>Legal</h4>
             <ul>
               <li>
-                <NavLink to={'/'}>Términos de uso</NavLink>
+                <NavLink to={'/about'}>Términos de uso</NavLink>
               </li>
               <li>
-                <NavLink to={'/'}>Privacidad</NavLink>
+                <NavLink to={'/about'}>Privacidad</NavLink>
               </li>
               <li>
-                <NavLink to={'/'}>Política de cookies</NavLink>
+                <NavLink to={'/about'}>Política de cookies</NavLink>
               </li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>¡Síguenos!</h4>
             <div className="social-links">
-              <NavLink to={'/'}>
+              <NavLink to={'/about'}>
                 <i className="fab fb fa-facebook-f"></i>
               </NavLink>
-              <NavLink to={'/'}>
+              <NavLink to={'/about'}>
                 <i className="fab fa-twitter"></i>
               </NavLink>
-              <NavLink to={'/'}>
+              <NavLink to={'/about'}>
                 <i className="fab fa-instagram"></i>
               </NavLink>
-              <NavLink to={'/'}>
+              <NavLink to={'/about'}>
                 <i className="fab fa-linkedin-in"></i>
               </NavLink>
             </div>
