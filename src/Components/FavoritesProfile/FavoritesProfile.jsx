@@ -1,8 +1,10 @@
+import './FavoritesProfile.css';
+
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { UserContext } from '../../Context/UserContext';
 import { API } from '../../services/API';
-import './FavoritesProfile.css';
 const Favorites = () => {
   const { id } = useContext(UserContext);
 

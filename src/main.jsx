@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 
 import App from './App';
+import Favorites from './Components/FavoritesProfile/FavoritesProfile';
 import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes';
 import { CityContextProvider } from './Context/CityContext';
 import { ThemeContextProvider } from './Context/ThemeContext';
@@ -17,7 +18,6 @@ import Login from './Pages/Login/Login';
 import Profile from './Pages/Profile/Profile';
 import Register from './Pages/Register/Register';
 import Sections from './Pages/Sections/Sections';
-import Favorites from './Components/FavoritesProfile/FavoritesProfile';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

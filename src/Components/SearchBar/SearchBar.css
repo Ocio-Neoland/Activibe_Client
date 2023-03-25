@@ -2,7 +2,7 @@
 
 .search {
   width: 13vw;
-display: flex;
+  display: flex;
 }
 
 .searchTerm {
@@ -11,11 +11,11 @@ display: flex;
   padding: 3px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color:var(--av-color-highlight);
+  color: var(--av-color-highlight);
 }
 
 .searchTerm:focus {
-  color:#25222a;
+  color: #25222a;
 }
 
 .searchButton {

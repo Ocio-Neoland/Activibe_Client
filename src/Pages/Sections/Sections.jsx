@@ -4,9 +4,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { CityContext } from '../../Context/CityContext';
+import { UserContext } from '../../Context/UserContext';
 import { types } from '../../data/data.js';
 import { API } from '../../Services/API';
-import { UserContext } from '../../Context/UserContext';
 
 const Sections = () => {
   const [activities, setActivities] = useState('');

@@ -1,5 +1,7 @@
-import React, { useRef } from 'react';
 import './ModalCreate.css';
+
+import React, { useRef } from 'react';
+
 import InputCreate from '../Inputs/InputCreate';
 import SelectCreate from '../Selects/SelectCreate';
 

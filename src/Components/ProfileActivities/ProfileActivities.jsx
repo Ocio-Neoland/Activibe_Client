@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ModalEdit from '../ModalCreateEdit/ModalEdit';
-import ModalCreate from '../ModalCreateEdit/ModalCreate';
+
 import { UserContext } from '../../Context/UserContext';
 import { city, typesInput, typesNames } from '../../data/data';
 import { API } from '../../services/API';
+import ModalCreate from '../ModalCreateEdit/ModalCreate';
+import ModalEdit from '../ModalCreateEdit/ModalEdit';
 
 const Profile2 = () => {
   const [error, setError] = useState(null);

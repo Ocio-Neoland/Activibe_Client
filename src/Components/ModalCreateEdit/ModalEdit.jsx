@@ -1,5 +1,7 @@
-import React from 'react';
 import './ModalEdit.css';
+
+import React from 'react';
+
 import InputEdit from '../Inputs/InputEdit';
 import SelectEdit from '../Selects/SelectEdit';
 
