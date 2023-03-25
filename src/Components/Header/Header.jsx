@@ -7,6 +7,7 @@ import { CityContext } from '../../Context/CityContext';
 import { UserContext } from '../../Context/UserContext';
 import { cities, types } from '../../data/data';
 import BtnDarkMode from '../Btn-darkMode/Btn-darkMode';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Header = () => {
   const { city, setCity } = useContext(CityContext);
@@ -59,7 +60,7 @@ const Header = () => {
       <div className="ocio-nav-container">
         <NavLink to={'/'}>
           <img
-            src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1679488952/activibe-removebg-preview_sczveb.png"
+            src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1679775073/activibe__11_-removebg-preview_rrvcut.png"
             alt="imagen"
           />
         </NavLink>
@@ -74,6 +75,7 @@ const Header = () => {
                 {`${city}`}
               </button>
             </li>
+
             <li>
               <button
                 className="ocio-sections-btn"
@@ -83,9 +85,8 @@ const Header = () => {
                 Menu
               </button>
             </li>
-
             <li>
-              <NavLink to={'/about'}>About</NavLink>
+              <SearchBar />
             </li>
 
             {!user && (

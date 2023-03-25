@@ -14,8 +14,8 @@ header {
 }
 
 .ocio-nav-container > a > img {
-  width: 80px;
-  height: 80px;
+  max-width: 190px;
+  height: auto;
   overflow: hidden;
 }
 .log {
@@ -48,7 +48,9 @@ header > .ocio-nav-container {
   justify-content: space-around;
   align-items: center;
   z-index: 1030;
-  position: fixed;
+  gap: 3rem;
+  padding-left: 1rem;
+  /* position: fixed; */
   background-color: var(--av-color-background-primary);
 }
 header > div > nav > ul {
@@ -56,6 +58,7 @@ header > div > nav > ul {
   justify-content: center;
   align-items: center;
   gap: 7rem;
+  width: 100%;
 }
 
 header > div > nav > ul > li {
