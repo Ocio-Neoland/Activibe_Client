@@ -1,6 +1,6 @@
 .ocio-feeds {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   gap: 1rem;
   color: black;
   margin-top: 2rem;
@@ -11,17 +11,16 @@ flex-direction: column;
 
 .ocio-main-details {
   background-color: #333038;
-width: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   color: white;
-
 }
-.section-right{
+.section-right {
   width: 50%;
   background-color: white;
 }
-.ocio-figure{
+.ocio-figure {
   padding: 1rem;
   display: flex;
   width: 100%;
@@ -37,10 +36,9 @@ border-style: 20%;
   position: relative;
 left: 6.5rem;
 } */
-.descrption-img{
-  padding: 1rem ;
+.descrption-img {
+  padding: 1rem;
   margin-left: 5rem;
-  
 }
 .ocio-img-details {
   height: 390px;
@@ -48,24 +46,23 @@ left: 6.5rem;
   border-radius: 12px;
   object-fit: cover;
   display: flex;
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.description-act{
+.description-act {
   display: flex;
   background-color: #2b2634;
   gap: 2rem;
   color: white;
   border-radius: 8px;
-height: 20rem;
-margin-bottom: 10rem;
+  height: 20rem;
+  margin-bottom: 10rem;
 }
-.description-activity2{
-margin-top: 9rem;
+.description-activity2 {
+  margin-top: 9rem;
 }
-.description-activity2 p{
+.description-activity2 p {
   font-size: 1.2rem;
-
 }
 .description-activity2 h1 {
   color: white;
@@ -75,7 +72,7 @@ margin-top: 9rem;
   align-items: center;
   font-size: 2.5rem;
 }
-.description-activity2 h2{
+.description-activity2 h2 {
   font-size: 2rem;
   margin-bottom: 5px;
 }
@@ -120,7 +117,6 @@ margin-top: 9rem;
   color: var(--av-color-background-secondary);
 }
 
-
 .ocio-comment {
   border: 1px solid black;
   border-radius: 7px;
@@ -136,13 +132,12 @@ margin-top: 9rem;
 }
 
 .ocio-blog {
-
   white-space: wrap;
   display: flex;
   justify-content: center;
   gap: 1rem;
   text-overflow: ellipsis;
- height: 35rem;
+  height: 35rem;
   flex-wrap: wrap;
 }
 
@@ -151,9 +146,9 @@ margin-top: 9rem;
   border: solid 1px black;
   height: 300px;
   margin-bottom: 2rem;
-  background-color: white
+  background-color: white;
 }
-.divMap{
+.divMap {
   width: 50%;
 }
 
@@ -223,13 +218,13 @@ q {
   color: white;
 }
 
-.activity-coment{
-background-color: white;
-width: 50%;
-display: flex;
-justify-content: center;
-position: relative;
-bottom:21rem
+.activity-coment {
+  background-color: white;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 21rem;
 }
 
 .comment-create {
@@ -242,7 +237,7 @@ bottom:21rem
 }
 
 .comment-create > form > h2 {
-  color: black
+  color: black;
 }
 
 .comment-create > form {
