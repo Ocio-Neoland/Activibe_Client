@@ -37,7 +37,7 @@ header {
   gap: 1rem;
   padding: 2rem 4rem;
   top: 3rem;
-  z-index: 1030;
+  z-index: 1;
   position: fixed;
 }
 

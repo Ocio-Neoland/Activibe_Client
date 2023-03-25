@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 
 import App from './App';
+import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes';
 import { CityContextProvider } from './Context/CityContext';
 import { ThemeContextProvider } from './Context/ThemeContext';
 import { UserContextProvider } from './Context/UserContext';
@@ -28,9 +29,23 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route index element={<Home />} />
                 <Route path="/:name" element={<Sections />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoutes>
+                      <Profile />
+                    </ProtectedRoutes>
+                  }
+                />
                 <Route path="/login" element={<Login />} />
-                <Route path="/:name/:id" element={<ActivityDetail />} />
+                <Route
+                  path="/:name/:id"
+                  element={
+                    <ProtectedRoutes>
+                      <ActivityDetail />
+                    </ProtectedRoutes>
+                  }
+                />
                 <Route path="/about" element={<About />} />
               </Route>
             </Routes>

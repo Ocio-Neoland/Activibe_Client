@@ -45,7 +45,7 @@ export const UserContextProvider = ({ children }) => {
     localStorage.removeItem('token');
     localStorage.removeItem('id');
     localStorage.removeItem('avatar');
-    navigate('/login');
+    navigate('/');
   };
 
   const login = (resUser, resToken, resId, resAvatar, resPassword) => {
