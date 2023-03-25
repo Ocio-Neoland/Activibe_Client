@@ -156,7 +156,7 @@ const ActivityDetail = () => {
         <div className="curve"></div>
       </div>
       <div className="divMap">
-        <div className="ocio-map"></div>
+        <div className="ocio-map">x</div>
       </div>
       {loaded ? (
         <figure className="ocio-figure">
