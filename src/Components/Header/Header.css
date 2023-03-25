@@ -39,11 +39,7 @@ header {
   top: 3rem;
   z-index: 1;
   position: fixed;
- 
 }
-
-
-
 
 header > .ocio-nav-container {
   min-height: 80px;
