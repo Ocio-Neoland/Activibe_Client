@@ -6,16 +6,30 @@ import { Link, useParams } from 'react-router-dom';
 import { CityContext } from '../../Context/CityContext';
 import { types } from '../../data/data.js';
 import { API } from '../../Services/API';
+import { UserContext } from '../../Context/UserContext';
 
 const Sections = () => {
   const [activities, setActivities] = useState('');
   const { city } = useContext(CityContext);
   const [loaded, setLoaded] = useState(false);
+  const { id } = useContext(UserContext);
   const { name } = useParams();
   const getSection = () => {
     API.get(`/sections/${city}/${name}`).then((res) => {
       setActivities(res.data.results);
       setLoaded(true);
+    });
+  };
+
+  const chooseFavorite = (value) => {
+    const info = {
+      id: id,
+    };
+    console.log(info);
+    console.log(value);
+    API.put(`/activities/favorites/${value}`, info, {
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(info),
     });
   };
 
@@ -58,6 +72,9 @@ const Sections = () => {
                 </div>
               </div>
             </div>
+            <button className="deleteLike" onClick={() => chooseFavorite(activity._id)}>
+              💓
+            </button>
           </div>
         ))
       ) : (

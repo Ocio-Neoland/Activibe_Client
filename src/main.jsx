@@ -17,6 +17,7 @@ import Login from './Pages/Login/Login';
 import Profile from './Pages/Profile/Profile';
 import Register from './Pages/Register/Register';
 import Sections from './Pages/Sections/Sections';
+import Favorites from './Components/FavoritesProfile/FavoritesProfile';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route index element={<Home />} />
                 <Route path="/:name" element={<Sections />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/favorites" element={<Favorites />} />
                 <Route
                   path="/profile"
                   element={
