@@ -1,0 +1,21 @@
+.divDialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  height: 800px;
+  gap: 1rem;
+  width: 100%;
+}
+
+.mainDialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dialog {
+  width: 100%;
+  z-index: 1;
+}

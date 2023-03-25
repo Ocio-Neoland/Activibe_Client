@@ -1,11 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import InputCreate from '../../Components/Inputs/InputCreate';
-import InputEdit from '../../Components/Inputs/InputEdit';
-import ModalCreate from '../../Components/ModalCreate/ModalCreate';
-import SelectCreate from '../../Components/Selects/SelectCreate';
-import SelectEdit from '../../Components/Selects/SelectEdit';
+import ModalEdit from '../ModalCreateEdit/ModalEdit';
+import ModalCreate from '../ModalCreateEdit/ModalCreate';
 import { UserContext } from '../../Context/UserContext';
 import { city, typesInput, typesNames } from '../../data/data';
 import { API } from '../../services/API';
@@ -54,6 +50,7 @@ const Profile2 = () => {
   //CREATE
 
   const createActivities = (ev) => {
+    console.log(activity);
     ev.preventDefault();
     console.log(activity);
     if (
@@ -117,7 +114,14 @@ const Profile2 = () => {
                 >
                   Create activity
                 </button>
-                <ModalCreate />
+                <ModalCreate
+                  createAct={createActivities}
+                  typesInp={typesInput}
+                  setAct={setActivity}
+                  act={activity}
+                  typNa={typesNames}
+                  cit={city}
+                />
               </div>
               <div className="perfil-all-activities">
                 {loaded ? (
@@ -154,11 +158,21 @@ const Profile2 = () => {
                             Eliminar
                           </button>
                           <button
-                            onClick={() => setEditActivity(act)}
+                            onClick={(ev) => (
+                              (ev.target.nextSibling.open = true), setEditActivity(act)
+                            )}
                             className="perfil-button"
                           >
                             Editar
                           </button>
+                          <ModalEdit
+                            editAct={updateActivities}
+                            typesInp={typesInput}
+                            setEditAct={setEditActivity}
+                            edAct={editActivity}
+                            typNa={typesNames}
+                            cit={city}
+                          />
                         </div>
                       </figure>
                     );
@@ -169,74 +183,6 @@ const Profile2 = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <h2>Create Activity</h2>
-          <form onSubmit={(ev) => createActivities(ev)}>
-            {typesInput.map((info) => (
-              <InputCreate
-                info={info}
-                key={info}
-                action={(ev) => {
-                  setActivity({ ...activity, [info]: ev.target.value });
-                }}
-              />
-            ))}
-
-            <input
-              onChange={(ev) => {
-                setActivity({ ...activity, image: ev.target.files[0] });
-              }}
-              type="file"
-            />
-
-            <SelectCreate
-              options={typesNames}
-              action={(ev) => setActivity({ ...activity, type: ev.target.value })}
-            />
-
-            <SelectCreate
-              options={city}
-              action={(ev) => setActivity({ ...activity, city: ev.target.value })}
-            />
-
-            <button type="submit">Create Activity</button>
-          </form>
-
-          <h2>Edit Activity</h2>
-          <form onSubmit={(ev) => updateActivities(ev, editActivity._id)}>
-            {typesInput.map((info) => (
-              <InputEdit
-                value={editActivity[info]}
-                info={info}
-                key={info}
-                action={(ev) => {
-                  setEditActivity({ ...editActivity, [info]: ev.target.value });
-                }}
-              />
-            ))}
-
-            <input
-              onChange={(ev) => {
-                setEditActivity({ ...editActivity, image: ev.target.files[0] });
-              }}
-              type="file"
-            />
-
-            <SelectEdit
-              value={editActivity.city}
-              options={city}
-              action={(ev) => setEditActivity({ ...editActivity, city: ev.target.value })}
-            />
-
-            <SelectEdit
-              value={editActivity.type}
-              options={typesNames}
-              action={(ev) => setEditActivity({ ...editActivity, type: ev.target.value })}
-            />
-
-            <button type="submit">Update Activity</button>
-          </form>
         </div>
       </div>
     </main>

@@ -31,7 +31,8 @@ export const types = [
   },
 ];
 
-export const typesInput = ['name', 'description', 'location', 'coordinates'];
+export const typesInput = ['name', 'description'];
+export const typesInput2 = ['calle', 'numero', 'codPostal', 'ciudad'];
 
 export const typesNames = [
   '-',
