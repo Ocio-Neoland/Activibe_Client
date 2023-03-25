@@ -16,6 +16,7 @@ import Login from './Pages/Login/Login';
 import Profile from './Pages/Profile/Profile';
 import Register from './Pages/Register/Register';
 import Sections from './Pages/Sections/Sections';
+import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -28,9 +29,23 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route index element={<Home />} />
                 <Route path="/:name" element={<Sections />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoutes>
+                      <Profile />
+                    </ProtectedRoutes>
+                  }
+                />
                 <Route path="/login" element={<Login />} />
-                <Route path="/:name/:id" element={<ActivityDetail />} />
+                <Route
+                  path="/:name/:id"
+                  element={
+                    <ProtectedRoutes>
+                      <ActivityDetail />
+                    </ProtectedRoutes>
+                  }
+                />
                 <Route path="/about" element={<About />} />
               </Route>
             </Routes>

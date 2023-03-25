@@ -9,6 +9,7 @@ import { cities, types } from '../../data/data';
 import BtnDarkMode from '../Btn-darkMode/Btn-darkMode';
 
 const Header = () => {
+  const { logout } = useContext(UserContext);
   const { city, setCity } = useContext(CityContext);
   const menuBtn = useRef('null');
   const hiddenMenu = useRef('null');
@@ -88,11 +89,6 @@ const Header = () => {
               <NavLink to={'/about'}>About</NavLink>
             </li>
 
-            {!user && (
-              <li>
-                <NavLink to={'/register'}>Register</NavLink>
-              </li>
-            )}
             {!user ? (
               <li>
                 <NavLink to={'/login'}>
@@ -142,6 +138,14 @@ const Header = () => {
         <ul className="ocio-menu-sections">
           <li>
             <NavLink to="/profile"> Profile</NavLink>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={() => {
+                logout(), setProfile(false);
+              }}
+            ></button>
           </li>
         </ul>
       )}

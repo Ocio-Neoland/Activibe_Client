@@ -50,6 +50,16 @@ const Home = () => {
     });
   };
 
+  // const typesCarousel = [
+  //   [activities, 'Top 10 →'],
+  //   [naturaleza, 'Para los amantes de la Naturaleza → '],
+  //   [deportes, 'Para los más Deportistas → '],
+  //   [adrenalina, 'Para los más Atrevidos → '],
+  //   [juegos, 'Para los amantes de los Juegos de Mesa → '],
+  //   [exoticos, 'Para los más Exóticos →'],
+  //   [otros, 'Otras Actividades... → '],
+  // ];
+
   useEffect(() => {
     getAllActivities();
     getTop10();
@@ -60,32 +70,23 @@ const Home = () => {
     <main className="ocio-home">
       {loaded ? (
         <div className="ocio-container-home">
+          {/* {typesCarousel.map((type) => {
+            console.log(type[1]);
+            <Carousel prop={type[0]} title={type[1]} />;
+          })} */}
           <h2>Top 10 →</h2>
-
           <Carousel prop={activities} />
-
           <h2>Para los amantes de la Naturaleza →</h2>
-
           <Carousel prop={naturaleza} />
-
           <h2>Para los más Deportistas →</h2>
-
           <Carousel prop={deportes} />
-
           <h2>Para los más Atrevidos →</h2>
-
           <Carousel prop={adrenalina} />
-
           <h2>Para los amantes de los Juegos de Mesa →</h2>
-
           <Carousel prop={juegos} />
-
           <h2>Para los más Exóticos →</h2>
-
           <Carousel prop={exoticos} />
-
           <h2>Otras Actividades... →</h2>
-
           <Carousel prop={otros} />
         </div>
       ) : (
