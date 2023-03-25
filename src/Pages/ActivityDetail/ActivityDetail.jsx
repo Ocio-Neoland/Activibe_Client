@@ -1,12 +1,13 @@
 import './ActivityDetail.css';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { CityContext } from '../../Context/CityContext';
 import { API } from '../../Services/API';
-
 const ActivityDetail = () => {
   const { id } = useParams();
+  const { city } = useContext(CityContext);
   const [idComents] = useState(() => {
     const savedName = localStorage.getItem('id');
     return savedName || null;
@@ -37,7 +38,7 @@ const ActivityDetail = () => {
   });
   const [feeds, setFeeds] = useState('');
   const getSection = async () => {
-    API.get(`/activities/${id}`).then((res) => {
+    API.get(`/activities/${city}/${id}`).then((res) => {
       setDetails(res.data);
       setComments(res.data.comments);
       setFeeds(res.data.feeds);
