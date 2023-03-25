@@ -1,11 +1,13 @@
 import './Home.css';
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Carousel from '../../Components/Carousel/Carousel';
+import { CityContext } from '../../Context/CityContext';
 import { API } from '../../Services/API';
 
 const Home = () => {
+  const { city } = useContext(CityContext);
   const [activities, setActivities] = useState('');
   const [naturaleza, setNaturaleza] = useState('');
   const [deportes, setDeportes] = useState('');
@@ -37,13 +39,13 @@ const Home = () => {
     }
   };
   const getAllActivities = () => {
-    API.get(`/activities`).then((res) => {
+    API.get(`/activities/${city}`).then((res) => {
       filters(res.data);
     });
   };
 
   const getTop10 = () => {
-    API.get(`/activities/top10`).then((res) => {
+    API.get(`/activities/${city}/top10`).then((res) => {
       setActivities(res.data);
     });
   };
@@ -52,7 +54,7 @@ const Home = () => {
     getAllActivities();
     getTop10();
     setLoaded(true);
-  }, []);
+  }, [city]);
 
   return (
     <main className="ocio-home">
