@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import InputCreate from '../../Components/Inputs/InputCreate';
 import InputEdit from '../../Components/Inputs/InputEdit';
+import ModalCreate from '../../Components/ModalCreate/ModalCreate';
 import SelectCreate from '../../Components/Selects/SelectCreate';
 import SelectEdit from '../../Components/Selects/SelectEdit';
 import { UserContext } from '../../Context/UserContext';
@@ -110,7 +111,13 @@ const Profile2 = () => {
             <div className="perfil-crud">
               <div className="header-actividades">
                 <h2>Mis actividades</h2>
-                <button className="perfil-button">Create activity</button>
+                <button
+                  onClick={(ev) => (ev.target.nextSibling.open = true)}
+                  className="perfil-button-act"
+                >
+                  Create activity
+                </button>
+                <ModalCreate />
               </div>
               <div className="perfil-all-activities">
                 {loaded ? (
