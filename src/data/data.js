@@ -44,3 +44,4 @@ export const typesNames = [
 ];
 
 export const city = ['-', 'Madrid', 'Malaga', 'Barcelona'];
+export const cities = ['Madrid', 'Malaga', 'Barcelona'];

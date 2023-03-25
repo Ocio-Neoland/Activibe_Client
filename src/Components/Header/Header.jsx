@@ -3,14 +3,18 @@ import './Header.css';
 import React, { useContext, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { CityContext } from '../../Context/CityContext';
 import { UserContext } from '../../Context/UserContext';
-import { types } from '../../data/data';
+import { cities, types } from '../../data/data';
 import BtnDarkMode from '../Btn-darkMode/Btn-darkMode';
 
 const Header = () => {
+  const { city, setCity } = useContext(CityContext);
   const menuBtn = useRef('null');
   const hiddenMenu = useRef('null');
+  const menuCity = useRef('null');
   const [menu, setMenu] = useState(false);
+  const [chooseCity, setChooseCity] = useState(false);
   const [profile, setProfile] = useState(false);
   const { user, avatar } = useContext(UserContext);
 
@@ -18,8 +22,11 @@ const Header = () => {
     if (menu === false) {
       setMenu(true);
       setProfile(false);
+      setChooseCity(false);
     } else {
       setMenu(false);
+      setProfile(false);
+      setChooseCity(false);
     }
   };
 
@@ -27,8 +34,23 @@ const Header = () => {
     if (profile === false) {
       setProfile(true);
       setMenu(false);
+      setChooseCity(false);
     } else {
       setProfile(false);
+      setChooseCity(false);
+      setMenu(false);
+    }
+  };
+
+  const handleClickCity = () => {
+    if (chooseCity === false) {
+      setChooseCity(true);
+      setProfile(false);
+      setMenu(false);
+    } else {
+      setProfile(false);
+      setMenu(false);
+      setChooseCity(false);
     }
   };
 
@@ -46,12 +68,22 @@ const Header = () => {
             <li>
               <button
                 className="ocio-sections-btn"
+                ref={menuCity}
+                onClick={handleClickCity}
+              >
+                {`${city}`}
+              </button>
+            </li>
+            <li>
+              <button
+                className="ocio-sections-btn"
                 ref={menuBtn}
                 onClick={handleClickMenu}
               >
                 Menu
               </button>
             </li>
+
             <li>
               <NavLink to={'/about'}>About</NavLink>
             </li>
@@ -82,6 +114,15 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      {chooseCity !== false && (
+        <ul className="ocio-menu-sections" ref={menuCity}>
+          {cities.map((type) => (
+            <button className="ocio-a-container" onClick={() => setCity(type)} key={type}>
+              {type}
+            </button>
+          ))}
+        </ul>
+      )}
       {menu !== false && (
         <ul className="ocio-menu-sections" ref={hiddenMenu}>
           {types.map((type) => (

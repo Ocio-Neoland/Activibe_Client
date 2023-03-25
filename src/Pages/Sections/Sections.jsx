@@ -1,17 +1,19 @@
 import './Sections.css';
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import { CityContext } from '../../Context/CityContext';
 import { types } from '../../data/data.js';
 import { API } from '../../Services/API';
 
 const Sections = () => {
   const [activities, setActivities] = useState('');
+  const { city } = useContext(CityContext);
   const [loaded, setLoaded] = useState(false);
   const { name } = useParams();
   const getSection = () => {
-    API.get(`/sections/${name}`).then((res) => {
+    API.get(`/sections/${city}/${name}`).then((res) => {
       setActivities(res.data.results);
       setLoaded(true);
     });
@@ -19,7 +21,7 @@ const Sections = () => {
 
   useEffect(() => {
     getSection();
-  }, [name]);
+  }, [name, city]);
 
   const filter = types.filter((filt) => filt.name === name);
 
