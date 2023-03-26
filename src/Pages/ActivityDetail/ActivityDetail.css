@@ -1,30 +1,99 @@
+
+main{
+  width: 1499px;
+}
 .ocio-feeds {
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
-  color: black;
+background-color: white;
   margin-top: 2rem;
-  padding-left: 4rem;
+  align-items: center;
   margin-bottom: 2rem;
-  width: 50%;
+  width: 45%;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--av-color-text-primary);
+}
+.ValoracionesUsers{
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+}
+.ValoracionesUsers > h2{
+  display: flex;
+text-align: center;
+justify-content: center;
+}
+.feedsUsuarios{
+  width: 100%;
+  padding: 1rem;
+
+}
+.carousel-div{
+  width: 100%;
+  height: 20rem;
+  border: 2px solid black;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: none;
+  gap: 2rem;
+  padding: 0.5rem 2rem;
+align-items: center;
+margin: 2rem 0 6rem 0;
+border-radius: 8px;
+
 }
 
-.ocio-main-details {
-  background-color: #333038;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  color: white;
+.tarts-Feeds{
+  font-size: 5rem;
 }
+.input-feeds{
+  margin-top: 1rem;
+  width: 100%;
+  height: 4rem;
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.startsComent{
+  display: flex;
+  gap: 0.5rem;
+
+}
+.startsComent button{
+border: none ;
+background-color: transparent;
+font-size: 1.5rem;
+
+}
+.feeds-H1{
+  font-size: 3rem;
+}
+.ocio-media {
+
+  color: black;
+  font-size:1.5rem;
+}
+.textarea{
+  width: 50rem;
+  height: 3rem;
+}
+
 .section-right {
   width: 50%;
   background-color: white;
 }
 .ocio-figure {
-  padding: 1rem;
+  padding: 1rem 3rem;
   display: flex;
   width: 100%;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 /* .curve {
@@ -51,12 +120,13 @@ left: 6.5rem;
 
 .description-act {
   display: flex;
-  background-color: #2b2634;
+  background-color: var(--av-color-backgotund-menu);
   gap: 2rem;
   color: white;
   border-radius: 8px;
   height: 20rem;
   margin-bottom: 10rem;
+  width: 100%
 }
 .description-activity2 {
   margin-top: 9rem;
@@ -93,7 +163,7 @@ left: 6.5rem;
 }
 
 .ocio-comments {
-  width: 500px;
+  width: 700px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -104,42 +174,41 @@ left: 6.5rem;
   border-radius: 7px;
 }
 
-.ocio-comments > h2 {
+.h2Coment {
   width: 100%;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 3rem;
+display: flex;
+justify-content: center;
   text-align: center;
-  background: #2b2634;
-
-  border: 1px solid #2b2634;
-  color: var(--av-color-background-secondary);
+  color: var(--av-color-background-primary);
 }
 
 .ocio-comment {
-  border: 1px solid black;
+ 
   border-radius: 7px;
-  width: 450px;
-
-  white-space: wrap;
+  width: 100%;
   display: flex;
   gap: 1rem;
-  text-overflow: ellipsis;
-  background-color: aliceblue;
-  height: 120px;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .ocio-blog {
-  white-space: wrap;
-  display: flex;
-  justify-content: center;
+  border: solid 1px black;
   gap: 1rem;
-  text-overflow: ellipsis;
-  height: 35rem;
+  flex-direction: column;
+  height: 40rem;
+  width: 90%;
   flex-wrap: wrap;
+  background-color: white;
+  display: flex;
+  overflow-x: none;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  color: black;
+ 
 }
+
+
 
 .ocio-map {
   width: 300px;
@@ -150,13 +219,16 @@ left: 6.5rem;
 }
 .divMap {
   width: 50%;
+  padding:0 0 0 5rem;
 }
 
 .ocio-comment-avatar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+
+
 }
 
 .ocio-comment-avatar > img {
@@ -165,19 +237,20 @@ left: 6.5rem;
   border-radius: 50%;
   border: 1px solid black;
   object-fit: cover;
+
+
 }
 
 .ocio-comment-avatar > h2 {
   font-size: 12px;
 }
 
-.ocio-comment-p {
-  text-align: justify;
-}
 
 q {
   text-align: justify;
+  padding: 0 2rem;
   font-size: 12px;
+  color: black;
 }
 
 .ocio-feed {
@@ -192,8 +265,8 @@ q {
   color: white;
 }
 .ocio-feed > img {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border: 1px solid black;
   border-radius: 50%;
   object-fit: cover;
@@ -201,7 +274,7 @@ q {
 
 .ocio-feed > h2 {
   font-size: 16px;
-  color: white;
+  color: black;
 }
 
 .ocio-activity-detail {
@@ -210,30 +283,33 @@ q {
   margin-left: 2rem;
 }
 
-.ocio-media {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  width: 500px;
-  color: white;
-}
 
 .activity-coment {
-  background-color: white;
-  width: 50%;
   display: flex;
+  justify-content: center;            
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 45%;
+  height: 50rem;
   position: relative;
   bottom: 21rem;
+  border-radius: 8px;
+}
+.Feeds-coment-stars{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .comment-create {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  height: 20%;
+  color: black;
+
+  padding: 1rem;
 }
 
 .comment-create > form > h2 {
@@ -268,3 +344,37 @@ q {
 .hide:hover {
   opacity: 100%;
 }
+.comment-create2{
+  width: 95%;
+  display: flex;
+gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.inputComentComunty{
+  width: 29rem;
+  height: 3.5rem;
+  border-radius: 8px;
+  margin-left: 2.5rem;
+  font-size: 1rem;
+  padding: 5px;
+}
+.inputComentComunty:focus{
+  border: 1px solid var(--av-color-highlight);
+}
+.inputComentComunty2{
+  width: 35rem;
+  height: 3.5rem;
+  border-radius: 8px;
+
+  font-size: 1rem;
+  padding: 5px;
+  gap: 2rem;
+
+}
+
+
+
+
+

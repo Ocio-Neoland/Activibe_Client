@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { CityContext } from '../../Context/CityContext';
 import { API } from '../../Services/API';
+
 const ActivityDetail = () => {
   const { id } = useParams();
   const { city } = useContext(CityContext);
@@ -142,7 +143,7 @@ const ActivityDetail = () => {
   }, []);
 
   return (
-    <main className="ocio-main-details">
+    <main>
       <div className="description-act">
         <div className="descrption-img">
           <img className="ocio-img-details" src={details.image} alt={details.name} />
@@ -161,117 +162,133 @@ const ActivityDetail = () => {
       {loaded ? (
         <figure className="ocio-figure">
           <section className="ocio-feeds">
-            <h2>Valoraciones de los Usuarios</h2>
-            <div className="ocio-media">
-              {details.feeds.length === 0 ? (
-                <h2>0/5</h2>
-              ) : (
-                <h2>{details.mediaStars.toFixed(1)}</h2>
-              )}
-              <div className="ocio-media-right">
-                {details.mediaStars === 5 ? (
-                  <h2>⭐⭐⭐⭐⭐</h2>
-                ) : details.mediaStars < 4.5 && details.mediaStars >= 3.5 ? (
-                  <h2>⭐⭐⭐⭐</h2>
-                ) : details.mediaStars < 3.5 && details.mediaStars >= 2.5 ? (
-                  <h2>⭐⭐⭐</h2>
-                ) : details.mediaStars < 2.5 && details.mediaStars >= 1.5 ? (
-                  <h2>⭐⭐</h2>
+            <div className="ValoracionesUsers">
+              <h2>Valoraciones de los Usuarios</h2>
+
+              <div className="ocio-media">
+                {details.feeds.length === 0 ? (
+                  <h1 className="feeds-H1">0/5</h1>
                 ) : (
-                  <h2>⭐</h2>
+                  <h1 className="feeds-H1">{details.mediaStars.toFixed(1)}</h1>
                 )}
-                <h2>
-                  Basado en {details.feeds.length}
-                  {details.feeds.length === 1 ? ' valoracion.' : ' valoraciones.'}
-                </h2>
+                <div className="ocio-media-right">
+                  {details.mediaStars === 5 ? (
+                    <p>⭐⭐⭐⭐⭐</p>
+                  ) : details.mediaStars < 4.5 && details.mediaStars >= 3.5 ? (
+                    <p>⭐⭐⭐⭐</p>
+                  ) : details.mediaStars < 3.5 && details.mediaStars >= 2.5 ? (
+                    <p>⭐⭐⭐</p>
+                  ) : details.mediaStars < 2.5 && details.mediaStars >= 1.5 ? (
+                    <p>⭐⭐</p>
+                  ) : (
+                    <p>⭐</p>
+                  )}
+                  {/* <h2>
+                    {details.feeds.length}
+                    {details.feeds.length === 1 ? ' valoracion.' : ' valoraciones.'}
+                  </h2> */}
+                </div>
               </div>
             </div>
-            {feeds.length ? (
-              feeds.map((feed) => (
-                <article className="ocio-feed" key={feed._id}>
-                  <img src={feed.idUser.avatar} alt={feed.idUser.userName} />
-                  <h2>{feed.idUser.userName}</h2>
-                  {feed.stars === 5 ? (
-                    <h2>⭐⭐⭐⭐⭐</h2>
-                  ) : feed.stars === 4 ? (
-                    <h2>⭐⭐⭐⭐</h2>
-                  ) : feed.stars === 3 ? (
-                    <h2>⭐⭐⭐</h2>
-                  ) : feed.stars === 2 ? (
-                    <h2>⭐⭐</h2>
-                  ) : (
-                    <h2>⭐</h2>
-                  )}
-                  <q>
-                    <i>{feed.feed}</i>
-                  </q>
-                  {idComents === feed.idUser._id ? (
-                    <button onClick={() => deleteFeed(feed._id)}>Delete</button>
-                  ) : (
-                    <></>
-                  )}
-                </article>
-              ))
-            ) : (
-              <h2>No feeds in this activity</h2>
-            )}
+            <div className="carousel-div">
+              {feeds.length ? (
+                feeds.map((feed) => (
+                  <article className="ocio-feed" key={feed._id}>
+                    <img src={feed.idUser.avatar} alt={feed.idUser.userName} />
+                    <h2>{feed.idUser.userName}</h2>
+                    {feed.stars === 5 ? (
+                      <h2>⭐⭐⭐⭐⭐</h2>
+                    ) : feed.stars === 4 ? (
+                      <h2>⭐⭐⭐⭐</h2>
+                    ) : feed.stars === 3 ? (
+                      <h2>⭐⭐⭐</h2>
+                    ) : feed.stars === 2 ? (
+                      <h2>⭐⭐</h2>
+                    ) : (
+                      <h2>⭐</h2>
+                    )}
+                    <q>
+                      <i>{feed.feed}</i>
+                    </q>
+                    {idComents === feed.idUser._id ? (
+                      <button onClick={() => deleteFeed(feed._id)}>Delete</button>
+                    ) : (
+                      <></>
+                    )}
+                  </article>
+                ))
+              ) : (
+                <h2>No feeds in this activity</h2>
+              )}
+            </div>
+
             {alreadyFeed === false ? (
               <div className="comment-create">
-                <h2>Haz un comentario</h2>
-                <form onSubmit={(ev) => createFeed(ev)}>
-                  <ul>
-                    <button
-                      type="button"
-                      value="1"
-                      onClick={() => countingStars(1, hiddenStar1)}
-                      ref={hiddenStar1}
-                    >
-                      ⭐
-                    </button>
-                    <button
-                      value="2"
-                      type="button"
-                      onClick={() => countingStars(2, hiddenStar2)}
-                      ref={hiddenStar2}
-                    >
-                      ⭐
-                    </button>
-                    <button
-                      value="3"
-                      type="button"
-                      onClick={() => {
-                        countingStars(3, hiddenStar3);
-                      }}
-                      ref={hiddenStar3}
-                    >
-                      ⭐
-                    </button>
-                    <button
-                      value="4"
-                      type="button"
-                      onClick={() => countingStars(4, hiddenStar4)}
-                      ref={hiddenStar4}
-                    >
-                      ⭐
-                    </button>
-                    <button
-                      value="5"
-                      type="button"
-                      onClick={() => countingStars(5, hiddenStar5)}
-                      ref={hiddenStar5}
-                    >
-                      ⭐
-                    </button>
-                  </ul>
-                  <textarea
-                    name="textarea2"
-                    maxLength={200}
-                    onChange={(ev) => {
-                      setNewFeed({ ...newFeed, feed: ev.target.value });
-                    }}
-                  ></textarea>
-                  <button type="submit"> + </button>
-                </form>
+                <div>
+                  <form onSubmit={(ev) => createFeed(ev)}>
+                    <div className="Feeds-coment-stars">
+                      <h2>Has un comentario</h2>
+                      <ul className="startsComent">
+                        <button
+                          type="button"
+                          value="1"
+                          onClick={() => countingStars(1, hiddenStar1)}
+                          ref={hiddenStar1}
+                        >
+                          ⭐
+                        </button>
+                        <button
+                          value="2"
+                          type="button"
+                          onClick={() => countingStars(2, hiddenStar2)}
+                          ref={hiddenStar2}
+                        >
+                          ⭐
+                        </button>
+                        <button
+                          value="3"
+                          type="button"
+                          onClick={() => {
+                            countingStars(3, hiddenStar3);
+                          }}
+                          ref={hiddenStar3}
+                        >
+                          ⭐
+                        </button>
+                        <button
+                          value="4"
+                          type="button"
+                          onClick={() => countingStars(4, hiddenStar4)}
+                          ref={hiddenStar4}
+                        >
+                          ⭐
+                        </button>
+                        <button
+                          value="5"
+                          type="button"
+                          onClick={() => countingStars(5, hiddenStar5)}
+                          ref={hiddenStar5}
+                        >
+                          ⭐
+                        </button>
+                      </ul>
+                    </div>
+                    <div className="input-feeds">
+                      <textarea
+                        className="inputComentComunty2"
+                        name="textarea"
+                        maxLength={200}
+                        onChange={(ev) => {
+                          setNewFeed({ ...newFeed, feed: ev.target.value });
+                        }}
+                      ></textarea>
+                      <button className="perfil-button-act" type="submit">
+                        Publicar{' '}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
                 {error && <h3>{error}</h3>}
               </div>
             ) : (
@@ -279,56 +296,56 @@ const ActivityDetail = () => {
             )}
           </section>
           <div className="activity-coment">
-            <section className="ocio-comments">
+            <div className="ocio-blog">
               <h2 className="h2Coment">Comentarios de la comunidad</h2>
-
-              <div className="ocio-blog">
-                {comments.length ? (
-                  comments.map((comment) => (
-                    <article className="ocio-comment" key={comment._id}>
-                      <div className="ocio-comment-avatar">
-                        <img src={comment.idUser.avatar} alt={comment.idUser.userName} />
-                        <h2>{comment.idUser.userName}</h2>
-                      </div>
-                      <q>
-                        <i className="ocio-comment-p">{comment.comment}</i>
-                      </q>
-                      <div>
-                        {idComents === comment.idUser._id ? (
-                          <button onClick={() => deleteComment(comment._id)}>
-                            Delete
-                          </button>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                    </article>
-                  ))
-                ) : (
-                  <div>
-                    <h2>No hay comentarios en la actividad</h2>
-                    {/* <label htmlFor="input">Agrega un comentario</label>
+              {comments.length ? (
+                comments.map((comment) => (
+                  <article className="ocio-comment" key={comment._id}>
+                    <div className="ocio-comment-avatar">
+                      <img src={comment.idUser.avatar} alt={comment.idUser.userName} />
+                      <h2>{comment.idUser.userName}</h2>
+                    </div>
+                    <q>
+                      <i className="ocio-comment-p">{comment.comment}</i>
+                    </q>
+                    <div>
+                      {idComents === comment.idUser._id ? (
+                        <button
+                          className="perfil-button-act"
+                          onClick={() => deleteComment(comment._id)}
+                        >
+                          Delete
+                        </button>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  </article>
+                ))
+              ) : (
+                <div>
+                  <h2>No hay comentarios en la actividad</h2>
+                  {/* <label htmlFor="input">Agrega un comentario</label>
                       <input name="input">.....</input> */}
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
+            </div>
 
-              <div className="comment-create1">
-                <form className="comment-create2" onSubmit={(ev) => createComment(ev)}>
-                  <textarea
-                    className="inputComentComunty"
-                    name="textarea2"
-                    maxLength={200}
-                    onChange={(ev) => {
-                      setNewComment({ ...newComment, comment: ev.target.value });
-                    }}
-                  ></textarea>
-                  <button className="buttonComent" type="submit">
-                    Publish
-                  </button>
-                </form>
-              </div>
-            </section>
+            <div className="comment-create1">
+              <form className="comment-create2" onSubmit={(ev) => createComment(ev)}>
+                <textarea
+                  className="inputComentComunty"
+                  name="textarea"
+                  maxLength={200}
+                  onChange={(ev) => {
+                    setNewComment({ ...newComment, comment: ev.target.value });
+                  }}
+                ></textarea>
+                <button className="perfil-button-act" type="submit">
+                  Publicar
+                </button>
+              </form>
+            </div>
           </div>
         </figure>
       ) : (
