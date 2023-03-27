@@ -51,7 +51,7 @@ const Profile = () => {
   }, [loaded]);
 
   return (
-    <main>
+    <main className="mainProfile">
       <div className="container2">
         <h1>Profile</h1>
         <div className="perfil-container">
