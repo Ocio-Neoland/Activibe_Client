@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  width: 100%;
 }
 .av-section-container {
   width: auto;
@@ -10,7 +11,7 @@
   gap: rem;
   margin-top: 2rem;
 }
-.deleteLike{
+.deleteLike {
   border: none;
   background-color: transparent;
   width: 1rem;
