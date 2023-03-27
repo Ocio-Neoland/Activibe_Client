@@ -1,8 +1,10 @@
 import './ActivityDetail.css';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
+
 import { useParams } from 'react-router-dom';
 
+import Map from '../../Components/Map/Map';
 import { CityContext } from '../../Context/CityContext';
 import { API } from '../../Services/API';
 
@@ -13,11 +15,15 @@ const ActivityDetail = () => {
     const savedName = localStorage.getItem('id');
     return savedName || null;
   });
+
   const [details, setDetails] = useState('');
   const [alreadyFeed, setAlreadyFeed] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
   const [comments, setComments] = useState('');
+
+  const [longitud, setLongitud] = useState(null);
+  const [latitud, setLatitud] = useState(null);
 
   const hiddenStar5 = useRef('null');
   const hiddenStar4 = useRef('null');
@@ -37,12 +43,26 @@ const ActivityDetail = () => {
     idUser: idComents,
     idActivity: id,
   });
+
   const [feeds, setFeeds] = useState('');
+
+  const getLocation = async (info) => {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${info},Spain&format=jsonv2`,
+    );
+    const data = await res.json();
+    setLongitud(data[0].lat);
+    setLatitud(data[0].lon);
+  };
+
   const getSection = async () => {
     API.get(`/activities/${city}/${id}`).then((res) => {
       setDetails(res.data);
       setComments(res.data.comments);
       setFeeds(res.data.feeds);
+      localStorage.setItem('location', res.data.coordinates.replaceAll(' ', '+'));
+      getLocation(localStorage.getItem('location'));
+
       const feedsOfUser = res.data.feeds.filter((feed) => feed.idUser._id === idComents);
       if (feedsOfUser.length) {
         setAlreadyFeed(true);
@@ -143,7 +163,7 @@ const ActivityDetail = () => {
   }, []);
 
   return (
-    <main>
+    <main className="detail-main">
       <div className="description-act">
         <div className="descrption-img">
           <img className="ocio-img-details" src={details.image} alt={details.name} />
@@ -156,145 +176,153 @@ const ActivityDetail = () => {
         </div>
         <div className="curve"></div>
       </div>
-      <div className="divMap">
-        <div className="ocio-map">x</div>
-      </div>
+
       {loaded ? (
         <figure className="ocio-figure">
-          <section className="ocio-feeds">
-            <div className="ValoracionesUsers">
-              <h2>Valoraciones de los Usuarios</h2>
+          <div className="mapVal">
+            <div className="divMap">
+              <Map prop1={longitud} prop2={latitud} prop3={details.location} />
+            </div>
+            <section className="ocio-feeds">
+              <div className="ValoracionesUsers">
+                <h2>Valoraciones de los Usuarios {`( ${feeds.length} )`}</h2>
 
-              <div className="ocio-media">
-                {details.feeds.length === 0 ? (
-                  <h1 className="feeds-H1">0/5</h1>
-                ) : (
-                  <h1 className="feeds-H1">{details.mediaStars.toFixed(1)}</h1>
-                )}
-                <div className="ocio-media-right">
-                  {details.mediaStars === 5 ? (
-                    <p>⭐⭐⭐⭐⭐</p>
-                  ) : details.mediaStars < 4.5 && details.mediaStars >= 3.5 ? (
-                    <p>⭐⭐⭐⭐</p>
-                  ) : details.mediaStars < 3.5 && details.mediaStars >= 2.5 ? (
-                    <p>⭐⭐⭐</p>
-                  ) : details.mediaStars < 2.5 && details.mediaStars >= 1.5 ? (
-                    <p>⭐⭐</p>
+                <div className="ocio-media">
+                  {details.feeds.length === 0 ? (
+                    <h1 className="feeds-H1">0/5</h1>
                   ) : (
-                    <p>⭐</p>
+                    <h1 className="feeds-H1">{details.mediaStars.toFixed(1)}</h1>
                   )}
-                  {/* <h2>
+                  <div className="ocio-media-right">
+                    {details.mediaStars === 5 ? (
+                      <p>⭐⭐⭐⭐⭐</p>
+                    ) : details.mediaStars < 4.5 && details.mediaStars >= 3.5 ? (
+                      <p>⭐⭐⭐⭐</p>
+                    ) : details.mediaStars < 3.5 && details.mediaStars >= 2.5 ? (
+                      <p>⭐⭐⭐</p>
+                    ) : details.mediaStars < 2.5 && details.mediaStars >= 1.5 ? (
+                      <p>⭐⭐</p>
+                    ) : (
+                      <p>⭐</p>
+                    )}
+                    {/* <h2>
                     {details.feeds.length}
                     {details.feeds.length === 1 ? ' valoracion.' : ' valoraciones.'}
                   </h2> */}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="carousel-div">
-              {feeds.length ? (
-                feeds.map((feed) => (
-                  <article className="ocio-feed" key={feed._id}>
-                    <img src={feed.idUser.avatar} alt={feed.idUser.userName} />
-                    <h2>{feed.idUser.userName}</h2>
-                    {feed.stars === 5 ? (
-                      <h2>⭐⭐⭐⭐⭐</h2>
-                    ) : feed.stars === 4 ? (
-                      <h2>⭐⭐⭐⭐</h2>
-                    ) : feed.stars === 3 ? (
-                      <h2>⭐⭐⭐</h2>
-                    ) : feed.stars === 2 ? (
-                      <h2>⭐⭐</h2>
-                    ) : (
-                      <h2>⭐</h2>
-                    )}
-                    <q>
-                      <i>{feed.feed}</i>
-                    </q>
-                    {idComents === feed.idUser._id ? (
-                      <button onClick={() => deleteFeed(feed._id)}>Delete</button>
-                    ) : (
-                      <></>
-                    )}
-                  </article>
-                ))
-              ) : (
-                <h2>No feeds in this activity</h2>
-              )}
-            </div>
+              <div className="carousel-div">
+                {feeds.length ? (
+                  feeds.map((feed) => (
+                    <article className="ocio-feed" key={feed._id}>
+                      <img src={feed.idUser.avatar} alt={feed.idUser.userName} />
+                      <h2>{feed.idUser.userName}</h2>
+                      {feed.stars === 5 ? (
+                        <h2>⭐⭐⭐⭐⭐</h2>
+                      ) : feed.stars === 4 ? (
+                        <h2>⭐⭐⭐⭐</h2>
+                      ) : feed.stars === 3 ? (
+                        <h2>⭐⭐⭐</h2>
+                      ) : feed.stars === 2 ? (
+                        <h2>⭐⭐</h2>
+                      ) : (
+                        <h2>⭐</h2>
+                      )}
+                      <q>
+                        <i>{feed.feed}</i>
+                      </q>
+                      {idComents === feed.idUser._id ? (
+                        <button
+                          className="btn-feeds"
+                          onClick={() => deleteFeed(feed._id)}
+                        >
+                          Eliminar
+                        </button>
+                      ) : (
+                        <></>
+                      )}
+                    </article>
+                  ))
+                ) : (
+                  <h2>No feeds in this activity</h2>
+                )}
+              </div>
 
-            {alreadyFeed === false ? (
-              <div className="comment-create">
-                <div>
-                  <form onSubmit={(ev) => createFeed(ev)}>
-                    <div className="Feeds-coment-stars">
-                      <h2>Has un comentario</h2>
-                      <ul className="startsComent">
-                        <button
-                          type="button"
-                          value="1"
-                          onClick={() => countingStars(1, hiddenStar1)}
-                          ref={hiddenStar1}
-                        >
-                          ⭐
-                        </button>
-                        <button
-                          value="2"
-                          type="button"
-                          onClick={() => countingStars(2, hiddenStar2)}
-                          ref={hiddenStar2}
-                        >
-                          ⭐
-                        </button>
-                        <button
-                          value="3"
-                          type="button"
-                          onClick={() => {
-                            countingStars(3, hiddenStar3);
+              {alreadyFeed === false ? (
+                <div className="comment-create">
+                  <div className="contain-form">
+                    <form className="form-feeds" onSubmit={(ev) => createFeed(ev)}>
+                      <div className="Feeds-coment-stars">
+                        <h2>Valora y comenta</h2>
+                        <ul className="startsComent">
+                          <button
+                            type="button"
+                            value="1"
+                            onClick={() => countingStars(1, hiddenStar1)}
+                            ref={hiddenStar1}
+                          >
+                            ⭐
+                          </button>
+                          <button
+                            value="2"
+                            type="button"
+                            onClick={() => countingStars(2, hiddenStar2)}
+                            ref={hiddenStar2}
+                          >
+                            ⭐
+                          </button>
+                          <button
+                            value="3"
+                            type="button"
+                            onClick={() => {
+                              countingStars(3, hiddenStar3);
+                            }}
+                            ref={hiddenStar3}
+                          >
+                            ⭐
+                          </button>
+                          <button
+                            value="4"
+                            type="button"
+                            onClick={() => countingStars(4, hiddenStar4)}
+                            ref={hiddenStar4}
+                          >
+                            ⭐
+                          </button>
+                          <button
+                            value="5"
+                            type="button"
+                            onClick={() => countingStars(5, hiddenStar5)}
+                            ref={hiddenStar5}
+                          >
+                            ⭐
+                          </button>
+                        </ul>
+                      </div>
+                      <div className="input-feeds">
+                        <textarea
+                          className="inputComentComunty2"
+                          name="textarea"
+                          maxLength={200}
+                          onChange={(ev) => {
+                            setNewFeed({ ...newFeed, feed: ev.target.value });
                           }}
-                          ref={hiddenStar3}
-                        >
-                          ⭐
+                        ></textarea>
+                        <button className="btn-public" type="submit">
+                          Publicar{' '}
                         </button>
-                        <button
-                          value="4"
-                          type="button"
-                          onClick={() => countingStars(4, hiddenStar4)}
-                          ref={hiddenStar4}
-                        >
-                          ⭐
-                        </button>
-                        <button
-                          value="5"
-                          type="button"
-                          onClick={() => countingStars(5, hiddenStar5)}
-                          ref={hiddenStar5}
-                        >
-                          ⭐
-                        </button>
-                      </ul>
-                    </div>
-                    <div className="input-feeds">
-                      <textarea
-                        className="inputComentComunty2"
-                        name="textarea"
-                        maxLength={200}
-                        onChange={(ev) => {
-                          setNewFeed({ ...newFeed, feed: ev.target.value });
-                        }}
-                      ></textarea>
-                      <button className="perfil-button-act" type="submit">
-                        Publicar{' '}
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                      </div>
+                    </form>
+                  </div>
 
-                {error && <h3>{error}</h3>}
-              </div>
-            ) : (
-              <h2>Gracias por valorar la actividad</h2>
-            )}
-          </section>
+                  {error && <h3>{error}</h3>}
+                </div>
+              ) : (
+                <h2>Gracias por valorar la actividad</h2>
+              )}
+            </section>
+          </div>
           <div className="activity-coment">
             <div className="ocio-blog">
               <h2 className="h2Coment">Comentarios de la comunidad</h2>
@@ -311,10 +339,10 @@ const ActivityDetail = () => {
                     <div>
                       {idComents === comment.idUser._id ? (
                         <button
-                          className="perfil-button-act"
+                          className="btn-coments"
                           onClick={() => deleteComment(comment._id)}
                         >
-                          Delete
+                          Eliminar
                         </button>
                       ) : (
                         <></>
