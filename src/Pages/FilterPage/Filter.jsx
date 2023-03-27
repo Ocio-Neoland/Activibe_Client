@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import { CityContext } from '../../Context/CityContext';
 import { SearchContext } from '../../Context/SearchContext';
-
 import { API } from '../../Services/API';
 
 const Filter = () => {

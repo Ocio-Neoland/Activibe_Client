@@ -1,10 +1,9 @@
-
-main{
+main {
   width: 1499px;
 }
 .ocio-feeds {
   gap: 1rem;
-background-color: white;
+  background-color: white;
   margin-top: 2rem;
   align-items: center;
   margin-bottom: 2rem;
@@ -13,7 +12,7 @@ background-color: white;
   border-radius: 8px;
   color: var(--av-color-text-primary);
 }
-.ValoracionesUsers{
+.ValoracionesUsers {
   display: flex;
   width: 100%;
   height: 5rem;
@@ -22,17 +21,16 @@ background-color: white;
   padding: 5px;
   align-items: center;
 }
-.ValoracionesUsers > h2{
+.ValoracionesUsers > h2 {
   display: flex;
-text-align: center;
-justify-content: center;
+  text-align: center;
+  justify-content: center;
 }
-.feedsUsuarios{
+.feedsUsuarios {
   width: 100%;
   padding: 1rem;
-
 }
-.carousel-div{
+.carousel-div {
   width: 100%;
   height: 20rem;
   border: 2px solid black;
@@ -41,16 +39,15 @@ justify-content: center;
   overflow-y: none;
   gap: 2rem;
   padding: 0.5rem 2rem;
-align-items: center;
-margin: 2rem 0 6rem 0;
-border-radius: 8px;
-
+  align-items: center;
+  margin: 2rem 0 6rem 0;
+  border-radius: 8px;
 }
 
-.tarts-Feeds{
+.tarts-Feeds {
   font-size: 5rem;
 }
-.input-feeds{
+.input-feeds {
   margin-top: 1rem;
   width: 100%;
   height: 4rem;
@@ -58,29 +55,24 @@ border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
-.startsComent{
+.startsComent {
   display: flex;
   gap: 0.5rem;
-
 }
-.startsComent button{
-border: none ;
-background-color: transparent;
-font-size: 1.5rem;
-
+.startsComent button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
 }
-.feeds-H1{
+.feeds-H1 {
   font-size: 3rem;
 }
 .ocio-media {
-
   color: black;
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
-.textarea{
+.textarea {
   width: 50rem;
   height: 3rem;
 }
@@ -126,7 +118,7 @@ left: 6.5rem;
   border-radius: 8px;
   height: 20rem;
   margin-bottom: 10rem;
-  width: 100%
+  width: 100%;
 }
 .description-activity2 {
   margin-top: 9rem;
@@ -177,14 +169,13 @@ left: 6.5rem;
 .h2Coment {
   width: 100%;
   height: 3rem;
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
   text-align: center;
   color: var(--av-color-background-primary);
 }
 
 .ocio-comment {
- 
   border-radius: 7px;
   width: 100%;
   display: flex;
@@ -205,10 +196,7 @@ justify-content: center;
   overflow-y: scroll;
   scroll-behavior: smooth;
   color: black;
- 
 }
-
-
 
 .ocio-map {
   width: 300px;
@@ -219,7 +207,7 @@ justify-content: center;
 }
 .divMap {
   width: 50%;
-  padding:0 0 0 5rem;
+  padding: 0 0 0 5rem;
 }
 
 .ocio-comment-avatar {
@@ -227,8 +215,6 @@ justify-content: center;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-
-
 }
 
 .ocio-comment-avatar > img {
@@ -237,14 +223,11 @@ justify-content: center;
   border-radius: 50%;
   border: 1px solid black;
   object-fit: cover;
-
-
 }
 
 .ocio-comment-avatar > h2 {
   font-size: 12px;
 }
-
 
 q {
   text-align: justify;
@@ -283,10 +266,9 @@ q {
   margin-left: 2rem;
 }
 
-
 .activity-coment {
   display: flex;
-  justify-content: center;            
+  justify-content: center;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -297,7 +279,7 @@ q {
   bottom: 21rem;
   border-radius: 8px;
 }
-.Feeds-coment-stars{
+.Feeds-coment-stars {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -344,15 +326,15 @@ q {
 .hide:hover {
   opacity: 100%;
 }
-.comment-create2{
+.comment-create2 {
   width: 95%;
   display: flex;
-gap: 1rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
   color: white;
 }
-.inputComentComunty{
+.inputComentComunty {
   width: 29rem;
   height: 3.5rem;
   border-radius: 8px;
@@ -360,10 +342,10 @@ gap: 1rem;
   font-size: 1rem;
   padding: 5px;
 }
-.inputComentComunty:focus{
+.inputComentComunty:focus {
   border: 1px solid var(--av-color-highlight);
 }
-.inputComentComunty2{
+.inputComentComunty2 {
   width: 35rem;
   height: 3.5rem;
   border-radius: 8px;
@@ -371,10 +353,4 @@ gap: 1rem;
   font-size: 1rem;
   padding: 5px;
   gap: 2rem;
-
 }
-
-
-
-
-

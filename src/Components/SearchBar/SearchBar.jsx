@@ -3,6 +3,7 @@ import './SearchBar.css';
 import React, { useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+
 import { SearchContext } from '../../Context/SearchContext';
 
 const SearchBar = () => {
