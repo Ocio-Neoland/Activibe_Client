@@ -3,6 +3,7 @@ import './Register.css';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { API } from '../../Services/API';
 
@@ -22,6 +23,18 @@ const Register = () => {
     setShowImgAvatar(URL.createObjectURL(e.target.files[0]));
   };
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
+
   let navigate = useNavigate();
   const formSubmit = (formData) => {
     let data;
@@ -32,7 +45,24 @@ const Register = () => {
         password: formData.password,
         avatar: imgavatar,
       };
+      Toast.fire({
+        icon: 'success',
+        title: '¡Registro completado con éxito!',
+        position: 'center',
+        iconColor: 'white',
+        customClass: {
+          popup: 'registerAlert',
+        },
+      });
     } else {
+      Swal.fire({
+        text: 'Por favor, complete todos los campos correctamente',
+        confirmButtonText: 'Vale',
+        customClass: {
+          popup: 'errorAlert',
+        },
+        confirmButtonColor: '#0065de',
+      });
       data = {
         email: '',
         userName: '',
@@ -54,7 +84,9 @@ const Register = () => {
     <main className="main-register">
       <div className="containerRegister">
         <form className="form" onSubmit={handleSubmit(formSubmit)}>
-          <span className="sub mb">Register to get full access now </span>
+          <span className="sub mb">
+            Regístrate para obtener acceso completo a ActiVibe
+          </span>
 
           <input
             type="file"
@@ -81,12 +113,12 @@ const Register = () => {
                 </>
               )}
 
-              <p className="ParrafoAvatar">avatar</p>
+              <p className="ParrafoAvatar">Imagen perfil</p>
             </label>
           </div>
 
           <label className="username" htmlFor="userName">
-            Username:
+            Usuario:
           </label>
           <input
             placeholder="Username"
@@ -107,7 +139,7 @@ const Register = () => {
             placeholder="Email"
           />
 
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Contraseña:</label>
           <input
             type={shown ? 'text' : 'password'}
             value={password}
@@ -147,13 +179,10 @@ const Register = () => {
               </button>
             )}
             <div className="passwordRequisitos">
-              <p>min 8 characters,</p>
-              <p>1 uppercase,</p>
-              <p>1 symbol,</p>
-              <p>1 number</p>
+              <p>Mínimo 8 caracteres: 1 mayúscula, 1 número y 1 símbolo</p>
             </div>
           </div>
-          <label htmlFor="password">repit Password:</label>
+          <label htmlFor="password">Repetir contraseña:</label>
           <input
             placeholder="repeatPassword"
             type={shown1 ? 'text' : 'password'}
@@ -192,7 +221,7 @@ const Register = () => {
             )}
           </div>
           <button className="button" type="submit">
-            Register
+            Registrarse
           </button>
         </form>
       </div>

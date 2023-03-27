@@ -14,5 +14,5 @@ const APIHeaders = {
 export const API = axios.create({
   baseURL: 'http://localhost:8000/api/v1',
   headers: APIHeaders,
-  timeout: 4000,
+  timeout: 2500,
 });
