@@ -1,7 +1,6 @@
 import './ActivityDetail.css';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
-
 import { useParams } from 'react-router-dom';
 
 import Map from '../../Components/Map/Map';
