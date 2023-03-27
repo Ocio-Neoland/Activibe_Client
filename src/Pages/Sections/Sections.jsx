@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import './Sections.css';
 
 import React, { useContext, useEffect, useState } from 'react';
@@ -14,6 +15,10 @@ const Sections = () => {
   const [loaded, setLoaded] = useState(false);
   const { id } = useContext(UserContext);
   const { name } = useParams();
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavorites = localStorage.getItem('favorites');
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  }); // cargar favoritos del almacenamiento local al cargar la página
   const getSection = () => {
     API.get(`/sections/${city}/${name}`).then((res) => {
       setActivities(res.data.results);
@@ -30,12 +35,22 @@ const Sections = () => {
     API.put(`/activities/favorites/${value}`, info, {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(info),
+    }).then(() => {
+      if (favorites.includes(value)) {
+        setFavorites(favorites.filter((fav) => fav !== value)); // quitar favorito
+      } else {
+        setFavorites([...favorites, value]); // agregar favorito
+      }
     });
   };
 
   useEffect(() => {
     getSection();
-  }, [name, city]);
+  }, []);
+  useEffect(() => {
+    // Guardar los favoritos en el almacenamiento local cada vez que cambian
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const filter = types.filter((filt) => filt.name === name);
 
@@ -70,11 +85,19 @@ const Sections = () => {
                   <span className="sectionCity">{activity.city}</span>
                   <p className="stars">{activity.mediaStars} ⭐</p>
                 </div>
+                <button
+                  className="deleteLike"
+                  onClick={() => chooseFavorite(activity._id)}
+                  style={{ color: favorites.includes(activity._id) ? 'red' : 'white' }}
+                >
+                  {favorites ? (
+                    <i className="fas fa-heart"></i>
+                  ) : (
+                    <i className="far fa-heart"></i>
+                  )}
+                </button>
               </div>
             </div>
-            <button className="deleteLike" onClick={() => chooseFavorite(activity._id)}>
-              💓
-            </button>
           </div>
         ))
       ) : (
@@ -85,3 +108,11 @@ const Sections = () => {
 };
 
 export default Sections;
+{
+  /* <div onClick={handleClick}>
+{isFavorite ? (
+  <i className="fas fa-heart"></i>
+) : (
+  <i className="far fa-heart"></i>
+)} */
+}

@@ -59,14 +59,14 @@
 
 .perfil-crud {
   background-color: rgba(250, 235, 215, 0.11);
-  width: 100%;
+  width: 70%;
   border-radius: 8px;
   padding: 1.5rem;
-  height: 60rem;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow-y: scroll;
+
 }
 
 .perfil-all-activities {
@@ -80,7 +80,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 5rem;
   width: 100%;
   padding: 1rem;
 }
@@ -90,8 +90,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 55%;
+  width: 50%;
+  height: 50%;
   gap: 1rem;
+
+
 }
 .perfil-fav {
   display: flex;
@@ -227,9 +230,21 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .form-change-avatar {
   display: flex;
   flex-direction: column;
+}
+.header-actividades3{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  gap: 2rem;
+  width: 100%;
 }

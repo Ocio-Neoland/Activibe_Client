@@ -9,6 +9,10 @@ const Favorites = () => {
   const { id } = useContext(UserContext);
 
   const [favorites, setFavorites] = useState([]);
+  const [favorites2] = useState(() => {
+    const storedFavorites = localStorage.getItem('favorites');
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
 
   const getUser = async () => {
     API.get(`/users/${id}`).then((res) => {
@@ -24,6 +28,8 @@ const Favorites = () => {
       body: JSON.stringify(info),
     }).then(() => {
       getUser();
+      const filteredFav = favorites2.filter((fav) => !fav.includes(value));
+      localStorage.setItem('favorites', JSON.stringify(filteredFav));
     });
   };
 
@@ -37,8 +43,10 @@ const Favorites = () => {
         <div className="perfil-act-fav">
           <div className="perfil-create">
             <div className="perfil-crud">
-              <div className="header-actividades">
+              <div className="favorityH2">
                 <h2>Mis Favoritos</h2>
+              </div>
+              <div className="header-actividades2">
                 {favorites.length ? (
                   favorites.map((favorite) => (
                     <div className="av-section-container" key={favorite._id}>
@@ -66,14 +74,21 @@ const Favorites = () => {
                             <span className="sectionCity">{favorite.city}</span>
                             <p className="stars">{favorite.mediaStars} ⭐</p>
                           </div>
+                          <button
+                            className="deleteLike"
+                            onClick={() => chooseFavorite(`${favorite._id}`)}
+                            style={{
+                              color: favorites.includes(favorite._id) ? 'white' : 'red',
+                            }}
+                          >
+                            {favorites ? (
+                              <i className="fas fa-heart"></i>
+                            ) : (
+                              <i className="far fa-heart"></i>
+                            )}
+                          </button>
                         </div>
                       </div>
-                      <button
-                        className="deleteLike"
-                        onClick={() => chooseFavorite(`${favorite._id}`)}
-                      >
-                        💓
-                      </button>
                     </div>
                   ))
                 ) : (
