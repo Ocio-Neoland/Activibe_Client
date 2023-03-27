@@ -107,7 +107,7 @@ const Profile2 = () => {
         <div className="perfil-act-fav">
           <div className="perfil-create">
             <div className="perfil-crud">
-              <div className="header-actividades">
+              <div className="header-actividades3">
                 <h2>Mis actividades</h2>
                 <button
                   onClick={(ev) => (ev.target.nextSibling.open = true)}

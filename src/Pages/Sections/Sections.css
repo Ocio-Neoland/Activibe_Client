@@ -10,6 +10,12 @@
   gap: rem;
   margin-top: 2rem;
 }
+.deleteLike{
+  border: none;
+  background-color: transparent;
+  width: 1rem;
+  font-size: 1.2rem;
+}
 
 .av-section-container::before,
 .av-section-container::after {
