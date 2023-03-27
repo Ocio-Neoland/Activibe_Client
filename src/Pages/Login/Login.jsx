@@ -3,15 +3,29 @@ import './Login.css';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { UserContext } from '../../Context/UserContext';
 import { API } from '../../Services/API';
+
 const Login = () => {
   const [show, setShow] = useState(false);
   const { register, handleSubmit } = useForm();
   let navigate = useNavigate();
   const { login } = useContext(UserContext);
   const [setError] = useState(null);
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
 
   const formSubmit = (formData) => {
     API.post('/users/login', formData)
@@ -26,9 +40,24 @@ const Login = () => {
           );
 
           navigate('/');
+          Toast.fire({
+            icon: 'success',
+            title: '¡Logueado con éxito!',
+            position: 'center',
+          });
         }
       })
       .catch((error) => {
+        Swal.fire({
+          text: 'Por favor, complete todos los campos correctamente',
+          confirmButtonText: 'Vale',
+          timer: 3000,
+          timerProgressBar: true,
+          customClass: {
+            popup: 'errorAlert',
+          },
+          confirmButtonColor: '#0065de',
+        });
         setError(error);
       });
   };
@@ -65,7 +94,6 @@ const Login = () => {
                 onClick={switchShow}
                 className="login-button-mostrar2"
               >
-                {' '}
                 <img
                   className="ojoPassword2"
                   src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667868/fotos/ojo_aqmzwt.png"
@@ -78,7 +106,6 @@ const Login = () => {
                 onClick={switchShow}
                 className="login-button-mostrar2"
               >
-                {' '}
                 <img
                   className="ojoPassword2"
                   src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679667874/fotos/ojoCerrado_sy8jkw.png"
