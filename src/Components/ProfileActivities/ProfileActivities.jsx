@@ -25,6 +25,8 @@ const Profile2 = () => {
     createdBy: id,
   });
 
+  console.log(user);
+
   const [editActivity, setEditActivity] = useState({
     name: '',
     image: '',
@@ -51,9 +53,7 @@ const Profile2 = () => {
   //CREATE
 
   const createActivities = (ev) => {
-    console.log(activity);
     ev.preventDefault();
-    console.log(activity);
     if (
       !activity.image ||
       !activity.description ||
@@ -98,8 +98,6 @@ const Profile2 = () => {
   useEffect(() => {
     getUser();
   }, [loaded]);
-
-  console.log(user);
 
   return (
     <main>
