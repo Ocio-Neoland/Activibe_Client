@@ -25,6 +25,8 @@ const Profile2 = () => {
     createdBy: id,
   });
 
+  console.log(user);
+
   const [editActivity, setEditActivity] = useState({
     name: '',
     image: '',
@@ -51,9 +53,7 @@ const Profile2 = () => {
   //CREATE
 
   const createActivities = (ev) => {
-    console.log(activity);
     ev.preventDefault();
-    console.log(activity);
     if (
       !activity.image ||
       !activity.description ||
@@ -99,15 +99,13 @@ const Profile2 = () => {
     getUser();
   }, [loaded]);
 
-  console.log(user);
-
   return (
     <main>
       <div className="container2">
         <div className="perfil-act-fav">
           <div className="perfil-create">
             <div className="perfil-crud">
-              <div className="header-actividades">
+              <div className="header-actividades3">
                 <h2>Mis actividades</h2>
                 <button
                   onClick={(ev) => (ev.target.nextSibling.open = true)}

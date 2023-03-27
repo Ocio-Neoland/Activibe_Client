@@ -32,10 +32,9 @@ export const types = [
 ];
 
 export const typesInput = ['name', 'description'];
-export const typesInput2 = ['calle', 'numero', 'codPostal', 'ciudad'];
 
 export const typesNames = [
-  '-',
+  'Tipos de actividades',
   'Naturaleza',
   'Adrenalina',
   'Deportes',
@@ -44,5 +43,5 @@ export const typesNames = [
   'Otros',
 ];
 
-export const city = ['-', 'Madrid', 'Malaga', 'Barcelona'];
+export const city = ['Ciudades', 'Madrid', 'Malaga', 'Barcelona'];
 export const cities = ['Madrid', 'Malaga', 'Barcelona'];

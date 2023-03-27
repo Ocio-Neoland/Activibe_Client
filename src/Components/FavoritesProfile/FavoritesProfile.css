@@ -2,3 +2,29 @@
   width: 100px;
   height: 50px;
 }
+.perfil-act-fav {
+  width: 50%;
+}
+
+.header-actividades > h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.favorityH2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+
+  width: 100%;
+}
+.header-actividades2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+}

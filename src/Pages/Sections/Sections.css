@@ -3,12 +3,19 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  width: 100%;
 }
 .av-section-container {
   width: auto;
   height: auto;
   gap: rem;
   margin-top: 2rem;
+}
+.deleteLike {
+  border: none;
+  background-color: transparent;
+  width: 1rem;
+  font-size: 1.2rem;
 }
 
 .av-section-container::before,
