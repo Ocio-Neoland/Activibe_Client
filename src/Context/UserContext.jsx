@@ -7,28 +7,28 @@ export const UserContextProvider = ({ children }) => {
   let navigate = useNavigate();
 
   const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem('user');
+    const savedUser = sessionStorage.getItem('user');
     const initialValue = JSON.parse(savedUser);
     return initialValue || null;
   });
 
   const [avatar, setAvatar] = useState(() => {
-    const savedAvatar = localStorage.getItem('avatar');
+    const savedAvatar = sessionStorage.getItem('avatar');
     return savedAvatar || null;
   });
 
   const [password, setPassword] = useState(() => {
-    const savedPassword = localStorage.getItem('password');
+    const savedPassword = sessionStorage.getItem('password');
     return savedPassword || null;
   });
 
   const [id, setId] = useState(() => {
-    const savedId = localStorage.getItem('id');
+    const savedId = sessionStorage.getItem('id');
     return savedId || null;
   });
 
   const [jwt, setJwt] = useState(() => {
-    const savedJwt = localStorage.getItem('token');
+    const savedJwt = sessionStorage.getItem('token');
     return savedJwt || null;
   });
 
@@ -40,11 +40,11 @@ export const UserContextProvider = ({ children }) => {
     setPassword(null);
 
     setJwt(null);
-    localStorage.removeItem('user');
-    localStorage.removeItem('password');
-    localStorage.removeItem('token');
-    localStorage.removeItem('id');
-    localStorage.removeItem('avatar');
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('password');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('avatar');
     navigate('/');
   };
 
@@ -54,11 +54,11 @@ export const UserContextProvider = ({ children }) => {
     setAvatar(resAvatar);
     setPassword(resPassword);
     setId(resId);
-    localStorage.setItem('user', JSON.stringify(resUser));
-    localStorage.setItem('token', resToken);
-    localStorage.setItem('id', resId);
-    localStorage.setItem('avatar', resAvatar);
-    localStorage.setItem('password', resPassword);
+    sessionStorage.setItem('user', JSON.stringify(resUser));
+    sessionStorage.setItem('token', resToken);
+    sessionStorage.setItem('id', resId);
+    sessionStorage.setItem('avatar', resAvatar);
+    sessionStorage.setItem('password', resPassword);
   };
 
   return (
