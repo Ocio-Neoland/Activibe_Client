@@ -13,7 +13,7 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const { setSearchFinish } = useContext(SearchContext);
   const handleClickSearch = (data) => {
-    localStorage.setItem('search', data);
+    sessionStorage.setItem('search', data);
     if (pathname !== '/filter') {
       navigate('/filter');
     }

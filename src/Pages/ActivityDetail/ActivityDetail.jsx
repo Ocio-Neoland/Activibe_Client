@@ -11,7 +11,7 @@ const ActivityDetail = () => {
   const { id } = useParams();
   const { city } = useContext(CityContext);
   const [idComents] = useState(() => {
-    const savedName = localStorage.getItem('id');
+    const savedName = sessionStorage.getItem('id');
     return savedName || null;
   });
 
@@ -59,8 +59,8 @@ const ActivityDetail = () => {
       setDetails(res.data);
       setComments(res.data.comments);
       setFeeds(res.data.feeds);
-      localStorage.setItem('location', res.data.coordinates.replaceAll(' ', '+'));
-      getLocation(localStorage.getItem('location'));
+      sessionStorage.setItem('location', res.data.coordinates.replaceAll(' ', '+'));
+      getLocation(sessionStorage.getItem('location'));
 
       const feedsOfUser = res.data.feeds.filter((feed) => feed.idUser._id === idComents);
       if (feedsOfUser.length) {
