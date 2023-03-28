@@ -6,7 +6,6 @@
 .description-act {
   display: flex;
   justify-content: center;
-
   align-items: center;
   background-color: var(--av-color-backgotund-menu);
   gap: 2rem;
@@ -17,8 +16,6 @@
   position: relative;
   bottom: 5rem;
 }
-
-
 
 .descrption-img {
   height: 80%;
@@ -103,8 +100,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
-
 
 .ocio-feed {
   padding: 1rem;
@@ -301,52 +296,18 @@ q {
   width: 100%;
   padding: 1rem;
 }
-<<<<<<< HEAD
-.carousel-div {
-  width: 100%;
-  height: 20rem;
-  border: 2px solid black;
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: none;
-  gap: 2rem;
-  padding: 0.5rem 2rem;
-  align-items: center;
-  margin: 2rem 0 6rem 0;
-  border-radius: 8px;
-}
-=======
+
 
 
 
 .tarts-Feeds {
   font-size: 5rem;
 }
-<<<<<<< HEAD
-.input-feeds {
-  margin-top: 1rem;
-  width: 100%;
-  height: 4rem;
-  gap: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.startsComent {
-  display: flex;
-  gap: 0.5rem;
-}
-.startsComent button {
-  border: none;
-  background-color: transparent;
-  font-size: 1.5rem;
-}
-.feeds-H1 {
-=======
+
 
 
 .feeds-H1{
->>>>>>> develop
+
   font-size: 3rem;
 }
 .ocio-media {
@@ -378,22 +339,8 @@ left: 6.5rem;
 
 
 
-<<<<<<< HEAD
-.description-act {
-  display: flex;
-  background-color: var(--av-color-backgotund-menu);
-  gap: 2rem;
-  color: white;
-  border-radius: 8px;
-  height: 20rem;
-  margin-bottom: 10rem;
-  width: 100%;
-}
-.description-activity2 {
-  margin-top: 9rem;
-}
-=======
->>>>>>> develop
+
+
 .description-activity2 p {
   font-size: 1.2rem;
 }
@@ -454,24 +401,6 @@ left: 6.5rem;
   padding: 0.5rem 1rem;
 }
 
-<<<<<<< HEAD
-.ocio-blog {
-  border: solid 1px black;
-  gap: 1rem;
-  flex-direction: column;
-  height: 40rem;
-  width: 90%;
-  flex-wrap: wrap;
-  background-color: white;
-  display: flex;
-  overflow-x: none;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  color: black;
-}
-=======
-
->>>>>>> develop
 
 .ocio-map {
   width: 300px;
@@ -480,14 +409,6 @@ left: 6.5rem;
   margin-bottom: 2rem;
   background-color: white;
 }
-<<<<<<< HEAD
-.divMap {
-  width: 50%;
-  padding: 0 0 0 5rem;
-}
-=======
-
->>>>>>> develop
 
 .ocio-comment-avatar {
   display: flex;
@@ -529,29 +450,8 @@ q {
   margin-left: 2rem;
 }
 
-<<<<<<< HEAD
-.activity-coment {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: white;
-  width: 45%;
-  height: 50rem;
-  position: relative;
-  bottom: 21rem;
-  border-radius: 8px;
-}
-.Feeds-coment-stars {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-=======
 
->>>>>>> develop
+
 
 
 
@@ -565,20 +465,9 @@ q {
 .hide:hover {
   opacity: 100%;
 }
-<<<<<<< HEAD
-.comment-create2 {
-  width: 95%;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-.inputComentComunty {
-=======
+
 
 .inputComentComunty{
->>>>>>> develop
   width: 29rem;
   height: 3.5rem;
   border-radius: 8px;
@@ -589,17 +478,7 @@ q {
 .inputComentComunty:focus {
   border: 1px solid var(--av-color-highlight);
 }
-<<<<<<< HEAD
-.inputComentComunty2 {
-  width: 35rem;
-  height: 3.5rem;
-  border-radius: 8px;
-
-  font-size: 1rem;
-  padding: 5px;
-  gap: 2rem;
-}
-=======
 
 
   */
+
