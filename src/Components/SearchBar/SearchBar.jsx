@@ -13,13 +13,13 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const { setSearchFinish } = useContext(SearchContext);
   const handleClickSearch = (data) => {
-    sessionStorage.setItem('search', data);
-    if (pathname !== '/filter') {
-      navigate('/filter');
+    sessionStorage.setItem('search', data.toLowerCase());
+    const search = sessionStorage.getItem('search');
+    if (pathname !== `/search?=${search}`) {
+      navigate(`/search?=${search}`);
     }
     setSearchFinish(true);
   };
-
   return (
     <div className="search">
       <input

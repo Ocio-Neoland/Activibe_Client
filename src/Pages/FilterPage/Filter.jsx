@@ -1,4 +1,5 @@
 import '../Sections/Sections.css';
+import './Filter.css';
 
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -13,14 +14,16 @@ const Filter = () => {
   const { setSearchFinish, searchFinish } = useContext(SearchContext);
 
   const [loaded, setLoaded] = useState(false);
-
+  let search;
   const filters = (data) => {
-    const search = sessionStorage.getItem('search');
+    search = sessionStorage.getItem('search');
 
     if (!data.length) {
       setLoaded(false);
     } else {
-      const searchActivities = data.filter((activity) => activity.name.includes(search));
+      const searchActivities = data.filter((activity) =>
+        activity.name.toLowerCase().includes(search),
+      );
       console.log();
       setFilter(searchActivities);
     }
@@ -41,35 +44,49 @@ const Filter = () => {
     <main>
       {' '}
       {loaded ? (
-        <div className="ocio-container-home">
-          {filter.map((activity) => (
-            <div className={activity._id} key={activity._id}>
-              <div className="av-section-container" key={activity._id}>
-                <div className="box">
-                  <div className="headerCard">
-                    <h3 className="activity">{activity.type}</h3>
-                    <Link
-                      to={`/${activity.type}/${activity._id}`}
-                      value={activity._id}
-                      className="masInfo"
-                    >
-                      + info
-                    </Link>
-                  </div>
+        <div className="ocio-title-center">
+          <h2>
+            Hemos encontrado {filter.length}
+            {filter.length === 1 ? ' coincidencia' : ' coindicencias'} en tu búsqueda
+          </h2>
+          <div className="ocio-container-filter">
+            {filter.length > 0 ? (
+              filter.map((activity) => (
+                <div className={activity._id} key={activity._id}>
+                  <div className="av-section-container" key={activity._id}>
+                    <div className="box">
+                      <div className="headerCard">
+                        <h3 className="activity">{activity.type}</h3>
+                        <Link
+                          to={`/${activity.type}/${activity._id}`}
+                          value={activity._id}
+                          className="masInfo"
+                        >
+                          + info
+                        </Link>
+                      </div>
 
-                  <img className="imgSection" src={activity.image} alt={activity.name} />
-                  <div className="subBox">
-                    <strong>{activity.name}</strong>
-                    <span>{activity.location}</span>
-                    <div className="footerCard">
-                      <span className="sectionCity">{activity.city}</span>
-                      <p className="stars">{activity.mediaStars} ⭐</p>
+                      <img
+                        className="imgSection"
+                        src={activity.image}
+                        alt={activity.name}
+                      />
+                      <div className="subBox">
+                        <strong>{activity.name}</strong>
+                        <span>{activity.location}</span>
+                        <div className="footerCard">
+                          <span className="sectionCity">{activity.city}</span>
+                          <p className="stars">{activity.mediaStars} ⭐</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))
+            ) : (
+              <h2>No hay resultados de la búsqueda</h2>
+            )}
+          </div>
         </div>
       ) : (
         <h2>Loading</h2>

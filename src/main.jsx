@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     }
                   />
                   <Route path="/login" element={<Login />} />
-                  <Route path="/filter" element={<Filter />} />
+                  <Route path="/search" element={<Filter />} />
                   <Route
                     path="/:name/:id"
                     element={
