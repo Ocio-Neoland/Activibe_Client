@@ -2,7 +2,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
   z-index: 4000;
 }
@@ -47,10 +47,11 @@ header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
   min-height: 250px;
   background-color: var(--av-color-backgotund-menu);
   color: var(--av-color-text-primary);
-  width: 100%;
+  width: 100vw;
   max-height: 300px;
   flex-direction: column;
   margin-top: 2.2rem;
@@ -59,6 +60,7 @@ header {
   top: 2.8rem;
   z-index: 1;
   position: fixed;
+  right: 0px;
 }
 
 .ocio-menu-sections2 {
@@ -72,12 +74,14 @@ header {
   max-height: 300px;
   margin-top: 2.2rem;
   gap: 4rem;
-  padding: 2rem 4rem;
+  padding: 2rem 7rem;
   top: 2.8rem;
   z-index: 1;
   position: fixed;
-  margin-left: 74rem;
-  border-radius: 12px;
+  margin-left: 51rem;
+
+  border-end-end-radius: 12px;
+  border-end-start-radius: 12px;
 }
 .ocio-menu-sections3 {
   display: flex;
@@ -95,8 +99,9 @@ header {
   z-index: 1;
   position: fixed;
   flex-direction: column;
-  margin-right: 16rem;
-  border-radius: 12px;
+  margin-right: 29rem;
+  border-end-end-radius: 12px;
+  border-end-start-radius: 12px;
 }
 
 header > .ocio-nav-container {
@@ -154,7 +159,7 @@ header > div > nav > ul > li > .active {
   justify-content: left;
   align-items: center;
   gap: 1rem;
-  width: 300px;
+  width: 200px;
   background-color: inherit;
   border: 0;
   color: white;
@@ -199,4 +204,15 @@ header > div > nav > ul > li > .active {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+}
+
+.ocio-a-container a,
+button:hover {
+  color: var(--av-color-highlight);
+  cursor: pointer;
+}
+
+.ocio-a-container2:hover {
+  color: var(--av-color-highlight);
+  cursor: pointer;
 }

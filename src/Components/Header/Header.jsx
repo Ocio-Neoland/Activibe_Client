@@ -57,26 +57,25 @@ const Header = () => {
     }
   };
 
-  // const handleClickOutside = (event) => {
-  // const mybtns = document.querySelectorAll('h2');
-  // console.log(event);
-  // if (
-  //   (menuBtn.current && !menuBtn.current.contains(event.target)) ||
-  //   (menuCity.current && !menuCity.current.contains(event.target)) ||
-  //   (hiddenMenu.current && !hiddenMenu.current.contains(event.target)) ||
-  //   (mybtns[0].localName && !mybtns[0].localName.contains(event.target.localName))
-  // ) {
-  //   setChooseCity(false);
-  //   setMenu(false);
-  //   setProfile(false);
-  // }
-  // };
+  const handleClickOutside = (event) => {
+    if (
+      event.target.localName === 'h2' ||
+      event.target.localName === 'button' ||
+      event.target.localName === 'a'
+    ) {
+      console.log(event);
+    } else {
+      setChooseCity(false);
+      setMenu(false);
+      setProfile(false);
+    }
+  };
 
   useEffect(() => {
-    // document.addEventListener('mousedown', handleClickOutside);
-    // return () => {
-    //   document.removeEventListener('mousedown', handleClickOutside);
-    // };
+    document.addEventListener('mouseup', handleClickOutside);
+    return () => {
+      document.removeEventListener('mouseup', handleClickOutside);
+    };
   }, []);
 
   return (
@@ -108,6 +107,21 @@ const Header = () => {
               >
                 Menu
               </button>
+              {menu !== false && (
+                <ul className="ocio-menu-sections hide-menu" ref={hiddenMenu}>
+                  {types.map((type) => (
+                    <NavLink
+                      className="ocio-a-container"
+                      onClick={handleClickMenu}
+                      to={`/${type.name}`}
+                      key={type.name}
+                    >
+                      <img className="icon-menu" src={type.img} alt={type.name} />
+                      <h2>{type.name}</h2>
+                    </NavLink>
+                  ))}
+                </ul>
+              )}
             </li>
             <li>
               <SearchBar />
@@ -139,8 +153,8 @@ const Header = () => {
           {cities.map((type) => (
             <button
               className="ocio-a-container3"
-              onClick={() => {
-                setCity(type), setChooseCity(false), navigate('/');
+              onClick={(ev) => {
+                console.log(ev), setCity(type), setChooseCity(false), navigate('/');
               }}
               key={type}
             >
@@ -149,21 +163,7 @@ const Header = () => {
           ))}
         </ul>
       )}
-      {menu !== false && (
-        <ul className="ocio-menu-sections hide-menu" ref={hiddenMenu}>
-          {types.map((type) => (
-            <NavLink
-              className="ocio-a-container"
-              onClick={handleClickMenu}
-              to={`/${type.name}`}
-              key={type.name}
-            >
-              <img className="icon-menu" src={type.img} alt={type.name} />
-              <h2>{type.name}</h2>
-            </NavLink>
-          ))}
-        </ul>
-      )}
+
       {profile !== false && (
         <ul className="ocio-menu-sections2 hide-menu">
           <li>
