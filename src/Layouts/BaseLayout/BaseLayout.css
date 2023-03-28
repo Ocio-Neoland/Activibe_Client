@@ -1,7 +1,7 @@
 .gridLayout {
   display: grid;
   grid-template-rows:
-    15vh
+    10vh
     1fr
     20vh;
 }
