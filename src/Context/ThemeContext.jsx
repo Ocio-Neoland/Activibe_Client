@@ -3,15 +3,15 @@ import { createContext, useEffect, useState } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [theme, setTheme] = useState(sessionStorage.getItem('theme') || 'dark');
 
   const toggleTheme = () => {
     if (theme === 'dark') {
       setTheme('light');
-      localStorage.setItem('theme', 'light');
+      sessionStorage.setItem('theme', 'light');
     } else {
       setTheme('dark');
-      localStorage.setItem('theme', 'dark');
+      sessionStorage.setItem('theme', 'dark');
     }
   };
 

@@ -10,7 +10,7 @@ const Favorites = () => {
 
   const [favorites, setFavorites] = useState([]);
   const [favorites2] = useState(() => {
-    const storedFavorites = localStorage.getItem('favorites');
+    const storedFavorites = sessionStorage.getItem('favorites');
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
 
@@ -29,7 +29,7 @@ const Favorites = () => {
     }).then(() => {
       getUser();
       const filteredFav = favorites2.filter((fav) => !fav.includes(value));
-      localStorage.setItem('favorites', JSON.stringify(filteredFav));
+      sessionStorage.setItem('favorites', JSON.stringify(filteredFav));
     });
   };
 

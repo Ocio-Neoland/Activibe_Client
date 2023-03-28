@@ -15,7 +15,7 @@ const Filter = () => {
   const [loaded, setLoaded] = useState(false);
 
   const filters = (data) => {
-    const search = localStorage.getItem('search');
+    const search = sessionStorage.getItem('search');
 
     if (!data.length) {
       setLoaded(false);

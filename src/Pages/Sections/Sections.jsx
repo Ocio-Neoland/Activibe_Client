@@ -16,7 +16,7 @@ const Sections = () => {
   const { id } = useContext(UserContext);
   const { name } = useParams();
   const [favorites, setFavorites] = useState(() => {
-    const storedFavorites = localStorage.getItem('favorites');
+    const storedFavorites = sessionStorage.getItem('favorites');
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   }); // cargar favoritos del almacenamiento local al cargar la página
   const getSection = () => {
@@ -49,7 +49,7 @@ const Sections = () => {
   }, []);
   useEffect(() => {
     // Guardar los favoritos en el almacenamiento local cada vez que cambian
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    sessionStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
   const filter = types.filter((filt) => filt.name === name);

@@ -4,7 +4,7 @@ export const SearchContext = createContext();
 
 export const SearchContextProvider = ({ children }) => {
   const [search, setSearch] = useState(() => {
-    const savedName = localStorage.getItem('search');
+    const savedName = sessionStorage.getItem('search');
     return savedName || null;
   });
 
