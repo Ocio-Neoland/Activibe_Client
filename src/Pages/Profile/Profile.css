@@ -1,11 +1,16 @@
 .mainProfile {
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
+
 .container2 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .perfil-container {
@@ -76,6 +81,13 @@
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.103);
+  width: 100%;
+  height: 35rem;
+  border: 1px solid var(--av-color-highlight);
+  border-radius: 8px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .perfil-act-fav {
@@ -92,7 +104,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 90%;
   height: 50%;
   gap: 1rem;
 }
@@ -119,9 +131,9 @@
   position: absolute;
 }
 
-.container2 .box2 {
-  width: 18.875em;
-  height: 22.875em;
+.container2 .box {
+  width: 20.875em;
+  height: 25.875em;
   padding: 1rem;
   background-color: rgba(14, 61, 214, 0.048);
   border: 1px solid rgba(255, 255, 255, 0.555);
@@ -131,37 +143,38 @@
   transition: all ease 0.3s;
 }
 
-.container2 .box2 {
+.container2 .box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.container2 .box2 .title2 {
+.container2 .box .title2 {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
 }
 
-.container2 .box2 div strong {
+.container2 .box div strong {
   display: block;
   margin-bottom: 0.3rem;
-  font-size: 0.82em;
+  font-size: 1rem;
+  padding-top: 5px;
 }
 
-.container2 .box2 div p {
+.container2 .box div p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.1em;
 }
 
-.container2 .box2 div span {
+.container2 .box div span {
   font-size: 12px;
   font-weight: 300;
 }
 
-.container2 .box2 div span:nth-child(3) {
+.container2 .box div span:nth-child(3) {
   font-weight: 500;
   margin-right: 0.2rem;
 }
@@ -247,4 +260,11 @@ a {
   padding: 10px 15px;
   gap: 2rem;
   width: 100%;
+}
+.header-actividades2 {
+  gap: 1.5rem;
+  border: 1px solid var(--av-color-highlight);
+  padding: 1rem;
+  border-radius: 8px;
+  height: 560px;
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import './SelectEdit.css';
 
+import React from 'react';
 const SelectEdit = ({ options, action, value }) => {
   return (
     <select value={value} onChange={action}>

@@ -2,12 +2,17 @@ import React from 'react';
 
 const InputCreate = ({ info, value, action }) => {
   return (
-    <input
-      onChange={action}
-      type={info === 'image' ? 'file' : 'text'}
-      value={value}
-      placeholder={info}
-    />
+    <div className="inputGroup">
+      <input
+        className="input"
+        required=""
+        onChange={action}
+        type={info === 'image' ? 'file' : 'text'}
+        value={value}
+        placeholder={info === 'description' ? 'Descripción' : 'Nombre'}
+      />
+      <label htmlFor="name">{info === 'description' ? 'Descripción' : 'Nombre'}</label>
+    </div>
   );
 };
 
