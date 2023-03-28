@@ -1,6 +1,6 @@
 import './Header.css';
 
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { CityContext } from '../../Context/CityContext';
@@ -56,6 +56,28 @@ const Header = () => {
     }
   };
 
+  // const handleClickOutside = (event) => {
+  // const mybtns = document.querySelectorAll('h2');
+  // console.log(event);
+  // if (
+  //   (menuBtn.current && !menuBtn.current.contains(event.target)) ||
+  //   (menuCity.current && !menuCity.current.contains(event.target)) ||
+  //   (hiddenMenu.current && !hiddenMenu.current.contains(event.target)) ||
+  //   (mybtns[0].localName && !mybtns[0].localName.contains(event.target.localName))
+  // ) {
+  //   setChooseCity(false);
+  //   setMenu(false);
+  //   setProfile(false);
+  // }
+  // };
+
+  useEffect(() => {
+    // document.addEventListener('mousedown', handleClickOutside);
+    // return () => {
+    //   document.removeEventListener('mousedown', handleClickOutside);
+    // };
+  }, []);
+
   return (
     <header>
       <div className="ocio-nav-container">
@@ -102,7 +124,7 @@ const Header = () => {
               </li>
             ) : (
               <li>
-                <button className="btn-avatar" onClick={handleClickAvatar}>
+                <button className=" btn-avatar" onClick={handleClickAvatar}>
                   <img className="ocio-avatar-profile" src={avatar} alt={user} />
                 </button>
               </li>
@@ -112,7 +134,7 @@ const Header = () => {
         </nav>
       </div>
       {chooseCity !== false && (
-        <ul className="ocio-menu-sections" ref={menuCity}>
+        <ul className="ocio-menu-sections hide-menu" ref={menuCity}>
           {cities.map((type) => (
             <button className="ocio-a-container" onClick={() => setCity(type)} key={type}>
               {type}
@@ -121,7 +143,7 @@ const Header = () => {
         </ul>
       )}
       {menu !== false && (
-        <ul className="ocio-menu-sections" ref={hiddenMenu}>
+        <ul className="ocio-menu-sections hide-menu" ref={hiddenMenu}>
           {types.map((type) => (
             <NavLink
               className="ocio-a-container"
@@ -136,17 +158,29 @@ const Header = () => {
         </ul>
       )}
       {profile !== false && (
-        <ul className="ocio-menu-sections">
+        <ul className="ocio-menu-sections hide-menu">
           <li>
-            <NavLink to="/profile"> Profile</NavLink>
+            <NavLink
+              className="ocio-a-container"
+              to="/profile"
+              onClick={() => setProfile(false)}
+            >
+              Profile
+            </NavLink>
           </li>
           <li>
             <button
               type="button"
+              className="ocio-a-container"
               onClick={() => {
                 logout(), setProfile(false);
               }}
-            ></button>
+            >
+              <img
+                src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679902736/User-Interface-Logout-icon_aotorg.png"
+                alt="btnlogout"
+              />
+            </button>
           </li>
         </ul>
       )}
