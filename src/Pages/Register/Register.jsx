@@ -122,6 +122,7 @@ const Register = () => {
           </label>
           <input
             placeholder="Username"
+            required
             type="text"
             className="input"
             id="userName"
@@ -132,6 +133,7 @@ const Register = () => {
           <label htmlFor="email">Email:</label>
           <input
             type="text"
+            required
             className="input"
             id="email"
             name="email"
@@ -141,6 +143,7 @@ const Register = () => {
 
           <label htmlFor="password">Contraseña:</label>
           <input
+            required
             type={shown ? 'text' : 'password'}
             value={password}
             className="input"
@@ -148,7 +151,7 @@ const Register = () => {
             name="password"
             {...register('password')}
             onChange={onChange}
-            placeholder="password"
+            placeholder="Contraseña"
           />
           <div className="register-div-register">
             {shown ? (
@@ -184,6 +187,7 @@ const Register = () => {
           </div>
           <label htmlFor="password">Repetir contraseña:</label>
           <input
+            required
             placeholder="repeatPassword"
             type={shown1 ? 'text' : 'password'}
             className="input"
