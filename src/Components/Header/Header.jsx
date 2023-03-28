@@ -1,7 +1,7 @@
 import './Header.css';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { CityContext } from '../../Context/CityContext';
 import { UserContext } from '../../Context/UserContext';
@@ -19,6 +19,7 @@ const Header = () => {
   const [chooseCity, setChooseCity] = useState(false);
   const [profile, setProfile] = useState(false);
   const { user, avatar } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleClickMenu = () => {
     if (menu === false) {
@@ -134,9 +135,15 @@ const Header = () => {
         </nav>
       </div>
       {chooseCity !== false && (
-        <ul className="ocio-menu-sections hide-menu" ref={menuCity}>
+        <ul className="ocio-menu-sections3 hide-menu" ref={menuCity}>
           {cities.map((type) => (
-            <button className="ocio-a-container" onClick={() => setCity(type)} key={type}>
+            <button
+              className="ocio-a-container3"
+              onClick={() => {
+                setCity(type), setChooseCity(false), navigate('/');
+              }}
+              key={type}
+            >
               {type}
             </button>
           ))}
@@ -158,25 +165,26 @@ const Header = () => {
         </ul>
       )}
       {profile !== false && (
-        <ul className="ocio-menu-sections hide-menu">
+        <ul className="ocio-menu-sections2 hide-menu">
           <li>
             <NavLink
-              className="ocio-a-container"
+              className="ocio-a-container2"
               to="/profile"
               onClick={() => setProfile(false)}
             >
-              Profile
+              Perfil
             </NavLink>
           </li>
           <li>
             <button
               type="button"
-              className="ocio-a-container"
+              className="ocio-a-container2"
               onClick={() => {
                 logout(), setProfile(false);
               }}
             >
               <img
+                className="logout"
                 src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679902736/User-Interface-Logout-icon_aotorg.png"
                 alt="btnlogout"
               />

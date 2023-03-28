@@ -15,42 +15,35 @@ const Sections = () => {
   const [loaded, setLoaded] = useState(false);
   const { id } = useContext(UserContext);
   const { name } = useParams();
-  const [favorites, setFavorites] = useState(() => {
-    const storedFavorites = sessionStorage.getItem('favorites');
-    return storedFavorites ? JSON.parse(storedFavorites) : [];
-  }); // cargar favoritos del almacenamiento local al cargar la página
+  const [number, setNumber] = useState(1);
+  const [info, setInfo] = useState();
+
   const getSection = () => {
-    API.get(`/sections/${city}/${name}`).then((res) => {
+    API.get(`/sections/${city}/${name}?page=${number}&limit=10`).then((res) => {
       setActivities(res.data.results);
+      setInfo(res.data.info);
+
       setLoaded(true);
     });
   };
 
-  const chooseFavorite = (value) => {
+  const chooseFavorite = (value, activity) => {
+    console.log(activity.favorites.includes(id));
     const info = {
       id: id,
     };
-    console.log(info);
-    console.log(value);
+
     API.put(`/activities/favorites/${value}`, info, {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(info),
     }).then(() => {
-      if (favorites.includes(value)) {
-        setFavorites(favorites.filter((fav) => fav !== value)); // quitar favorito
-      } else {
-        setFavorites([...favorites, value]); // agregar favorito
-      }
+      getSection();
     });
   };
 
   useEffect(() => {
     getSection();
-  }, []);
-  useEffect(() => {
-    // Guardar los favoritos en el almacenamiento local cada vez que cambian
-    sessionStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
+  }, [name, number]);
 
   const filter = types.filter((filt) => filt.name === name);
 
@@ -87,10 +80,10 @@ const Sections = () => {
                 </div>
                 <button
                   className="deleteLike"
-                  onClick={() => chooseFavorite(activity._id)}
-                  style={{ color: favorites.includes(activity._id) ? 'red' : 'white' }}
+                  onClick={() => chooseFavorite(activity._id, activity)}
+                  style={{ color: activity.favorites.includes(id) ? 'red' : 'white' }}
                 >
-                  {favorites ? (
+                  {activity.favorites ? (
                     <i className="fas fa-heart"></i>
                   ) : (
                     <i className="far fa-heart"></i>
@@ -102,6 +95,34 @@ const Sections = () => {
         ))
       ) : (
         <h2> Loader... </h2>
+      )}
+      {loaded ? (
+        <>
+          {info.prev !== null ? (
+            <button
+              onClick={() => {
+                setNumber(number - 1);
+              }}
+            >
+              Anterior
+            </button>
+          ) : (
+            <button disabled>Anterior</button>
+          )}
+          {info.next !== null ? (
+            <button
+              onClick={() => {
+                setNumber(number + 1);
+              }}
+            >
+              Siguiente
+            </button>
+          ) : (
+            <button disabled>Siguiente</button>
+          )}
+        </>
+      ) : (
+        <h2>Hola</h2>
       )}
     </main>
   );

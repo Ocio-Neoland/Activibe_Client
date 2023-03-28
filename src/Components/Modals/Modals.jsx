@@ -11,6 +11,7 @@ const Modals = ({ changeA, changePass }) => {
   return (
     <dialog className="dialogCreate">
       <div className="mainDialog">
+
         <div className="divDialog3">
           <div className="SubDivPerfil">
             <h2>Editar perfil</h2>
@@ -50,11 +51,14 @@ const Modals = ({ changeA, changePass }) => {
               </form>
             </div>
 
+
             <button
               onClick={(ev) => (ev.target.offsetParent.open = false)}
               className="perfil-button-act"
             >
-              Cerrar
+
+              Change Password
+
             </button>
           </div>
         </div>
