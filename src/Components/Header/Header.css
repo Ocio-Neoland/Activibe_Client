@@ -61,8 +61,6 @@ header {
   z-index: 1;
   position: fixed;
   right: 0px;
-  
-
 }
 
 .ocio-menu-sections2 {
@@ -81,7 +79,7 @@ header {
   z-index: 1;
   position: fixed;
   margin-left: 51rem;
-  
+
   border-end-end-radius: 12px;
   border-end-start-radius: 12px;
 }
@@ -154,7 +152,6 @@ header > div > nav > ul > li > .active {
 
 .ocio-a-container > h2 {
   width: fit-content;
-  
 }
 
 .ocio-a-container {
@@ -209,12 +206,13 @@ header > div > nav > ul > li > .active {
   width: 50px;
 }
 
-.ocio-a-container a,button:hover{
+.ocio-a-container a,
+button:hover {
   color: var(--av-color-highlight);
   cursor: pointer;
 }
 
-.ocio-a-container2:hover{
+.ocio-a-container2:hover {
   color: var(--av-color-highlight);
   cursor: pointer;
 }
