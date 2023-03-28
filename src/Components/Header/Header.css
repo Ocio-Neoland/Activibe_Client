@@ -22,7 +22,7 @@ header {
   width: 30px;
   filter: invert(90%);
 }
-.list1{
+.list1 {
   color: var(--av-color-text-primary);
   font-size: 1rem;
 }

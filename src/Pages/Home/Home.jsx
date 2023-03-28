@@ -4,8 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import Carousel from '../../Components/Carousel/Carousel';
 import { CityContext } from '../../Context/CityContext';
-import { API } from '../../Services/API';
 import { hero } from '../../data/data';
+import { API } from '../../Services/API';
 
 const Home = () => {
   const { city } = useContext(CityContext);
