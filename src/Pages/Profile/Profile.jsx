@@ -50,6 +50,10 @@ const Profile = () => {
     getUser();
   }, [loaded]);
 
+  let parserDate = new Date(user.createdAt);
+
+  let formatedParserDate = parserDate.toLocaleDateString('es-ES');
+
   return (
     <main className="mainProfile">
       <div className="container2">
@@ -67,7 +71,7 @@ const Profile = () => {
               <strong>Email:</strong> {user.email}{' '}
             </p>
             <p className="espacio">
-              <strong>User created at:</strong> {user.createdAt}{' '}
+              <strong>User created at:</strong> {formatedParserDate}
             </p>
           </div>
           <button

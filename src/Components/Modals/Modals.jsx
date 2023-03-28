@@ -13,12 +13,13 @@ const Modals = ({ changeA, changePass }) => {
       <div className="mainDialog">
         <div className="divDialog">
           <form onSubmit={handleSubmit(changeA)} className="form-change-avatar">
+            <p>Cambiar Avatar</p>
             <input type="file" id="avatar" name="avatar" {...register('avatar')} />
             <button
               onClick={(ev) => (ev.target.offsetParent.open = false)}
               className="perfil-button-act"
             >
-              Change
+              Change Avatar
             </button>
           </form>
 
@@ -29,7 +30,7 @@ const Modals = ({ changeA, changePass }) => {
               onClick={(ev) => (ev.target.offsetParent.open = false)}
               className="perfil-button-act"
             >
-              Change
+              Change Password
             </button>
           </form>
 
