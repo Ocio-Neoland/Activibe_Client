@@ -15,16 +15,19 @@ const Sections = () => {
   const [loaded, setLoaded] = useState(false);
   const { id } = useContext(UserContext);
   const { name } = useParams();
+  const [number, setNumber] = useState(1);
+  const [info, setInfo] = useState();
 
   const getSection = () => {
-    API.get(`/sections/${city}/${name}`).then((res) => {
+    API.get(`/sections/${city}/${name}?page=${number}&limit=10`).then((res) => {
       setActivities(res.data.results);
+      setInfo(res.data.info);
+
       setLoaded(true);
     });
   };
 
   const chooseFavorite = (value, activity) => {
-    console.log(activity.favorites);
     console.log(activity.favorites.includes(id));
     const info = {
       id: id,
@@ -40,7 +43,7 @@ const Sections = () => {
 
   useEffect(() => {
     getSection();
-  }, [name]);
+  }, [name, number]);
 
   const filter = types.filter((filt) => filt.name === name);
 
@@ -92,6 +95,34 @@ const Sections = () => {
         ))
       ) : (
         <h2> Loader... </h2>
+      )}
+      {loaded ? (
+        <>
+          {info.prev !== null ? (
+            <button
+              onClick={() => {
+                setNumber(number - 1);
+              }}
+            >
+              Anterior
+            </button>
+          ) : (
+            <button disabled>Anterior</button>
+          )}
+          {info.next !== null ? (
+            <button
+              onClick={() => {
+                setNumber(number + 1);
+              }}
+            >
+              Siguiente
+            </button>
+          ) : (
+            <button disabled>Siguiente</button>
+          )}
+        </>
+      ) : (
+        <h2>Hola</h2>
       )}
     </main>
   );
