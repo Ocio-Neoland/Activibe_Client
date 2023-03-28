@@ -1,26 +1,101 @@
 .divDialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   opacity: 1;
-  height: 800px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   gap: 1rem;
   width: 100%;
+}
+.divDialog2 {
+  margin-top: 0.5rem;
+  gap: 1rem;
+  width: 50%;
+  height: 65vh;
+  border: 1px solid var(--av-color-background-primary);
+  margin: auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 .mainDialog {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  height: 40%;
+  margin-left: 24.5vw;
+  margin-top: 7vw;
 }
 
-.dialogCreate {
-  width: 53%;
+.input-create {
+  height: 2rem;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
+}
+
+.perfil-button-act {
   z-index: 1;
-  margin-left: 440px;
+}
+
+.button-create-footer {
+  gap: 2rem;
+  display: flex;
+  height: 4rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+/* .dialogCreate {
+  width: 38%;
+  height: 65%;
+  z-index: 1;
   border-radius: 12px;
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 4rem;
+  border: none;
+} */
+
+.dialogCreate {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 59%;
+  left: 50%;
+  filter: blur();
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  z-index: 9999;
+  margin: au;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.divForm {
+  width: 80%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.selectsCreate {
+  display: flex;
+  gap: 2rem;
+  width: 27.5rem;
+}
+select {
+  width: 10rem;
+}
+.input-create-Img {
+  padding: 1rem;
+
+  height: 4rem;
 }
 
 form > input {
@@ -45,4 +120,65 @@ form > button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1.5em 0 1em 0;
+  max-width: 450px;
+  position: relative;
+}
+
+.inputGroup .input {
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  border: 1px solid var(--av-color-highlight);
+  background-color: transparent;
+  border-radius: 8px;
+  min-width: 190px;
+  max-width: 465px;
+  height: 2.8rem;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.inputGroup :is(input:focus, input:valid) ~ label {
+  transform: translateY(-80%) scale(0.9);
+  margin: 0em;
+  margin-left: 1em;
+  padding: 0.3em;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+}
+
+.imgCreatePerfil {
+  width: 4rem;
+}
+.button-file-create {
+  border: none;
+  padding: 1rem 0;
+  background-color: transparent;
+}
+.imgCreatePerfilOne {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.divImageCreate {
+  width: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

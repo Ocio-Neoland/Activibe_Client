@@ -1,5 +1,6 @@
-import React from 'react';
+import './SelectCreate.css';
 
+import React from 'react';
 const SelectCreate = ({ options, action }) => {
   return (
     <select onChange={action}>
