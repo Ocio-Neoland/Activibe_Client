@@ -176,7 +176,9 @@ const Header = () => {
                 logout(), setProfile(false);
               }}
             >
+              <p className="list1">Logout</p>
               <img
+                className="logout"
                 src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679902736/User-Interface-Logout-icon_aotorg.png"
                 alt="btnlogout"
               />

@@ -22,6 +22,26 @@ header {
   width: 30px;
   filter: invert(90%);
 }
+.list1{
+  color: var(--av-color-text-primary);
+  font-size: 1rem;
+}
+
+.list1:hover {
+  color: var(--av-color-highlight);
+}
+
+.logout {
+  max-width: 28px;
+  height: auto;
+  background-color: transparent;
+  filter: invert(90%);
+}
+
+.logout:hover {
+  transform: scale(110%);
+  transition: ease-in-out 200ms;
+}
 
 .ocio-menu-sections {
   display: flex;
@@ -96,6 +116,10 @@ header > div > nav > ul > li > .active {
   align-items: center;
   gap: 1rem;
   width: 300px;
+  background-color: inherit;
+  border: 0;
+  color: white;
+  font-size: 1rem;
 }
 
 .ocio-a-container:hover {
