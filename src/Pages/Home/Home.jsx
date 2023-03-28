@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Carousel from '../../Components/Carousel/Carousel';
 import { CityContext } from '../../Context/CityContext';
 import { API } from '../../Services/API';
+import { hero } from '../../data/data';
 
 const Home = () => {
   const { city } = useContext(CityContext);
@@ -66,6 +67,8 @@ const Home = () => {
     setLoaded(true);
   }, [city]);
 
+  const filter = hero.filter((filt) => filt.name === city);
+
   return (
     <main className="ocio-home">
       {loaded ? (
@@ -74,6 +77,16 @@ const Home = () => {
             console.log(type[1]);
             <Carousel prop={type[0]} title={type[1]} />;
           })} */}
+
+          <div
+            className="hero-home"
+            style={{ backgroundImage: `url(${filter[0].img})`, backgroundSize: `cover` }}
+          >
+            <h1 className="hero-name">{filter[0].name}</h1>
+          </div>
+          <div className="subHero-home">
+            <p>{filter[0].quote}</p>
+          </div>
           <h2>Top 10 →</h2>
           <Carousel prop={activities} />
           <h2>Para los amantes de la Naturaleza →</h2>

@@ -6,8 +6,8 @@ export const types = [
   },
   {
     name: 'Adrenalina',
-    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679333732/Ocioland/p5bv3dmdyngpwuhhk5zu.jpg',
-    img2: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679500040/fotos/ocioLand%20Activiy/1643497759_664524_1643498221_noticia_normal_xhpoym.jpg',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019152/Ocioland/article-asi-funciona-adrenalina-5a5de3dfcf432_oyl6qx.jpg',
+    img2: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019152/Ocioland/article-asi-funciona-adrenalina-5a5de3dfcf432_oyl6qx.jpg',
   },
   {
     name: 'Deportes',
@@ -21,13 +21,13 @@ export const types = [
   },
   {
     name: 'Exoticos',
-    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346117/Ocioland/escape-room-1_ewglaw.jpg',
-    img2: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346117/Ocioland/escape-room-1_ewglaw.jpg',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019153/Ocioland/adventure-ocean-puzzle-break-room-activity_fqnzfx.jpg',
+    img2: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019153/Ocioland/adventure-ocean-puzzle-break-room-activity_fqnzfx.jpg',
   },
   {
     name: 'Otros',
-    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346030/Ocioland/Ultimate-Frisbee1_b48ryc.jpg',
-    img2: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1679346030/Ocioland/Ultimate-Frisbee1_b48ryc.jpg',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019153/Ocioland/actividades-de-humor-amarillo-barcelona-partfy-_4006_fznrvw.jpg',
+    img2: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019153/Ocioland/actividades-de-humor-amarillo-barcelona-partfy-_4006_fznrvw.jpg',
   },
 ];
 
@@ -45,3 +45,24 @@ export const typesNames = [
 
 export const city = ['Ciudades', 'Madrid', 'Malaga', 'Barcelona'];
 export const cities = ['Madrid', 'Malaga', 'Barcelona'];
+
+export const hero = [
+  {
+    name: 'Madrid',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019153/Ocioland/emilio-garcia-no04yCmUn_E-unsplash_fzp1xl.jpg',
+    quote:
+      '¡Descubre las mejores actividades en Madrid! - Como buen gato sabe, Madrid está repleto de callejones por explorar y secretos por descubrir. Hay algo para todos en esta ciudad que nunca duerme: brunches, terraceo, cine, afterworks y las mejores fiestas de sol a sol. Sea un paseo por el Retiro, una noche loca por las discotecas de Gran Vía, un monólogo o una cata en un restaurante tres estrellas, aquí está ActiVibe para enseñarte los mejores planes en Madrid, un centro cultural y fiestero a partes iguales.',
+  },
+  {
+    name: 'Barcelona',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680026505/Ocioland/desktop-wallpaper-barcelona-city-1-barcelona-city_eesngw.jpg',
+    quote:
+      '¡Descubre las mejores actividades en Barcelona! - Una ciudad cosmopolita y de gran importancia comercial y turística, Barcelona rebosa de cultura y entretenimiento. Unas visitas a la Sagrada Familia y a La Rambla no pueden faltar, por supuesto, pero las calles de esta ciudad costal también cuentan con otras propuestas: conciertos a la luz de las velas, experiencias inmersivas, festivales, afterworks únicos, y mucho, mucho más. Cuenta con ActiVibe para estar siempre al tanto de los mejores planes en Barcelona.',
+  },
+  {
+    name: 'Malaga',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680019153/Ocioland/david-becker-h1y4jJOW-l0-unsplash_zowncm.jpg',
+    quote:
+      '¡Descubre las mejores actividades en Málaga! - Una ciudad costera con una rica historia y una gran oferta turística, Málaga ofrece numerosas actividades culturales y de entretenimiento para todos los gustos. Desde visitar la Alcazaba y el Castillo de Gibralfaro hasta disfrutar de las playas y la gastronomía local, Málaga tiene mucho que ofrecer. También hay una gran cantidad de festivales, exposiciones, conciertos y eventos deportivos durante todo el año. Utiliza ActiVibe para conocer los mejores planes y disfrutar al máximo de esta hermosa ciudad del sur de España.',
+  },
+];
