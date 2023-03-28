@@ -1,3 +1,5 @@
+import './ProfileActivities.css';
+
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -101,7 +103,7 @@ const Profile2 = () => {
 
   return (
     <main>
-      <div className="container2">
+      <div className="containerAct">
         <div className="perfil-act-fav">
           <div className="perfil-create">
             <div className="perfil-crud">
