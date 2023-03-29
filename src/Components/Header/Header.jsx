@@ -83,7 +83,7 @@ const Header = () => {
       <div className="ocio-nav-container">
         <NavLink to={'/'}>
           <img
-            src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1679775073/activibe__11_-removebg-preview_rrvcut.png"
+            src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1680105261/Dise%C3%B1o_sin_t%C3%ADtulo_2_h0rscw.png"
             alt="imagen"
           />
         </NavLink>
