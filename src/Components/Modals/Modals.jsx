@@ -1,7 +1,7 @@
 import './Modals.css';
 
-import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 const Modals = ({ changeA, changePass }) => {
   const [selectedImage, setSelectedImage] = useState(null);
