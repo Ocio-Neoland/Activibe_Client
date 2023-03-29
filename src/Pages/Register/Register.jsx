@@ -136,6 +136,7 @@ const Register = () => {
             required
             className="input"
             id="email"
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
             name="email"
             {...register('email')}
             placeholder="Email"
@@ -149,6 +150,7 @@ const Register = () => {
             className="input"
             id="password"
             name="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.@$!%*?&])[A-Za-z\d.@$!%*?&]{8,}$"
             {...register('password')}
             onChange={onChange}
             placeholder="Contraseña"
@@ -192,6 +194,7 @@ const Register = () => {
             type={shown1 ? 'text' : 'password'}
             className="input"
             id="repeatPassword"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.@$!%*?&])[A-Za-z\d.@$!%*?&]{8,}$"
             name="repeatPassword"
             onChange={(ev) => setRepeatPassword(ev.target.value)}
           />
