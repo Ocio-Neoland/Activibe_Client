@@ -124,7 +124,7 @@ const Profile2 = () => {
                   cit={city}
                 />
               </div>
-              <div className="perfil-all-activities">
+              <div className="perfil-all-activities scrollbar" id="style-7">
                 {loaded ? (
                   act.map((act) => {
                     return (

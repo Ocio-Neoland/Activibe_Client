@@ -61,7 +61,8 @@ const Header = () => {
     if (
       event.target.localName === 'h2' ||
       event.target.localName === 'button' ||
-      event.target.localName === 'a'
+      event.target.localName === 'a' ||
+      event.target.localName === 'img'
     ) {
       console.log(event);
     } else {
