@@ -94,7 +94,7 @@
 
 .ValoracionesUsers {
   display: flex;
-  width: 100%;
+  width: 92%;
   text-align: center;
   justify-content: space-between;
   align-items: center;
@@ -294,4 +294,63 @@ q {
 
 .hide {
   opacity: 35%;
+}
+
+@media (max-width: 800px) {
+  .ocio-figure {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .description-act {
+    gap: 1rem;
+  }
+  .mapVal {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+  .ocio-feeds {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .inputComentComunty2 {
+    height: 60px;
+    width: 230px;
+  }
+  .inputComentComunty {
+    height: 60px;
+    width: 230px;
+  }
+  .activity-coment {
+    width: 300px;
+  }
+  .ocio-blog > div > h2 {
+    font-size: 16px;
+  }
+  .carousel-div {
+    margin-left: 1rem;
+  }
+  .carousel-div > h2 {
+    font-size: 16px;
+    justify-content: center;
+  }
+  .ocio-comment {
+    gap: 0;
+    width: 80px;
+    padding: 0;
+    min-width: 220px;
+  }
+  .ocio-img-details {
+    height: 200px;
+  }
+  .descrption-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
