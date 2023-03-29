@@ -82,14 +82,18 @@ const Header = () => {
   return (
     <header>
       <div className="ocio-nav-container">
-        <NavLink to={'/'}>
-          <img
-            src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1679775073/activibe__11_-removebg-preview_rrvcut.png"
-            alt="imagen"
-          />
-        </NavLink>
         <nav>
           <ul>
+            <li>
+              {' '}
+              <NavLink to={'/'}>
+                <img
+                  className="img-Header"
+                  src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1680105261/Dise%C3%B1o_sin_t%C3%ADtulo_2_h0rscw.png"
+                  alt="imagen"
+                />
+              </NavLink>
+            </li>
             <li>
               <button
                 className="ocio-sections-btn"
@@ -145,7 +149,9 @@ const Header = () => {
                 </button>
               </li>
             )}
-            <BtnDarkMode />
+            <li>
+              <BtnDarkMode />
+            </li>
           </ul>
         </nav>
       </div>
@@ -166,32 +172,34 @@ const Header = () => {
       )}
 
       {profile !== false && (
-        <ul className="ocio-menu-sections2 hide-menu">
-          <li>
-            <NavLink
-              className="ocio-a-container2"
-              to="/profile"
-              onClick={() => setProfile(false)}
-            >
-              Perfil
-            </NavLink>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="ocio-a-container2"
-              onClick={() => {
-                logout(), setProfile(false);
-              }}
-            >
-              <img
-                className="logout"
-                src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679902736/User-Interface-Logout-icon_aotorg.png"
-                alt="btnlogout"
-              />
-            </button>
-          </li>
-        </ul>
+        <div className="ocio-menu-sections2 hide-menu">
+          <ul>
+            <li>
+              <NavLink
+                className="ocio-a-container2"
+                to="/profile"
+                onClick={() => setProfile(false)}
+              >
+                Perfil
+              </NavLink>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="ocio-a-container2"
+                onClick={() => {
+                  logout(), setProfile(false);
+                }}
+              >
+                <img
+                  className="logout"
+                  src="https://res.cloudinary.com/dpxyn2bps/image/upload/v1679902736/User-Interface-Logout-icon_aotorg.png"
+                  alt="btnlogout"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
       )}
     </header>
   );

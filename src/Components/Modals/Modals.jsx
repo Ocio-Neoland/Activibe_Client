@@ -4,10 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
 const Modals = ({ changeA, changePass }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  //   const { id, setAvatar, setPassword } = useContext(UserContext);
-  //   const [user, setUser] = useState({});
-  //   const [loaded, setLoaded] = useState(false);
+
   const { register, handleSubmit } = useForm();
 
   return (
@@ -80,5 +77,3 @@ const Modals = ({ changeA, changePass }) => {
 };
 
 export default Modals;
-
-// changeAvatar, changePassword

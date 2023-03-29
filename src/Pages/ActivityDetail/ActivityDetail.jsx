@@ -2,6 +2,7 @@ import './ActivityDetail.css';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import Map from '../../Components/Map/Map';
 import { CityContext } from '../../Context/CityContext';
@@ -29,6 +30,27 @@ const ActivityDetail = () => {
   const hiddenStar3 = useRef('null');
   const hiddenStar2 = useRef('null');
   const hiddenStar1 = useRef('null');
+  const handleDeleteButton = (ev, type) => {
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success');
+        if (type === 'feed') {
+          deleteFeed(ev);
+        } else {
+          deleteComment(ev);
+        }
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info');
+      }
+    });
+  };
 
   const [newComment, setNewComment] = useState({
     comment: '',
@@ -205,7 +227,7 @@ const ActivityDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="carousel-div">
+              <div className="carousel-div scrollbar" id="style-7">
                 {feeds.length ? (
                   feeds.map((feed) => (
                     <article className="ocio-feed" key={feed._id}>
@@ -227,10 +249,12 @@ const ActivityDetail = () => {
                       </q>
                       {idComents === feed.idUser._id ? (
                         <button
+
                           className="btn-feeds"
-                          onClick={() => deleteFeed(feed._id)}
+                          onClick={() => handleDeleteButton(feed._id, 'feed')}
+
                         >
-                          Eliminar
+                          ❌
                         </button>
                       ) : (
                         <></>
@@ -317,7 +341,7 @@ const ActivityDetail = () => {
             </section>
           </div>
           <div className="activity-coment">
-            <div className="ocio-blog">
+            <div className="ocio-blog scrollbar" id="style-7">
               <h2 className="h2Coment">Comentarios de la comunidad</h2>
               {comments.length ? (
                 comments.map((comment) => (
@@ -333,7 +357,7 @@ const ActivityDetail = () => {
                       {idComents === comment.idUser._id ? (
                         <button
                           className="btn-coments"
-                          onClick={() => deleteComment(comment._id)}
+                          onClick={() => handleDeleteButton(comment._id, 'comment')}
                         >
                           ❌
                         </button>

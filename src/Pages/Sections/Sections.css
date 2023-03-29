@@ -2,8 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
   gap: 2rem;
   width: 100%;
+}
+
+.activitiesSections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 3rem;
 }
 .av-section-container {
   width: auto;
@@ -24,8 +34,14 @@
   position: absolute;
 }
 
+.prevNext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .av-section-container .box {
-  width: 24.875em;
+  width: 20.875em;
   height: 28.875em;
   padding: 1rem;
   background-color: rgba(14, 61, 214, 0.093);
