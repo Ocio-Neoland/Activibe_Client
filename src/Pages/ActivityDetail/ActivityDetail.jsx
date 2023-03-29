@@ -2,6 +2,7 @@ import './ActivityDetail.css';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import Map from '../../Components/Map/Map';
 import { CityContext } from '../../Context/CityContext';
@@ -29,6 +30,27 @@ const ActivityDetail = () => {
   const hiddenStar3 = useRef('null');
   const hiddenStar2 = useRef('null');
   const hiddenStar1 = useRef('null');
+  const handleDeleteButton = (ev, type) => {
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success');
+        if (type === 'feed') {
+          deleteFeed(ev);
+        } else {
+          deleteComment(ev);
+        }
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info');
+      }
+    });
+  };
 
   const [newComment, setNewComment] = useState({
     comment: '',
@@ -227,8 +249,10 @@ const ActivityDetail = () => {
                       </q>
                       {idComents === feed.idUser._id ? (
                         <button
-                          className="btn-coments"
-                          onClick={() => deleteFeed(feed._id)}
+
+                          className="btn-feeds"
+                          onClick={() => handleDeleteButton(feed._id, 'feed')}
+
                         >
                           ❌
                         </button>
@@ -333,7 +357,7 @@ const ActivityDetail = () => {
                       {idComents === comment.idUser._id ? (
                         <button
                           className="btn-coments"
-                          onClick={() => deleteComment(comment._id)}
+                          onClick={() => handleDeleteButton(comment._id, 'comment')}
                         >
                           ❌
                         </button>
