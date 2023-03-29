@@ -79,6 +79,9 @@ ul {
 
 /*responsive*/
 @media (max-width: 767px) {
+  footer {
+    margin-top: 200px;
+  }
   .footer-col {
     width: 50%;
     margin-bottom: 30px;
