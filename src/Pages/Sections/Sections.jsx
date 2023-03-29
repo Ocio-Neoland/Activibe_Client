@@ -55,75 +55,77 @@ const Sections = () => {
       >
         <h1 className="hero">{name}</h1>
       </div>
-      {loaded ? (
-        activities.map((activity) => (
-          <div className="av-section-container" key={activity._id}>
-            <div className="box">
-              <div className="headerCard">
-                <h3 className="activity">{activity.type}</h3>
-                <Link
-                  to={`/${activity.type}/${activity._id}`}
-                  value={activity._id}
-                  className="masInfo"
-                >
-                  + info
-                </Link>
-              </div>
-
-              <img className="imgSection" src={activity.image} alt={activity.name} />
-              <div className="subBox">
-                <strong>{activity.name}</strong>
-                <span>{activity.location}</span>
-                <div className="footerCard">
-                  <span className="sectionCity">{activity.city}</span>
-                  <p className="stars">{activity.mediaStars} ⭐</p>
+      <div className="activitiesSections">
+        {loaded ? (
+          activities.map((activity) => (
+            <div className="av-section-container" key={activity._id}>
+              <div className="box">
+                <div className="headerCard">
+                  <h3 className="activity">{activity.type}</h3>
+                  <Link
+                    to={`/${activity.type}/${activity._id}`}
+                    value={activity._id}
+                    className="masInfo"
+                  >
+                    + info
+                  </Link>
                 </div>
-                <button
-                  className="deleteLike"
-                  onClick={() => chooseFavorite(activity._id, activity)}
-                  style={{ color: activity.favorites.includes(id) ? 'red' : 'white' }}
-                >
-                  {activity.favorites ? (
-                    <i className="fas fa-heart"></i>
-                  ) : (
-                    <i className="far fa-heart"></i>
-                  )}
-                </button>
+
+                <img className="imgSection" src={activity.image} alt={activity.name} />
+                <div className="subBox">
+                  <strong>{activity.name}</strong>
+                  <span>{activity.location}</span>
+                  <div className="footerCard">
+                    <span className="sectionCity">{activity.city}</span>
+                    <p className="stars">{activity.mediaStars} ⭐</p>
+                  </div>
+                  <button
+                    className="deleteLike"
+                    onClick={() => chooseFavorite(activity._id, activity)}
+                    style={{ color: activity.favorites.includes(id) ? 'red' : 'white' }}
+                  >
+                    {activity.favorites ? (
+                      <i className="fas fa-heart"></i>
+                    ) : (
+                      <i className="far fa-heart"></i>
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <h2> Loader... </h2>
-      )}
-      {loaded ? (
-        <>
-          {info.prev !== null ? (
-            <button
-              onClick={() => {
-                setNumber(number - 1);
-              }}
-            >
-              Anterior
-            </button>
-          ) : (
-            <button disabled>Anterior</button>
-          )}
-          {info.next !== null ? (
-            <button
-              onClick={() => {
-                setNumber(number + 1);
-              }}
-            >
-              Siguiente
-            </button>
-          ) : (
-            <button disabled>Siguiente</button>
-          )}
-        </>
-      ) : (
-        <h2>Hola</h2>
-      )}
+          ))
+        ) : (
+          <h2>Cargando...</h2>
+        )}
+      </div>
+      <div className="prevNext">
+        {loaded ? (
+          <>
+            {info.prev !== null && (
+              <button
+                className="perfil-button"
+                onClick={() => {
+                  setNumber(number - 1);
+                }}
+              >
+                Anterior
+              </button>
+            )}
+            {info.next !== null && (
+              <button
+                className="perfil-button"
+                onClick={() => {
+                  setNumber(number + 1);
+                }}
+              >
+                Siguiente
+              </button>
+            )}
+          </>
+        ) : (
+          <h2>Cargando...</h2>
+        )}
+      </div>
     </main>
   );
 };
