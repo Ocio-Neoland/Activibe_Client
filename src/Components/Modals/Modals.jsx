@@ -1,8 +1,10 @@
 import './Modals.css';
 
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 const Modals = ({ changeA, changePass }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
   //   const { id, setAvatar, setPassword } = useContext(UserContext);
   //   const [user, setUser] = useState({});
   //   const [loaded, setLoaded] = useState(false);
@@ -10,61 +12,68 @@ const Modals = ({ changeA, changePass }) => {
 
   return (
     <dialog className="dialogCreate">
-      <div className="mainDialog">
-        <div className="divDialog">
-          <div className="divDialog3">
-            <div className="SubDivPerfil">
-              <h2>Editar perfil</h2>
-              <div className="divForm2">
-                <form onSubmit={handleSubmit(changeA)} className="form-change-avatar">
-                  <div className="divFilePerfil">
-                    <input
-                      type="file"
-                      id="avatar"
-                      name="avatar"
-                      {...register('avatar')}
-                    />
-                    <button
-                      onClick={(ev) => (ev.target.offsetParent.open = false)}
-                      className="perfil-button-act"
-                    >
-                      Change
-                    </button>
-                  </div>
-                </form>
+      <div className="divForm2">
+        <h2>Editar perfil</h2>
 
-                <form onSubmit={handleSubmit(changePass)}>
-                  <div className="divEditPassword">
-                    <div className="inputGroup2">
-                      <input
-                        className="input2"
-                        required={true}
-                        type="text"
-                        id="password"
-                        name="password"
-                        {...register('password')}
-                      />
-                      <label htmlFor="name">contraseña</label>
-                      <button
-                        onClick={(ev) => (ev.target.offsetParent.open = false)}
-                        className="perfil-button-act"
-                      >
-                        Change
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+        <form onSubmit={handleSubmit(changeA)} className="form-change-avatar">
+          <div className="divModal2">
+            <div className="editEvatarImg">
+              <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                {...register('avatar')}
+                onChange={(event) => {
+                  setSelectedImage(URL.createObjectURL(event.target.files[0]));
+                }}
+              />
 
-              <button
-                onClick={(ev) => (ev.target.offsetParent.open = false)}
-                className="perfil-button-act"
-              >
-                cerrar
-              </button>
+              <img
+                className="imgAvatarEdit"
+                src={
+                  selectedImage
+                    ? selectedImage
+                    : 'https://cdn-icons-png.flaticon.com/512/126/126486.png'
+                }
+                alt="Avatar"
+              />
             </div>
+            <button
+              onClick={(ev) => {
+                ev.target.offsetParent.open = false;
+              }}
+              className="perfil-button-act"
+            >
+              Change
+            </button>
           </div>
-        </div>
+        </form>
+
+        <form className="form-change-avatar2" onSubmit={handleSubmit(changePass)}>
+          <div className="inputGroup">
+            <input
+              className="input"
+              required={true}
+              type="text"
+              id="password"
+              name="password"
+              {...register('password')}
+            />
+            <label htmlFor="name">contraseña</label>
+            <button
+              onClick={(ev) => (ev.target.offsetParent.open = false)}
+              className="perfil-button-act"
+            >
+              Change
+            </button>
+          </div>
+        </form>
+        <button
+          onClick={(ev) => (ev.target.offsetParent.open = false)}
+          className="perfil-button-act"
+        >
+          cerrar
+        </button>
       </div>
     </dialog>
   );

@@ -1,12 +1,16 @@
 .divDialog2 {
+  margin-top: 7rem;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   opacity: 1;
-
+  border: 1px solid black;
   gap: 1rem;
-  width: 100%;
+  width: 30%;
+
+  padding: 1.1rem;
+  border-radius: 8px;
+  background-color: white;
 }
 
 .mainDialog {
