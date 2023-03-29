@@ -4,8 +4,9 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
 const Modals = ({ changeA, changePass }) => {
-
   const { register, handleSubmit } = useForm();
+
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <dialog className="dialogCreate">

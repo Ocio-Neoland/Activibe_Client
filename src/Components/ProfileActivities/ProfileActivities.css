@@ -85,3 +85,11 @@ a {
 .main-content {
   backdrop-filter: blur(5px);
 }
+
+@media (max-width: 767px) {
+.perfil-act-button{
+   width: 70%;
+   gap: 1rem;
+   margin-left: 3rem;
+  }
+}
