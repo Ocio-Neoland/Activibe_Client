@@ -39,3 +39,9 @@
 .fa-sun {
   color: yellow;
 }
+
+@media (max-width: 850px) {
+  .btn-DarkMode {
+    display: none;
+  }
+}

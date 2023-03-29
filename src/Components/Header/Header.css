@@ -13,7 +13,7 @@ header {
   color: var(--av-color-text-primary);
 }
 
-.ocio-nav-container > a > img {
+.img-Header {
   max-width: 190px;
   height: auto;
   overflow: hidden;
@@ -47,7 +47,7 @@ header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 250px;
   background-color: var(--av-color-backgotund-menu);
   color: var(--av-color-text-primary);
@@ -65,21 +65,20 @@ header {
 
 .ocio-menu-sections2 {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  align-items: self-end;
+  align-self: flex-end;
+  justify-content:flex-end;
   min-height: 50px;
-  background-color: var(--av-color-backgotund-menu);
+  background-color:transparent;
   color: var(--av-color-text-primary);
-  width: 12%;
+  width: 100%;
   max-height: 300px;
-  margin-top: 2.2rem;
+  margin-top: 5rem;
   gap: 4rem;
-  padding: 2rem 7rem;
-  top: 2.8rem;
+  padding: 2rem 0rem;
   z-index: 1;
   position: fixed;
-  margin-left: 51rem;
-
+  
   border-end-end-radius: 12px;
   border-end-start-radius: 12px;
 }
@@ -90,7 +89,7 @@ header {
   min-height: 50px;
   background-color: var(--av-color-backgotund-menu);
   color: var(--av-color-text-primary);
-  width: 12%;
+  max-width: 300px;
   max-height: 300px;
   margin-top: 2.2rem;
   gap: 4rem;
@@ -99,7 +98,7 @@ header {
   z-index: 1;
   position: fixed;
   flex-direction: column;
-  margin-right: 29rem;
+  margin-right: 42rem;
   border-end-end-radius: 12px;
   border-end-start-radius: 12px;
 }
@@ -111,17 +110,18 @@ header > .ocio-nav-container {
   justify-content: space-around;
   align-items: center;
   z-index: 1030;
-  gap: 3rem;
-  padding-left: 1rem;
-  /* position: fixed; */
+gap:1rem;
   background-color: var(--av-color-background-primary);
   position: fixed;
 }
+header > div > nav{
+  width: 100%;
+}
 header > div > nav > ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 7rem;
+  gap: 3rem;
   width: 100%;
 }
 
@@ -159,7 +159,7 @@ header > div > nav > ul > li > .active {
   justify-content: left;
   align-items: center;
   gap: 1rem;
-  width: 200px;
+  width: 180px;
   background-color: inherit;
   border: 0;
   color: white;
@@ -174,7 +174,21 @@ header > div > nav > ul > li > .active {
   background-color: inherit;
   border: 0;
   color: white;
+  background-color: var(--av-color-backgotund-menu);
   font-size: 1rem;
+}
+
+.ocio-menu-sections2 > ul{
+  background-color: var(--av-color-backgotund-menu);
+  display: flex;
+  width: 200px;
+height: 80px;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+position: relative;
+bottom: 2rem;
+border-radius: 12px ;
 }
 
 .ocio-a-container3 {
@@ -204,6 +218,11 @@ header > div > nav > ul > li > .active {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  border:none;
+}
+.ocio-avatar-profile {
+  border:none;
+
 }
 
 .ocio-a-container a,
@@ -215,4 +234,64 @@ button:hover {
 .ocio-a-container2:hover {
   color: var(--av-color-highlight);
   cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  
+  header > div > nav > ul {
+    gap:0.5rem;
+  }
+  .ocio-nav-container {
+    justify-content: center;
+  }
+  
+}
+
+
+@media (max-width: 800px){
+  .ocio-menu-sections3{
+    margin-right:0;
+    gap:1rem;
+  }
+  .ocio-sections-btn {
+    font-size: 18px;
+  }
+  .ocio-a-container > h2 {
+    font-size: 15px;
+  }
+  .ocio-menu-sections {
+    flex-direction: column;
+    width: 100%;
+    height: 100vw;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 450px) {
+  .img-Header {
+    width: 120px;
+  }
+}
+
+@media (max-width:400px) {
+  .ocio-menu-sections3{
+    margin-right:2rem;
+    gap:1rem;
+  }
+  .ocio-menu-sections2 {
+    margin-left:1rem;
+  }
+  .ocio-sections-btn {
+    font-size: 18px;
+  }
+  .ocio-a-container > h2 {
+    font-size: 15px;
+  }
+  .ocio-menu-sections {
+    flex-direction: column;
+    width: 100%;
+    height: 100vw;
+    padding: 4px;
+  }
+  
 }
