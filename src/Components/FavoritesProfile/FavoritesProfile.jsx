@@ -46,7 +46,7 @@ const Favorites = () => {
               <div className="favorityH2">
                 <h2>Mis Favoritos</h2>
               </div>
-              <div className="header-actividades2">
+              <div className="header-actividades2 scrollbar" id="style-7">
                 {favorites.length ? (
                   favorites.map((favorite) => (
                     <div className="av-section-container" key={favorite._id}>

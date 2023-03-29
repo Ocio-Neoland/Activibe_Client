@@ -20,6 +20,7 @@
 .hero-name {
   font-size: 70px;
   width: 50%;
+  color: aliceblue;
   height: 80%;
   display: flex;
   justify-content: center;
