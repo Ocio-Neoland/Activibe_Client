@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-.container2 {
+.container4 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,9 +18,18 @@
   height: 15rem;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   align-items: center;
   background-color: rgba(250, 235, 215, 0.11);
   border-radius: 8px;
+  padding: 150px;
+}
+
+.perfil-container-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 30rem;
+  align-items: center;
 }
 .avatar2 {
   display: flex;
@@ -268,4 +277,30 @@ a {
   border-radius: 8px;
   height: 560px;
   background-color: rgba(255, 255, 255, 0.103);
+}
+
+@media (max-width: 767px) {
+  .perfil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 700px;
+  }
+  .perfil-container-flex {
+    display: flex;
+    width: 100vw;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .mainProfile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
 }
