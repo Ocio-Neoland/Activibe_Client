@@ -227,7 +227,7 @@ const ActivityDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="carousel-div">
+              <div className="carousel-div scrollbar" id="style-7">
                 {feeds.length ? (
                   feeds.map((feed) => (
                     <article className="ocio-feed" key={feed._id}>
@@ -249,10 +249,12 @@ const ActivityDetail = () => {
                       </q>
                       {idComents === feed.idUser._id ? (
                         <button
+
                           className="btn-feeds"
                           onClick={() => handleDeleteButton(feed._id, 'feed')}
+
                         >
-                          Eliminar
+                          ❌
                         </button>
                       ) : (
                         <></>
@@ -339,7 +341,7 @@ const ActivityDetail = () => {
             </section>
           </div>
           <div className="activity-coment">
-            <div className="ocio-blog">
+            <div className="ocio-blog scrollbar" id="style-7">
               <h2 className="h2Coment">Comentarios de la comunidad</h2>
               {comments.length ? (
                 comments.map((comment) => (

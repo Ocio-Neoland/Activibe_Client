@@ -8,7 +8,7 @@ const BtnDarkMode = () => {
   const { toggleTheme } = useContext(ThemeContext);
   return (
     <>
-      <div>
+      <div className="btn-DarkMode">
         <input
           onChange={() => toggleTheme()}
           type="checkbox"

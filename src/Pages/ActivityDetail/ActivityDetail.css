@@ -284,3 +284,15 @@ q {
   background-color: transparent;
   border: none;
 }
+
+.startsComent > button:hover {
+  opacity: 60%;
+}
+.startsComent > button:hover {
+  opacity: 100%;
+}
+
+.hide {
+  opacity: 35%;
+}
+
