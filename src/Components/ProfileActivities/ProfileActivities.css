@@ -12,6 +12,13 @@
   margin-top: 2rem;
 }
 
+.perfil-all-activities {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .box2 {
   display: flex;
   flex-direction: column;
