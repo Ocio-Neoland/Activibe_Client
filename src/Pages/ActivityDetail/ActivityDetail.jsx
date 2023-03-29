@@ -169,11 +169,9 @@ const ActivityDetail = () => {
         </div>
         <div className="description-activity2">
           <h1>{details.name}</h1>
-          <h2>Description</h2>
           <p>{details.description}</p>
           <p>{details.location}</p>
         </div>
-        <div className="curve"></div>
       </div>
 
       {loaded ? (
@@ -204,10 +202,6 @@ const ActivityDetail = () => {
                     ) : (
                       <p>⭐</p>
                     )}
-                    {/* <h2>
-                    {details.feeds.length}
-                    {details.feeds.length === 1 ? ' valoracion.' : ' valoraciones.'}
-                  </h2> */}
                   </div>
                 </div>
               </div>
@@ -244,7 +238,7 @@ const ActivityDetail = () => {
                     </article>
                   ))
                 ) : (
-                  <h2>No feeds in this activity</h2>
+                  <h2>No Hay Valoraciones</h2>
                 )}
               </div>
 
@@ -341,7 +335,7 @@ const ActivityDetail = () => {
                           className="btn-coments"
                           onClick={() => deleteComment(comment._id)}
                         >
-                          Eliminar
+                          ❌
                         </button>
                       ) : (
                         <></>
