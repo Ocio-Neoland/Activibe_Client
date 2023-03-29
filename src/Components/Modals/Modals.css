@@ -20,8 +20,13 @@
   padding: 2rem 2rem;
   gap: 1rem;
   margin: 2rem 0;
+
   width: 30%;
   height: 76%;
+
+  width:30%;
+  height: 85%;
+
   background-color: white;
   border: 1px solid black;
   border-radius: 8px;
