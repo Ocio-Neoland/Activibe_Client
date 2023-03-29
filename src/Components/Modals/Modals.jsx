@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
 const Modals = ({ changeA, changePass }) => {
-
+  const [selectedImage, setSelectedImage] = useState(null);
   const { register, handleSubmit } = useForm();
 
   return (
