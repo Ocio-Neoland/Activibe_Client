@@ -56,31 +56,36 @@ const Profile = () => {
 
   return (
     <main className="mainProfile">
-      <div className="container2">
-        <h1>Profile</h1>
+      <div className="container4">
         <div className="perfil-container">
-          <div className="avatar2">
-            <img src={user.avatar} alt={user.userName} />
+          <div>
+            <h1>Profile</h1>
           </div>
+          <div className="perfil-container-flex">
+            <div className="avatar2">
+              <img src={user.avatar} alt={user.userName} />
+            </div>
 
-          <div className="perfil-datos">
-            <p className="espacio">
-              <strong>Username:</strong> {user.userName}
-            </p>
-            <p className="espacio">
-              <strong>Email:</strong> {user.email}{' '}
-            </p>
-            <p className="espacio">
-              <strong>User created at:</strong> {formatedParserDate}
-            </p>
+            <div className="perfil-datos">
+              <p className="espacio">
+                <strong>Username:</strong> {user.userName}
+              </p>
+              <p className="espacio">
+                <strong>Email:</strong> {user.email}{' '}
+              </p>
+              <p className="espacio">
+                <strong>User created at:</strong> {formatedParserDate}
+              </p>
+            </div>
+
+            <button
+              onClick={(ev) => (ev.target.nextSibling.open = true)}
+              className="perfil-button-act"
+            >
+              Edit profile
+            </button>
+            <Modals changeA={changeAvatar} changePass={changePassword} />
           </div>
-          <button
-            onClick={(ev) => (ev.target.nextSibling.open = true)}
-            className="perfil-button-act"
-          >
-            Edit profile
-          </button>
-          <Modals changeA={changeAvatar} changePass={changePassword} />
         </div>
       </div>
       <div className="perfil-toggle-buttons">
