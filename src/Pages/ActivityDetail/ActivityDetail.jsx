@@ -249,10 +249,8 @@ const ActivityDetail = () => {
                       </q>
                       {idComents === feed.idUser._id ? (
                         <button
-
                           className="btn-feeds"
                           onClick={() => handleDeleteButton(feed._id, 'feed')}
-
                         >
                           ❌
                         </button>

@@ -5,21 +5,16 @@
   align-items: center;
   gap: 1rem;
   width: 0%;
-
 }
-.divForm{
+.divForm {
   height: 80%;
   padding: 2rem 0;
-
 }
-
-
 
 .mainDialog {
   width: 40%;
   height: 40%;
- margin: auto;
-
+  margin: auto;
 }
 
 .input-create {
@@ -103,10 +98,10 @@ form > input {
   border-radius: 5px;
   padding: 12px;
 }
-form{
+form {
   display: flex;
   justify-content: center;
-flex-direction: column;
+  flex-direction: column;
 }
 form > select {
   display: flex;
@@ -139,8 +134,6 @@ form > button {
   border-radius: 8px;
 
   height: 2.6rem;
-
-
 }
 
 .inputGroup label {

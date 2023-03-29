@@ -303,7 +303,7 @@ a {
     flex-direction: column;
     gap: 0;
   }
-  .avatar2 img{
+  .avatar2 img {
     border-radius: 8px;
   }
 }
