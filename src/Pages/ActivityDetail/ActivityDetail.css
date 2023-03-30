@@ -117,7 +117,6 @@
   word-break: break-all;
 }
 
-
 .btn-feeds {
   width: 40px;
   padding: 5px;
@@ -127,9 +126,8 @@
   color: var(--av-color-text-primary);
   background: none;
   background-color: transparent;
-  border:none;
+  border: none;
 }
-
 
 .btn-feeds:hover {
   background-color: #0348a3;
@@ -261,15 +259,14 @@
   background-color: #dfe4f2;
   border-radius: 6px;
   gap: 0.5rem;
- width: 100%;
+  width: 100%;
 }
 .ocio-comment > q {
-   padding: 10px;
+  padding: 10px;
 }
 .ocio-comment-p {
   padding: 2px;
   word-break: break-all;
-  
 }
 
 .ocio-comment-avatar {
@@ -336,7 +333,6 @@ q {
   }
   .ocio-feed {
     width: 200px;
-
   }
   .inputComentComunty2 {
     height: 60px;
@@ -349,7 +345,7 @@ q {
   .activity-coment {
     width: 300px;
   }
-  .ocio-blog{
+  .ocio-blog {
     width: 320px;
   }
   .ocio-blog > div > h2 {
