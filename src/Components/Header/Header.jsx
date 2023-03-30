@@ -89,7 +89,7 @@ const Header = () => {
               <NavLink to={'/'}>
                 <img
                   className="img-Header"
-                  src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1680105261/Dise%C3%B1o_sin_t%C3%ADtulo_2_h0rscw.png"
+                  src="https://res.cloudinary.com/dqkcdzt1m/image/upload/v1680166430/ACTIVIBE_13_dvz906.png"
                   alt="imagen"
                 />
               </NavLink>
