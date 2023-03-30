@@ -22,13 +22,13 @@
   align-items: center;
   background-color: rgba(250, 235, 215, 0.11);
   border-radius: 8px;
-  padding: 150px;
+  padding: 150px 0;
 }
 
 .perfil-container-flex {
   display: flex;
-  justify-content: space-between;
-  gap: 30rem;
+  justify-content: space-around;
+  gap: 20rem;
   align-items: center;
 }
 .avatar2 {
@@ -285,7 +285,7 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    padding: 150px 0;
     height: 700px;
   }
   .perfil-container-flex {
