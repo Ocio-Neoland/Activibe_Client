@@ -113,7 +113,7 @@ const Profile2 = () => {
                   onClick={(ev) => (ev.target.nextSibling.open = true)}
                   className="perfil-button-act"
                 >
-
+                  Crea una Actividad
                 </button>
                 <ModalCreate
                   createAct={createActivities}

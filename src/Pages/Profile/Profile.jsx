@@ -74,7 +74,7 @@ const Profile = () => {
                 <strong>Correo:</strong> {user.email}{' '}
               </p>
               <p className="espacio">
-                <strong>Creado el :</strong> {formatedParserDate}
+                <strong>Creado:</strong> {formatedParserDate}
               </p>
             </div>
 

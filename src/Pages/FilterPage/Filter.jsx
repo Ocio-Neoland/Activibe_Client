@@ -77,7 +77,7 @@ const Filter = () => {
                         <span>{activity.location}</span>
                         <div className="footerCard">
                           <span className="sectionCity">{activity.city}</span>
-                          <p className="stars">{activity.mediaStars} ⭐</p>
+                          <p className="stars">{activity.mediaStars.toFixed(1)} ⭐</p>
                         </div>
                       </div>
                     </div>
