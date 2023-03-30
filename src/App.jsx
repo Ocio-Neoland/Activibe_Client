@@ -33,7 +33,7 @@ const App = () => {
         <div className="ocio-video">
           <video className="ocio-video-1" playsInline autoPlay muted loop>
             <source
-              src="https://res.cloudinary.com/dpxyn2bps/video/upload/v1680166637/Activibe_1_od4owg.mp4"
+              src="https://res.cloudinary.com/dpxyn2bps/video/upload/v1680173971/Bienvenido_a_zwhpno.mp4"
               type="video/mp4"
             />
           </video>
