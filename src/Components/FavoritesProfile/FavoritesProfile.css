@@ -27,3 +27,27 @@
   overflow: scroll;
   overflow-x: hidden;
 }
+
+@media (max-width: 767px) {
+  .header-actividades2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    gap: 0rem;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .box8 {
+    width: 15.875em;
+    height: 27.875em;
+    padding: 0rem;
+    background-color: rgba(14, 61, 214, 0.093);
+    border: 1px solid rgba(255, 255, 255, 0.952);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 0.7rem;
+    border: 1px solid black;
+  }
+}

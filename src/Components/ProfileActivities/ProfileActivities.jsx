@@ -128,7 +128,7 @@ const Profile2 = () => {
                 {loaded ? (
                   act.map((act) => {
                     return (
-                      <figure key={act.name}>
+                      <figure key={act.name} className="figureACttt">
                         <div className="box2">
                           <div className="headerCard2">
                             <h3 className="activity2">{act.type}</h3>
