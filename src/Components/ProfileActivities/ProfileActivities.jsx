@@ -3,6 +3,7 @@ import './ProfileActivities.css';
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 import { UserContext } from '../../Context/UserContext';
 import { city, typesInput, typesNames } from '../../data/data';
 import { API } from '../../services/API';
