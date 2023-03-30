@@ -29,8 +29,8 @@
 }
 
 .box8 {
-  width: 20.875em;
-  height: 27.875em;
+  width: 21.875em;
+  height: 24.875em;
   padding: 1rem;
   background-color: rgba(14, 61, 214, 0.093);
   border: 1px solid rgba(255, 255, 255, 0.952);
@@ -42,7 +42,10 @@
   margin-top: 2rem;
 }
 .imgSection8 {
-  width: 100%;
+  width:19rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 @media (max-width: 767px) {
