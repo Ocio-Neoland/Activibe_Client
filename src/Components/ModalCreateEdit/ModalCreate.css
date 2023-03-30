@@ -4,28 +4,17 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  width: 100%;
+  width: 0%;
 }
-.divDialog2 {
-  margin-top: 0.5rem;
-  gap: 1rem;
-  width: 50%;
-  height: 65vh;
-  border: 1px solid var(--av-color-background-primary);
-  margin: auto;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 8px;
+.divForm {
+  height: 80%;
+  padding: 2rem 0;
 }
 
 .mainDialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
+  width: 40%;
   height: 40%;
-  margin-left: 24.5vw;
-  margin-top: 7vw;
+  margin: auto;
 }
 
 .input-create {
@@ -40,10 +29,11 @@
 }
 
 .button-create-footer {
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
   height: 4rem;
-  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
   justify-content: center;
 }
 
@@ -62,7 +52,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 59%;
+  top: 50%;
   left: 50%;
   filter: blur();
   transform: translate(-50%, -50%);
@@ -79,7 +69,7 @@
 }
 
 .divForm {
-  width: 80%;
+  width: auto;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -87,10 +77,10 @@
 .selectsCreate {
   display: flex;
   gap: 2rem;
-  width: 27.5rem;
+  width: 100%;
 }
 select {
-  width: 10rem;
+  width: 100%;
 }
 .input-create-Img {
   padding: 1rem;
@@ -108,12 +98,17 @@ form > input {
   border-radius: 5px;
   padding: 12px;
 }
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 form > select {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
 }
 form > button {
   display: flex;
@@ -124,22 +119,21 @@ form > button {
 
 .inputGroup {
   font-family: 'Segoe UI', sans-serif;
-  margin: 1.5em 0 1em 0;
-  max-width: 450px;
+  margin: 5px 0;
   position: relative;
+  display: flex;
+  width: 100%;
 }
 
 .inputGroup .input {
   font-size: 1rem;
-  text-align: center;
   border: none;
   outline: none;
   border: 1px solid var(--av-color-highlight);
   background-color: transparent;
   border-radius: 8px;
-  min-width: 190px;
-  max-width: 465px;
-  height: 2.8rem;
+
+  height: 2.6rem;
 }
 
 .inputGroup label {
