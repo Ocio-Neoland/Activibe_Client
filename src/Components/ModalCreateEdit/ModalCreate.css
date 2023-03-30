@@ -176,3 +176,9 @@ form > button {
   flex-direction: column;
   justify-content: center;
 }
+.perfil-button-act1{
+  width: 125px;
+  height: 32px;
+  background-color: transparent;
+  border:none;
+}

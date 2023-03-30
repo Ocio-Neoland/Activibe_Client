@@ -101,6 +101,7 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  width: 100%;
 }
 .imgSection {
   width: auto;
@@ -162,7 +163,7 @@ a {
   }
   .av-section-container .box {
     width: 20.875em;
-    height: 27.875em;
+    height: 27.9rem;
     padding: 1rem;
     background-color: rgba(14, 61, 214, 0.093);
     border: 1px solid rgba(255, 255, 255, 0.952);
@@ -170,13 +171,11 @@ a {
     backdrop-filter: blur(20px);
     border-radius: 0.7rem;
     transition: all ease 0.3s;
-  }
-  .box {
-    display: flex;
+     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
   }
+ 
   .imgSection {
     width: 100%;
     object-fit: cover;

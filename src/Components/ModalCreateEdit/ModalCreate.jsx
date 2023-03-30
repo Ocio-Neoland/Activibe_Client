@@ -10,7 +10,7 @@ const ModalCreate = ({ createAct, typesInp, setAct, act, typNa, cit }) => {
     <dialog className="dialogCreate">
       <form className="divForm" onSubmit={(ev) => createAct(ev)}>
         <div className="divDialog2">
-          <h2>Create Activity</h2>
+          <h2>Crear actividad</h2>
           {typesInp.map((info) => (
             <InputCreate
               info={info}
@@ -31,9 +31,9 @@ const ModalCreate = ({ createAct, typesInp, setAct, act, typNa, cit }) => {
                 });
               }}
               type="text"
-              placeholder="calle numero codigo postal y municipio"
+              placeholder="Calle numero codigo postal y municipio"
             />
-            <label htmlFor="name">Location</label>
+            <label htmlFor="name">Localizacion</label>
           </div>
           <div className="divImageCreate">
             <p>Añade tu imagen:</p>
@@ -74,6 +74,12 @@ const ModalCreate = ({ createAct, typesInp, setAct, act, typNa, cit }) => {
             />
           </div>
           <div className="button-create-footer">
+            <input
+              type="reset"
+              id="resetButton"
+              value="Limpiar"
+              className="perfil-button-act1"
+            ></input>
             <button
               onClick={(ev) => {
                 ev.target.offsetParent.open = false;
@@ -83,16 +89,10 @@ const ModalCreate = ({ createAct, typesInp, setAct, act, typNa, cit }) => {
             >
               Crear
             </button>
-            <input
-              type="reset"
-              id="resetButton"
-              value="reset"
-              className="perfil-button-act"
-            ></input>
           </div>
           <button
             onClick={(ev) => (ev.target.offsetParent.open = false)}
-            className="perfil-button-act"
+            className="perfil-button-act1"
           >
             Cerrar
           </button>
