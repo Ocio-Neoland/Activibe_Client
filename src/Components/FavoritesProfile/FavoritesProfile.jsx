@@ -63,7 +63,7 @@ const Favorites = () => {
                         </div>
 
                         <img
-                          className="imgSection"
+                          className="imgSection8"
                           src={favorite.image}
                           alt={favorite.name}
                         />
