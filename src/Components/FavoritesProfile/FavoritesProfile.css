@@ -58,8 +58,8 @@
   }
   .box8 {
     width: 15.875em;
-    height: 22.875em;
-    padding: 0rem;
+    height: 24.875em;
+    padding: 1rem;
     background-color: rgba(14, 61, 214, 0.093);
     border: 1px solid rgba(255, 255, 255, 0.952);
     -webkit-backdrop-filter: blur(20px);
