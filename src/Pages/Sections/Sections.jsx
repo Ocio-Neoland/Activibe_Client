@@ -3,6 +3,7 @@ import './Sections.css';
 
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+
 import Spinner from '../../Components/Spinner/Spinner';
 import { CityContext } from '../../Context/CityContext';
 import { UserContext } from '../../Context/UserContext';
