@@ -50,7 +50,7 @@ const Favorites = () => {
                 {favorites.length ? (
                   favorites.map((favorite) => (
                     <div className="av-section-container" key={favorite._id}>
-                      <div className="box">
+                      <div className="box8">
                         <div className="headerCard">
                           <h3 className="activity">{favorite.type}</h3>
                           <Link
