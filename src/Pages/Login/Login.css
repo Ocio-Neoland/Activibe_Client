@@ -91,6 +91,15 @@
   background: linear-gradient(90deg, transparent, #fff);
   animation: btn-anim1 1.5s linear infinite;
 }
+.login-button-mostrar2{
+
+
+
+}
+.login-button-mostrar2 img{
+  width: 20px;
+  object-fit: cover;
+}
 
 @keyframes btn-anim1 {
   0% {
@@ -220,7 +229,7 @@
   bottom: 4.3rem;
   left: 14.5rem;
   float: right;
-  height: 1.7rem;
+  height: 1.3rem;
   border: none;
   padding: 0;
   margin: 0;

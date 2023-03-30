@@ -6,7 +6,9 @@
   opacity: 1;
   border: 1px solid black;
   gap: 1rem;
-  width: 30%;
+  width: 40%;
+  height: 38rem;
+
 
   padding: 1.1rem;
   border-radius: 8px;
@@ -23,3 +25,19 @@ dialog {
   width: 100%;
   z-index: 1;
 }
+
+
+@media (max-width: 721px){
+  .divDialog2 {
+    width: 100%;
+  }
+  .fileEditPerfil{
+    position: relative;
+    right: 1.3rem;
+  }
+
+    .divForm2{
+  
+    }
+    }
+

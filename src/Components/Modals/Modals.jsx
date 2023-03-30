@@ -16,6 +16,7 @@ const Modals = ({ changeA, changePass }) => {
           <div className="divModal2">
             <div className="editEvatarImg">
               <input
+                className="fileEditPerfil"
                 type="file"
                 id="avatar"
                 name="avatar"
@@ -41,7 +42,7 @@ const Modals = ({ changeA, changePass }) => {
               }}
               className="perfil-button-act"
             >
-              Change
+              Cambiar
             </button>
           </div>
         </form>
@@ -58,10 +59,11 @@ const Modals = ({ changeA, changePass }) => {
             />
             <label htmlFor="name">contraseña</label>
             <button
+              id="IDbuttonModal"
               onClick={(ev) => (ev.target.offsetParent.open = false)}
               className="perfil-button-act"
             >
-              Change
+              Editar Contraseña
             </button>
           </div>
         </form>
