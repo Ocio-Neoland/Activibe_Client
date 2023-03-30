@@ -12,7 +12,7 @@ const Carousel = ({ prop }) => {
 
   return (
     <div className="ocio-carousel">
-      <button className=" carousel-button-left" onClick={() => handleScroll(-270)}>
+      <button className=" carousel-button-left" onClick={() => handleScroll(-335)}>
         ⟨
       </button>
       <section className="container-carousel" ref={carouselRef}>
@@ -35,7 +35,7 @@ const Carousel = ({ prop }) => {
             </Link>
           ))}
       </section>
-      <button className=" carousel-button-right" onClick={() => handleScroll(270)}>
+      <button className=" carousel-button-right" onClick={() => handleScroll(335)}>
         ⟩
       </button>
     </div>

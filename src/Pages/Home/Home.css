@@ -36,7 +36,27 @@
 }
 
 .subHero-home > p {
-  width: 50%;
+  width: 80%;
   margin: 2rem 0;
   font-size: 18px;
+}
+@media (max-width: 767px) {
+  .hero-home h1{
+ font-size: 3.5rem;
+ margin-left: 5rem;
+  }
+  .container-carousel a .item{
+    height: 12rem;
+ 
+  }
+  .carousel-button-left {
+
+    padding-right: 5rem;
+ 
+  }
+  
+  .carousel-button-right {
+
+    padding-left: 2rem;
+  }
 }
