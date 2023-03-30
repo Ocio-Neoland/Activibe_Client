@@ -1,0 +1,42 @@
+
+.ocio-video-1{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fade-in 2s ease-in-out forwards;
+    transition: 2s ease-in-out;
+ 
+  }
+
+
+  .ocio-btn-video{
+    width: 100px;
+    height: 50px;
+
+    position: relative;
+    color: antiquewhite;
+    background-color: inherit; 
+    position: absolute;
+    bottom: 30%;
+    right: 47%;
+    z-index: 1;
+    border: 1px solid white;
+    border-radius: 6px;
+    opacity: 0;
+  animation: fade-in 2s ease-in-out forwards;
+  transition: 2s ease-in-out;
+
+  }
+ 
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
