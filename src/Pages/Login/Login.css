@@ -91,12 +91,9 @@
   background: linear-gradient(90deg, transparent, #fff);
   animation: btn-anim1 1.5s linear infinite;
 }
-.login-button-mostrar2{
-
-
-
+.login-button-mostrar2 {
 }
-.login-button-mostrar2 img{
+.login-button-mostrar2 img {
   width: 20px;
   object-fit: cover;
 }

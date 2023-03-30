@@ -9,7 +9,6 @@
   width: 40%;
   height: 38rem;
 
-
   padding: 1.1rem;
   border-radius: 8px;
   background-color: white;
@@ -26,18 +25,15 @@ dialog {
   z-index: 1;
 }
 
-
-@media (max-width: 721px){
+@media (max-width: 721px) {
   .divDialog2 {
     width: 100%;
   }
-  .fileEditPerfil{
+  .fileEditPerfil {
     position: relative;
     right: 1.3rem;
   }
 
-    .divForm2{
-  
-    }
-    }
-
+  .divForm2 {
+  }
+}

@@ -24,7 +24,7 @@
   width: 30%;
   height: 76%;
 
-  width:30%;
+  width: 30%;
   height: 85%;
 
   background-color: white;
@@ -172,12 +172,9 @@
     width: 100%;
     height: 60%;
     margin-top: 5rem;
-
-
   }
   .imgAvatarEdit {
     display: flex;
     gap: 2rem;
   }
-
 }
