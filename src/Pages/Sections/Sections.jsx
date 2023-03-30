@@ -3,7 +3,7 @@ import './Sections.css';
 
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-
+import Spinner from '../../Components/Spinner/Spinner';
 import { CityContext } from '../../Context/CityContext';
 import { UserContext } from '../../Context/UserContext';
 import { types } from '../../data/data.js';
@@ -77,7 +77,7 @@ const Sections = () => {
                   <span>{activity.location}</span>
                   <div className="footerCard">
                     <span className="sectionCity">{activity.city}</span>
-                    <p className="stars">{activity.mediaStars} ⭐</p>
+                    <p className="stars">{activity.mediaStars.toFixed(1)} ⭐</p>
                   </div>
                   <button
                     className="deleteLike"
@@ -95,7 +95,7 @@ const Sections = () => {
             </div>
           ))
         ) : (
-          <h2>Cargando...</h2>
+          <Spinner />
         )}
       </div>
       <div className="prevNext">
@@ -123,7 +123,7 @@ const Sections = () => {
             )}
           </>
         ) : (
-          <h2>Cargando...</h2>
+          <Spinner />
         )}
       </div>
     </main>

@@ -70,6 +70,7 @@ const Login = () => {
             <input
               className="input"
               type="text"
+              placeholder="Nombre de usuario"
               required=""
               id="userName"
               name="userName"
@@ -79,7 +80,7 @@ const Login = () => {
           </div>
           <div className="user-box">
             <input
-              placeholder="password"
+              placeholder="contraseña"
               className="input"
               type={show ? 'text' : 'password'}
               required=""

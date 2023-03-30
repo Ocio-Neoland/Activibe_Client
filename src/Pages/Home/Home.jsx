@@ -1,7 +1,7 @@
 import './Home.css';
 
 import React, { useContext, useEffect, useState } from 'react';
-
+import Spinner from '../../Components/Spinner/Spinner';
 import Carousel from '../../Components/Carousel/Carousel';
 import { CityContext } from '../../Context/CityContext';
 import { hero } from '../../data/data';
@@ -103,7 +103,7 @@ const Home = () => {
           <Carousel prop={otros} />
         </div>
       ) : (
-        <h2>Loading</h2>
+        <Spinner />
       )}
     </main>
   );

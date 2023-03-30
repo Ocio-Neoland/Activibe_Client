@@ -59,7 +59,7 @@ const Profile = () => {
       <div className="container4">
         <div className="perfil-container">
           <div>
-            <h1>Profile</h1>
+            <h1>Perfil</h1>
           </div>
           <div className="perfil-container-flex">
             <div className="avatar2">
@@ -68,13 +68,13 @@ const Profile = () => {
 
             <div className="perfil-datos">
               <p className="espacio">
-                <strong>Username:</strong> {user.userName}
+                <strong>Usuario:</strong> {user.userName}
               </p>
               <p className="espacio">
-                <strong>Email:</strong> {user.email}{' '}
+                <strong>Correo:</strong> {user.email}{' '}
               </p>
               <p className="espacio">
-                <strong>User created at:</strong> {formatedParserDate}
+                <strong>Creado el :</strong> {formatedParserDate}
               </p>
             </div>
 
@@ -82,7 +82,7 @@ const Profile = () => {
               onClick={(ev) => (ev.target.nextSibling.open = true)}
               className="perfil-button-act"
             >
-              Edit profile
+              Editar perfil
             </button>
             <Modals changeA={changeAvatar} changePass={changePassword} />
           </div>

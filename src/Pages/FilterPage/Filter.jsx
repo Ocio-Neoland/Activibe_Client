@@ -3,7 +3,7 @@ import './Filter.css';
 
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Spinner from '../../Components/Spinner/Spinner';
 import { CityContext } from '../../Context/CityContext';
 import { SearchContext } from '../../Context/SearchContext';
 import { API } from '../../Services/API';
@@ -89,7 +89,7 @@ const Filter = () => {
           </div>
         </div>
       ) : (
-        <h2>Loading</h2>
+        <Spinner />
       )}
     </main>
   );
