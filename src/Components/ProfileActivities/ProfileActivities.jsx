@@ -2,6 +2,7 @@ import './ProfileActivities.css';
 
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { UserContext } from '../../Context/UserContext';
 import { city, typesInput, typesNames } from '../../data/data';
@@ -97,6 +98,33 @@ const Profile2 = () => {
     });
   };
 
+  const handleDeleteButton = (ev) => {
+    Swal.fire({
+      title: '¿Seguro que quieres borrar la actividad?',
+      showDenyButton: true,
+      confirmButtonColor: '#ff3c00',
+      denyButtonColor: '#38B6FF',
+      cancelButtonColor: '#38B6FF',
+      showCancelButton: false,
+      confirmButtonText: 'Borrar',
+      denyButtonText: 'No borrar',
+      customClass: {
+        popup: 'cancelButton',
+        confirmButton: 'confirmButton',
+        cancelButton: 'cancelButton',
+        denyButton: 'denyButton',
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Borrado', '', 'Éxito');
+
+        deleteActivities(ev);
+      } else if (result.isDenied) {
+        Swal.fire('Los cambios no se han guardado', '', '');
+      }
+    });
+  };
+
   useEffect(() => {
     getUser();
   }, [loaded]);
@@ -153,11 +181,14 @@ const Profile2 = () => {
                         </div>
                         <div className="perfil-act-button">
                           <button
-                            onClick={() => deleteActivities(act._id)}
+                            onClick={() => {
+                              handleDeleteButton(act._id);
+                            }}
                             className="perfil-button"
                           >
                             Eliminar
                           </button>
+
                           <button
                             onClick={(ev) => (
                               (ev.target.nextSibling.open = true), setEditActivity(act)
