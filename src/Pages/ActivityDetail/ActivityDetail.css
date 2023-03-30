@@ -2,6 +2,42 @@
   display: flex;
   flex-direction: column;
 }
+.confirmDelete {
+  background: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  font-weight: bold !important;
+}
+
+.confirmButton {
+  background: #ff3c00 !important;
+  background-color: #ff3c00 !important;
+  color: #000000 !important;
+  background: rgba(#ff3c00, 0.8) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  font-weight: bold !important;
+}
+
+.denyButton,
+.cancelButton {
+  background-color: (#38b6ff !important);
+  background: (#38b6ff, 0.8 !important);
+  color: #000000 !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  font-weight: bold !important;
+}
+
 .description-act {
   display: flex;
   justify-content: center;
