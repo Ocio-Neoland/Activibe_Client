@@ -30,24 +30,33 @@ const ActivityDetail = () => {
   const hiddenStar3 = useRef('null');
   const hiddenStar2 = useRef('null');
   const hiddenStar1 = useRef('null');
+
   const handleDeleteButton = (ev, type) => {
     Swal.fire({
-      title: 'Do you want to save the changes?',
+      title: '¿Seguro que quieres borrar la actividad?',
       showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Save',
-      denyButtonText: `Don't save`,
+      confirmButtonColor: '#ff3c00',
+      denyButtonColor: '#38B6FF',
+      cancelButtonColor: '#38B6FF',
+      showCancelButton: false,
+      confirmButtonText: 'Borrar',
+      denyButtonText: `No borrar`,
+      customClass: {
+        popup: 'cancelButton',
+        confirmButton: 'confirmButton',
+        cancelButton: 'cancelButton',
+        denyButton: 'denyButton',
+      },
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire('Saved!', '', 'success');
+        Swal.fire('Borrado', '', 'Éxito');
         if (type === 'feed') {
           deleteFeed(ev);
         } else {
           deleteComment(ev);
         }
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info');
+        Swal.fire('Los cambios no se han guardado', '', '');
       }
     });
   };
@@ -128,7 +137,9 @@ const ActivityDetail = () => {
       });
     }
   };
-
+  function borrarTextArea() {
+    document.getElementById('miTextArea').value = '';
+  }
   const countingStars = (numberOfStars) => {
     if (numberOfStars === 4) {
       hiddenStar5.current.classList.value = 'hide';
@@ -378,13 +389,18 @@ const ActivityDetail = () => {
               <form className="comment-create2" onSubmit={(ev) => createComment(ev)}>
                 <textarea
                   className="inputComentComunty"
+                  id="miTextArea"
                   name="textarea"
                   maxLength={200}
                   onChange={(ev) => {
                     setNewComment({ ...newComment, comment: ev.target.value });
                   }}
                 ></textarea>
-                <button className="perfil-button-act" type="submit">
+                <button
+                  className="perfil-button-act"
+                  type="submit"
+                  onClick={() => borrarTextArea()}
+                >
                   Publicar
                 </button>
               </form>
