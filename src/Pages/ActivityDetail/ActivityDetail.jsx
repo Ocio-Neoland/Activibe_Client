@@ -358,7 +358,9 @@ const ActivityDetail = () => {
                     <div className="ocio-comment-avatar">
                       <img src={comment.idUser.avatar} alt={comment.idUser.userName} />
                       <h2>{comment.idUser.userName}</h2>
+                      <h2>{new Date(comment.createdAt).toLocaleString('es-ES')}</h2>
                     </div>
+
                     <q>
                       <i className="ocio-comment-p">{comment.comment}</i>
                     </q>

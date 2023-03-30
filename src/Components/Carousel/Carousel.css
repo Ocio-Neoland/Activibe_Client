@@ -9,16 +9,15 @@
   overflow: scroll;
   gap: 1.4rem;
   width: 100%;
-  margin-left:1px;
+  margin-left: 1px;
 }
 
 .container-carousel > a {
   height: 180px;
   border-radius: 8px;
 }
-.container-carousel > a h3{
+.container-carousel > a h3 {
   border-radius: 8px;
-
 }
 
 .container-carousel::-webkit-scrollbar {
@@ -30,7 +29,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  
 }
 
 .ocio-carousel:hover button {
@@ -60,7 +58,7 @@
   padding-left: 0.5rem;
 
   background-color: rgba(0, 0, 0, 0.26);
-  
+
   font-size: 40px;
   color: var(--av-color-text-primary);
   cursor: pointer;
@@ -73,7 +71,6 @@
   z-index: 1;
   border-radius: 8px;
 }
-
 
 .item {
   line-height: 40px;
@@ -129,19 +126,18 @@
   align-self: flex-end;
   border-radius: 6px;
 }
-.container-carousel img{
+.container-carousel img {
   border-radius: 8px;
 }
 
 @media (max-width: 730px) {
-
-  .container-carousel a .item{
+  .container-carousel a .item {
     height: 16rem;
     width: 30em;
     object-fit: cover;
     border-radius: 8px;
   }
-  
+
   /* .carousel-button-left {
 
 
@@ -166,30 +162,27 @@ left: -70px;
 
     
   } */
-  .ocio-carousel button{
+  .ocio-carousel button {
     display: flex;
     height: 16.2rem;
     margin-bottom: -4.5rem;
-
   }
-  .container-carousel img{
-
+  .container-carousel img {
     border-radius: 8px;
-    height:35rem;
+    height: 35rem;
     width: 35rem;
-
   }
-  .ocio-carousel{
+  .ocio-carousel {
     height: 25rem;
     margin-top: -3rem;
   }
-  .container-carousel{
-    height:30rem;
+  .container-carousel {
+    height: 30rem;
     width: 19rem;
     display: flex;
     gap: 2rem;
   }
-  .ocio-container-home h2{
+  .ocio-container-home h2 {
     margin-right: 3rem;
   }
 }

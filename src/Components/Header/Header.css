@@ -98,7 +98,7 @@ header {
   z-index: 1;
   position: fixed;
   flex-direction: column;
-  margin-right: 42rem;
+  margin-right: 48rem;
   border-end-end-radius: 12px;
   border-end-start-radius: 12px;
 }

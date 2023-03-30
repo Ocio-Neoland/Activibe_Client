@@ -38,7 +38,7 @@ const App = () => {
             />
           </video>
           <button className="ocio-btn-video" onClick={handleSetVideo}>
-            Click here
+            Entra Aqui
           </button>
         </div>
       )}
