@@ -17,7 +17,7 @@ const CardAbout = () => {
           <h3 className="title">Jesús Roman Juarez</h3>
           <ul className="sci">
             <li>
-              <a href="https://github.com/Shuss1988">
+              <a href="https://github.com/Shuss1988" target="_blank" rel="noreferrer">
                 <svg
                   fill="#FFFFFF"
                   xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,11 @@ const CardAbout = () => {
             </li>
 
             <li>
-              <a href="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/">
+              <a
+                href="https://www.linkedin.com/in/jes%C3%BAs-rom%C3%A1n-juarez-582249266/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   className="fa-brands fa-linkedin-in"
                   width="24"
@@ -58,7 +62,7 @@ const CardAbout = () => {
           <h3 className="title">Sebastian Riballo Herrera</h3>
           <ul className="sci">
             <li>
-              <a href="https://github.com/Sriballo93">
+              <a href="https://github.com/Sriballo93" target="_blank" rel="noreferrer">
                 <svg
                   fill="#FFFFFF"
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +77,11 @@ const CardAbout = () => {
             </li>
 
             <li>
-              <a href="https://www.linkedin.com/in/sebastian-riballo-herrera-a862b5180/">
+              <a
+                href="https://www.linkedin.com/in/sebastian-riballo-herrera-a862b5180/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   className="fa-brands fa-linkedin-in"
                   width="24"
@@ -99,7 +107,7 @@ const CardAbout = () => {
           <h3 className="title">Carlos M. García Sánchez </h3>
           <ul className="sci">
             <li>
-              <a href="https://github.com/Charliecgs">
+              <a href="https://github.com/Charliecgs" target="_blank" rel="noreferrer">
                 <svg
                   fill="#FFFFFF"
                   xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +122,11 @@ const CardAbout = () => {
             </li>
 
             <li>
-              <a href="https://www.linkedin.com/in/carlos-manuel-garc%C3%ADa-s%C3%A1nchez-95b211267/">
+              <a
+                href="https://www.linkedin.com/in/carlos-manuel-garc%C3%ADa-s%C3%A1nchez-95b211267/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   className="fa-brands fa-linkedin-in"
                   width="24"
@@ -140,7 +152,7 @@ const CardAbout = () => {
           <h3 className="title">Cristian Alonso Ramos </h3>
           <ul className="sci">
             <li>
-              <a href="https://github.com/C-AlonsoRamos">
+              <a href="https://github.com/C-AlonsoRamos" target="_blank" rel="noreferrer">
                 <svg
                   fill="#FFFFFF"
                   xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +167,11 @@ const CardAbout = () => {
             </li>
 
             <li>
-              <a href="https://www.linkedin.com/in/cristian-alonso-ramos-60749b256/">
+              <a
+                href="https://www.linkedin.com/in/cristian-alonso-ramos-60749b256/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   className="fa-brands fa-linkedin-in"
                   width="24"
@@ -181,7 +197,7 @@ const CardAbout = () => {
           <h3 className="title">Jacobo Linares Fernández</h3>
           <ul className="sci">
             <li>
-              <a href="https://github.com/jackhietala">
+              <a href="https://github.com/jackhietala" target="_blank" rel="noreferrer">
                 <svg
                   fill="#FFFFFF"
                   xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +212,11 @@ const CardAbout = () => {
             </li>
 
             <li>
-              <a href="https://www.linkedin.com/in/jacobo-linares-fern%C3%A1ndez-5285ba53/">
+              <a
+                href="https://www.linkedin.com/in/jacobo-linares-fern%C3%A1ndez-5285ba53/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   className="fa-brands fa-linkedin-in"
                   width="24"

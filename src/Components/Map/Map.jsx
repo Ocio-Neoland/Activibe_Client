@@ -32,7 +32,12 @@ const Map = ({ prop1, prop2, prop3 }) => {
           <h2>Coordenadas no encontradas !!</h2>
           <h2>
             Pincha aquí para ir a{' '}
-            <a className="google" href={`https://www.google.es/maps/place/${prop3}`}>
+            <a
+              className="google"
+              href={`https://www.google.es/maps/place/${prop3}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               Google Maps
             </a>
           </h2>
