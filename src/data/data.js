@@ -55,7 +55,7 @@ export const hero = [
   },
   {
     name: 'Barcelona',
-    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680026505/Ocioland/desktop-wallpaper-barcelona-city-1-barcelona-city_eesngw.jpg',
+    img: 'https://res.cloudinary.com/dpxyn2bps/image/upload/v1680183427/0-barcelona-noche-ciudad-alumbrado_vcdyh9.webp',
     quote:
       '¡Descubre las mejores actividades en Barcelona! - Una ciudad cosmopolita y de gran importancia comercial y turística, Barcelona rebosa de cultura y entretenimiento. Unas visitas a la Sagrada Familia y a La Rambla no pueden faltar, por supuesto, pero las calles de esta ciudad costal también cuentan con otras propuestas: conciertos a la luz de las velas, experiencias inmersivas, festivales, afterworks únicos, y mucho, mucho más. Cuenta con ActiVibe para estar siempre al tanto de los mejores planes en Barcelona.',
   },

@@ -224,8 +224,12 @@ header > div > nav > ul > li > .active {
   border: none;
 }
 
-.ocio-a-container a,
-button:hover {
+.ocio-a-container > a, .ocio-a-container3:hover {
+  color: var(--av-color-highlight);
+  cursor: pointer;
+}
+
+.ocio-sections-btn:hover{
   color: var(--av-color-highlight);
   cursor: pointer;
 }

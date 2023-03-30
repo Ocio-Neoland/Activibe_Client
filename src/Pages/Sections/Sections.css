@@ -119,6 +119,8 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
+  animation: fade-in 2s ease-in-out forwards;
+  transition: 2s ease-in-out;
   margin-bottom: 1rem;
 }
 .heroImage {
@@ -135,6 +137,8 @@ a {
   justify-content: center;
   align-items: center;
   background-position: center;
+  animation: fade-in 1s ease-in-out forwards;
+  transition: 1s ease-in-out;
 }
 
 .divHero > h1 {

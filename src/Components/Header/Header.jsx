@@ -85,7 +85,6 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              {' '}
               <NavLink to={'/'}>
                 <img
                   className="img-Header"
@@ -157,17 +156,24 @@ const Header = () => {
       </div>
       {chooseCity !== false && (
         <ul className="ocio-menu-sections3 hide-menu" ref={menuCity}>
-          {cities.map((type) => (
-            <button
-              className="ocio-a-container3"
-              onClick={(ev) => {
-                console.log(ev), setCity(type), setChooseCity(false), navigate('/');
-              }}
-              key={type}
-            >
-              {type}
-            </button>
-          ))}
+          {cities.map((type) =>
+            type !== city ? (
+              <button
+                className="ocio-a-container3"
+                onClick={(ev) => {
+                  console.log(ev);
+                  setCity(type);
+                  setChooseCity(false);
+                  navigate('/');
+                }}
+                key={type}
+              >
+                {type}
+              </button>
+            ) : (
+              <React.Fragment key={type} />
+            ),
+          )}
         </ul>
       )}
 
