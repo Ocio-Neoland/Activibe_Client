@@ -1,14 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .search {
-  width: 16vw;
+  width: 30vw;
   display: flex;
+  text-align: center;
+  color: #fff;
+}
+.search:focus {
+  color: var(--av-color-highlight);
 }
 
 .searchTerm {
   width: 100%;
   border: 3px solid var(--av-color-highlight);
   padding: 3px;
+  text-align: center;
+  background-color: #25222a;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: var(--av-color-highlight);
@@ -16,6 +23,7 @@
 
 .searchTerm:focus {
   color: #25222a;
+  color: #fff;
 }
 
 .searchButton {
