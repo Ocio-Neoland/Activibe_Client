@@ -110,7 +110,7 @@ a {
     align-items: center;
     flex-direction: column;
   }
-  .perfil-act-button{
+  .perfil-act-button {
     display: flex;
     gap: 1rem;
   }
