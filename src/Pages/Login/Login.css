@@ -97,9 +97,8 @@
   object-fit: cover;
 }
 
-.login-button-mostrar2{
+.login-button-mostrar2 {
   color: var(--av-color-background-secondary);
-  
 }
 @keyframes btn-anim1 {
   0% {
@@ -238,5 +237,4 @@
   margin-bottom: 1rem;
   height: 0;
   width: 0;
-  
 }

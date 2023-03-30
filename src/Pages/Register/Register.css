@@ -1,5 +1,5 @@
 .errorAlert {
-  background:var(--av-color-background-secondary) !important;
+  background: var(--av-color-background-secondary) !important;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
   backdrop-filter: blur(2px) !important;
   -webkit-backdrop-filter: blur(2px) !important;
@@ -41,14 +41,14 @@
 
 .sub {
   text-align: center;
-  color:  var(--av-color-background-primary);
+  color: var(--av-color-background-primary);
   width: 100%;
   font-size: 1rem;
 }
 
 .sub.mb {
   margin-top: 30px;
-  color:  var(--av-color-background-primary);
+  color: var(--av-color-background-primary);
   font-weight: bold;
 }
 
@@ -153,7 +153,7 @@
   width: 5rem;
   height: 5rem;
   object-fit: cover;
-  cursor:pointer
+  cursor: pointer;
 }
 
 .register-avatar {
@@ -161,7 +161,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  
 }
 .regiser-button-mostrar {
   z-index: 10;
