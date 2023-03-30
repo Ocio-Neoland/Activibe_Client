@@ -7,7 +7,6 @@
   color: #fff;
 }
 .search:focus {
-
   color: var(--av-color-highlight);
 }
 

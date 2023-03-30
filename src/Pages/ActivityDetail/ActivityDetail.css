@@ -296,7 +296,6 @@ q {
   opacity: 35%;
 }
 
-
 @media (max-width: 800px) {
   .ocio-figure {
     flex-direction: column;
@@ -355,4 +354,3 @@ q {
     justify-content: center;
   }
 }
-
