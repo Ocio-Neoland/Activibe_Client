@@ -84,9 +84,7 @@ const Register = () => {
     <main className="main-register">
       <div className="containerRegister">
         <form className="form" onSubmit={handleSubmit(formSubmit)}>
-          <span className="sub mb">
-            Regístrate para obtener acceso completo a ActiVibe
-          </span>
+          <span className="sub mb">Regístrate para obtener acceso completo</span>
 
           <input
             type="file"
@@ -103,7 +101,7 @@ const Register = () => {
               )}
               {showImgavatar == null && (
                 <>
-                  {' '}
+                  <p className="ParrafoAvatar">Coloca tu avatar</p>
                   <span className="iconoImgAvatar">
                     <img
                       src="https://sistemas.com/wp-content/uploads/2013/12/twitpic.png"
@@ -112,8 +110,6 @@ const Register = () => {
                   </span>
                 </>
               )}
-
-              <p className="ParrafoAvatar">Imagen perfil</p>
             </label>
           </div>
 
@@ -121,7 +117,7 @@ const Register = () => {
             Usuario:
           </label>
           <input
-            placeholder="Username"
+            placeholder="Usuario"
             required
             type="text"
             className="input"
@@ -184,13 +180,13 @@ const Register = () => {
               </button>
             )}
             <div className="passwordRequisitos">
-              <p>Mínimo 8 caracteres: 1 mayúscula, 1 número y 1 símbolo</p>
+              <p>Mín 8 caracteres 1 mayusc. 1 num. y 1 sim.</p>
             </div>
           </div>
           <label htmlFor="password">Repetir contraseña:</label>
           <input
             required
-            placeholder="repeatPassword"
+            placeholder="Contraseña"
             type={shown1 ? 'text' : 'password'}
             className="input"
             id="repeatPassword"
