@@ -11,9 +11,9 @@ import ModalCreate from '../ModalCreateEdit/ModalCreate';
 import ModalEdit from '../ModalCreateEdit/ModalEdit';
 
 const Profile2 = () => {
-  const [setError] = useState(null);
+  const [error, setError] = useState(null);
   const { id } = useContext(UserContext);
-  const [setUser] = useState({});
+  const [user, setUser] = useState({});
   const [act, setAct] = useState({});
   const [loaded, setLoaded] = useState(false);
   const [activity, setActivity] = useState({
@@ -27,6 +27,8 @@ const Profile2 = () => {
     validate: true,
     createdBy: id,
   });
+  console.log(error);
+  console.log(user);
 
   const [editActivity, setEditActivity] = useState({
     name: '',
