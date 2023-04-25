@@ -1,0 +1,184 @@
+.divDialog {
+  opacity: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 0%;
+}
+.divForm {
+  height: 80%;
+  padding: 2rem 0;
+}
+
+.mainDialog {
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.input-create {
+  height: 2rem;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
+}
+
+.perfil-button-act {
+  z-index: 1;
+}
+
+.button-create-footer {
+  gap: 1rem;
+  display: flex;
+  height: 4rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+  justify-content: center;
+}
+
+/* .dialogCreate {
+  width: 38%;
+  height: 65%;
+  z-index: 1;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 4rem;
+  border: none;
+} */
+
+.dialogCreate {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  filter: blur();
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  z-index: 9999;
+  margin: au;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.divForm {
+  width: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.selectsCreate {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+select {
+  width: 100%;
+}
+.input-create-Img {
+  padding: 1rem;
+
+  height: 4rem;
+}
+
+form > input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 3vh;
+  border-radius: 5px;
+  padding: 12px;
+}
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+form > select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+form > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 5px 0;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.inputGroup .input {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border: 1px solid var(--av-color-highlight);
+  background-color: transparent;
+  border-radius: 8px;
+
+  height: 2.6rem;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.inputGroup :is(input:focus, input:valid) ~ label {
+  transform: translateY(-80%) scale(0.9);
+  margin: 0em;
+  margin-left: 1em;
+  padding: 0.3em;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+}
+
+.imgCreatePerfil {
+  width: 4rem;
+}
+.button-file-create {
+  border: none;
+  padding: 1rem 0;
+  background-color: transparent;
+}
+.imgCreatePerfilOne {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.divImageCreate {
+  width: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.perfil-button-act1 {
+  width: 125px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+}

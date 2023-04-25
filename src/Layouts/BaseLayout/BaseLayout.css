@@ -1,0 +1,7 @@
+.gridLayout {
+  display: grid;
+  grid-template-rows:
+    10vh
+    1fr
+    20vh;
+}

@@ -1,0 +1,39 @@
+.divDialog2 {
+  margin-top: 7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  border: 1px solid black;
+  gap: 1rem;
+  width: 40%;
+  height: 38rem;
+
+  padding: 1.1rem;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.mainDialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dialog {
+  width: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 721px) {
+  .divDialog2 {
+    width: 100%;
+  }
+  .fileEditPerfil {
+    position: relative;
+    right: 1.3rem;
+  }
+
+  .divForm2 {
+  }
+}

@@ -1,0 +1,114 @@
+.CardAbout {
+  display: flex;
+  gap: 3rem;
+}
+.mainCarAbout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 17rem;
+  height: 24rem;
+  padding: 2rem;
+  border: 1px solid var(--av-color-background-primary);
+  border-radius: 6px;
+  transition: ease-in-out 500ms;
+}
+
+.title {
+  position: relative;
+  font-weight: bold;
+  font-weight: 500;
+  line-height: 1em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content .title span {
+  font-weight: 300;
+  font-size: 0.7em;
+}
+
+.content .sci {
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li .fa-brands {
+  width: 14px;
+}
+
+.sci li .fa-facebook {
+  width: 10px;
+}
+
+.sci li a {
+  position: relative;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--av-color-background-secondary);
+  background: var(--av-color-highlight);
+  fill: currentColor;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 1rem;
+}
+.sci li a:hover {
+  background: #0348a3;
+}
+
+.foto {
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--av-color-background-primary);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale();
+}
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
