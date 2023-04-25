@@ -131,8 +131,7 @@ const ActivityDetail = () => {
       API.post('/feeds', newFeed, {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newFeed),
-      }).then((res) => {
-        console.log(res.data);
+      }).then(() => {
         getSection();
       });
     }
@@ -381,8 +380,6 @@ const ActivityDetail = () => {
               ) : (
                 <div>
                   <h2>No hay comentarios en la actividad</h2>
-                  {/* <label htmlFor="input">Agrega un comentario</label>
-                      <input name="input">.....</input> */}
                 </div>
               )}
             </div>

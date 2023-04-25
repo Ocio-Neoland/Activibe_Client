@@ -25,7 +25,7 @@ const Filter = () => {
       const searchActivities = data.filter((activity) =>
         activity.name.toLowerCase().includes(search),
       );
-      console.log();
+
       setFilter(searchActivities);
     }
   };

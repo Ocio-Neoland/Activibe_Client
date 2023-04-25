@@ -74,11 +74,6 @@ const Home = () => {
     <main className="ocio-home">
       {loaded ? (
         <div className="ocio-container-home">
-          {/* {typesCarousel.map((type) => {
-            console.log(type[1]);
-            <Carousel prop={type[0]} title={type[1]} />;
-          })} */}
-
           <div
             className="hero-home"
             style={{ backgroundImage: `url(${filter[0].img})`, backgroundSize: `cover` }}

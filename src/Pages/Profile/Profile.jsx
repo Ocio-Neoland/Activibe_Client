@@ -40,7 +40,7 @@ const Profile = () => {
       ...user,
       password: formData.password,
     };
-    console.log(data.password);
+
     API.patch(`/users/${user._id}`, data, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });

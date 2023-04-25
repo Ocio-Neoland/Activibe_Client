@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import './Sections.css';
 
 import React, { useContext, useEffect, useState } from 'react';
@@ -28,8 +27,7 @@ const Sections = () => {
     });
   };
 
-  const chooseFavorite = (value, activity) => {
-    console.log(activity.favorites.includes(id));
+  const chooseFavorite = (value) => {
     const info = {
       id: id,
     };
@@ -132,11 +130,3 @@ const Sections = () => {
 };
 
 export default Sections;
-{
-  /* <div onClick={handleClick}>
-{isFavorite ? (
-  <i className="fas fa-heart"></i>
-) : (
-  <i className="far fa-heart"></i>
-)} */
-}

@@ -11,9 +11,9 @@ import ModalCreate from '../ModalCreateEdit/ModalCreate';
 import ModalEdit from '../ModalCreateEdit/ModalEdit';
 
 const Profile2 = () => {
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
   const { id } = useContext(UserContext);
-  const [user, setUser] = useState({});
+  const [setUser] = useState({});
   const [act, setAct] = useState({});
   const [loaded, setLoaded] = useState(false);
   const [activity, setActivity] = useState({
@@ -27,8 +27,6 @@ const Profile2 = () => {
     validate: true,
     createdBy: id,
   });
-
-  console.log(user);
 
   const [editActivity, setEditActivity] = useState({
     name: '',
@@ -66,7 +64,6 @@ const Profile2 = () => {
       !activity.city
     ) {
       setError('Incomplete form');
-      console.log(error);
     } else {
       setError(null);
       API.post('/activities', activity, {
